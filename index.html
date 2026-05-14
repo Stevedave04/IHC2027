@@ -173,10 +173,8 @@ body::after{
   width:clamp(110px,14vw,170px);
   height:clamp(110px,14vw,170px);
   margin:0 auto 3rem;
-  animation:logo-spin 28s linear infinite;
 }
 .hero-logo-wrap img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 32px rgba(196,154,40,.35))}
-@keyframes logo-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
 .hero-eyebrow{
   position:relative;z-index:1;
@@ -838,8 +836,8 @@ footer{
 .hc.bl{bottom:0;left:0;border-bottom:1px solid rgba(196,154,40,.38);border-left:1px solid rgba(196,154,40,.38)}
 .hc.br{bottom:0;right:0;border-bottom:1px solid rgba(196,154,40,.38);border-right:1px solid rgba(196,154,40,.38)}
 
-/* ── Venue logo spin ───────────────────────────── */
-.venue-logo-spin{animation:logo-spin 32s linear infinite}
+/* ── Venue logo ───────────────────────────────── */
+.venue-logo-spin{}
 
 /* ── Speaker photo placeholder ─────────────────── */
 .speaker-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.24;mix-blend-mode:multiply;transition:opacity .35s var(--ease)}
@@ -1650,7 +1648,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
     </div>
     <div class="venue-card reveal" style="transition-delay:.2s">
       <div class="venue-card-bg-text" aria-hidden="true">IHC</div>
-      <img src="logo.png" alt="" class="venue-logo venue-logo-spin" aria-hidden="true" />
+      <img src="logo.png" alt="" class="venue-logo" aria-hidden="true" />
       <div class="venue-name">Clayton Hotel<br>Liffey Valley</div>
       <div class="venue-date">25–27 April 2027 · Dublin, Ireland</div>
       <div class="venue-pin" aria-hidden="true"></div>
