@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Refund &amp; Cancellations Policy | Irish Hypnotherapy Conference 2027</title>
-<meta name="description" content="Refund and cancellations policy for the Irish Hypnotherapy Conference 2027 — ticket cancellation terms, transfer rules, and how to request a refund."/>
-<link rel="canonical" href="https://stevedave04.github.io/IHC2027/refund-policy.html"/>
+<title>Workshops &amp; Masterclasses | Irish Hypnotherapy Conference 2027</title>
+<meta name="description" content="Explore the IHC 2027 workshop programme — three parallel tracks on Saturday 26 April and morning intensives on Sunday 27 April, covering clinical practice, research, and business growth."/>
+<link rel="canonical" href="https://stevedave04.github.io/IHC2027/workshops.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://stevedave04.github.io/IHC2027/refund-policy.html"/>
-<meta property="og:title" content="Refund &amp; Cancellations Policy | Irish Hypnotherapy Conference 2027"/>
-<meta property="og:description" content="Ticket cancellation terms, transfer rules, and how to request a refund for IHC 2027."/>
+<meta property="og:url" content="https://stevedave04.github.io/IHC2027/workshops.html"/>
+<meta property="og:title" content="Workshops &amp; Masterclasses | Irish Hypnotherapy Conference 2027"/>
+<meta property="og:description" content="Three parallel tracks and morning intensives covering clinical practice, research, and business growth. IHC 2027, Dublin."/>
 <meta property="og:image" content="https://stevedave04.github.io/IHC2027/ihc2026.jpeg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -22,7 +22,10 @@
   --emerald-2: #112218;
   --emerald-3: #1C3525;
   --parchment:   #F5EDDC;
+  --parchment-2: #EDE0C4;
+  --parchment-3: #E3D4B0;
   --gold:       #C49A28;
+  --gold-light: #D4AE50;
   --gold-rule:  rgba(196,154,40,0.28);
   --ink:   #0A0E08;
   --text:  #1C1F14;
@@ -95,18 +98,21 @@ body::after{
 }
 .nav-ticket:hover{background:var(--gold);color:var(--emerald) !important;border-color:var(--gold)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.6);transition:transform .3s}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.6);transition:transform .3s,opacity .3s}
+.nav[data-open] .nav-hamburger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav[data-open] .nav-hamburger span:nth-child(2){transform:translateY(-6px) rotate(-45deg)}
 
 /* ── Page header ──────────────────────────────── */
 .page-header{
   background:var(--emerald);
   padding:10rem 3rem 5rem;
   text-align:center;
-  position:relative;overflow:hidden;
+  position:relative;
+  overflow:hidden;
 }
 .page-header-ghost{
   position:absolute;
-  font-size:clamp(6rem,14vw,14rem);
+  font-size:clamp(7rem,16vw,16rem);
   font-weight:700;font-style:italic;
   color:rgba(255,255,255,.018);
   letter-spacing:-.04em;line-height:.85;
@@ -120,7 +126,7 @@ body::after{
   opacity:0;animation:fade-up .7s var(--ease) .1s forwards;
 }
 .page-title{
-  font-size:clamp(2.6rem,6vw,6rem);
+  font-size:clamp(3rem,7vw,6.5rem);
   font-weight:300;font-style:italic;
   color:#fff;line-height:.95;letter-spacing:-.02em;
   opacity:0;animation:fade-up .8s var(--ease) .2s forwards;
@@ -133,16 +139,16 @@ body::after{
 }
 
 /* ── Content layout ───────────────────────────── */
-.rp-wrap{
-  max-width:780px;
+.ws-wrap{
+  max-width:960px;
   margin:0 auto;
   padding:6rem 2.5rem 8rem;
 }
 
 /* ── Intro ────────────────────────────────────── */
-.rp-intro{
-  font-size:clamp(1.15rem,2vw,1.45rem);
-  font-weight:300;line-height:1.65;
+.coc-intro{
+  font-size:clamp(1.25rem,2.5vw,1.65rem);
+  font-weight:300;line-height:1.6;
   color:var(--muted);
   margin-bottom:4rem;
   padding-bottom:3rem;
@@ -150,141 +156,163 @@ body::after{
 }
 
 /* ── Section ──────────────────────────────────── */
-.rp-section{
-  margin-bottom:3rem;
-  padding-bottom:3rem;
+.coc-section{
+  margin-bottom:3.5rem;
+  padding-bottom:3.5rem;
   border-bottom:1px solid var(--gold-rule);
   opacity:0;transform:translateY(16px);
   transition:opacity .6s var(--ease),transform .6s var(--ease);
 }
-.rp-section.in{opacity:1;transform:none}
-.rp-section:last-child{border-bottom:none;margin-bottom:0}
+.coc-section.in{opacity:1;transform:none}
+.coc-section:last-child{border-bottom:none;margin-bottom:0}
 
-.rp-section-num{
+.coc-section-num{
   font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
   color:var(--gold);margin-bottom:.6rem;display:block;
 }
-.rp-section h2{
+.coc-section h2{
   font-size:clamp(1.8rem,3.5vw,2.6rem);
   font-weight:400;font-style:italic;
   color:var(--emerald);line-height:1.1;
-  margin-bottom:1.5rem;
+  margin-bottom:.5rem;
 }
-.rp-section p{
-  font-size:1.05rem;font-weight:300;
+.section-meta{
+  font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1.5rem;
+}
+.coc-section p{
+  font-size:1.1rem;font-weight:300;
   color:var(--muted);line-height:1.75;
   margin-bottom:1rem;
 }
-.rp-section p:last-child{margin-bottom:0}
-
-/* ── Subsection heading ───────────────────────── */
-.rp-sub{
-  font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--ink);margin:1.75rem 0 .75rem;display:block;
-}
-
-/* ── Timeline blocks ──────────────────────────── */
-.rp-timeline{
-  display:flex;flex-direction:column;gap:0;
-  margin:.5rem 0 1rem;
-  border:1px solid var(--gold-rule);
-}
-.rp-timeline-item{
-  display:grid;grid-template-columns:1fr 2fr;
-  gap:0;
-}
-.rp-timeline-item + .rp-timeline-item{
-  border-top:1px solid var(--gold-rule);
-}
-.rp-timeline-period{
-  padding:1rem 1.25rem;
-  background:var(--emerald);
-  font-size:.85rem;font-weight:500;
-  color:var(--gold);line-height:1.4;
-  display:flex;align-items:center;
-}
-.rp-timeline-detail{
-  padding:1rem 1.25rem;
-  font-size:.95rem;font-weight:300;
-  color:var(--text);line-height:1.5;
-  display:flex;align-items:center;
-}
+.coc-section p:last-child{margin-bottom:0}
 
 /* ── List items ───────────────────────────────── */
-.rp-list{
+.coc-list{
   list-style:none;
-  margin:.5rem 0;
+  margin-top:.75rem;
   display:flex;flex-direction:column;gap:.6rem;
 }
-.rp-list li{
+.coc-list li{
   font-size:1.05rem;font-weight:300;
   color:var(--text);line-height:1.65;
   padding-left:1.5rem;
   position:relative;
 }
-.rp-list li::before{
+.coc-list li::before{
   content:'';
-  position:absolute;left:0;top:.72em;
-  width:6px;height:1px;background:var(--gold);
+  position:absolute;left:0;top:.7em;
+  width:6px;height:1px;
+  background:var(--gold);
 }
 
-/* ── Contact callout ──────────────────────────── */
-.rp-contact{
+/* ── Track grid ───────────────────────────────── */
+.track-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  margin-top:1.75rem;
+}
+.track-card{
+  border-top:2px solid var(--gold-rule);
+  padding:1.75rem 1.5rem;
+  background:var(--parchment-2);
+  transition:background .2s;
+}
+.track-card:hover{background:var(--parchment-3)}
+.track-label{
+  font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:.75rem;
+}
+.track-title{
+  font-size:clamp(1.15rem,1.8vw,1.4rem);
+  font-weight:400;font-style:italic;
+  color:var(--emerald);line-height:1.2;
+  margin-bottom:.6rem;
+}
+.track-presenter{
+  font-size:.85rem;font-weight:300;
+  color:var(--muted);margin-bottom:.4rem;
+}
+.track-room{
+  font-size:.7rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1rem;
+}
+.track-desc{
+  font-size:.95rem;font-weight:300;
+  color:var(--muted);line-height:1.65;
+}
+
+/* ── Intensive grid ───────────────────────────── */
+.intensive-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  margin-top:1.75rem;
+}
+.intensive-card{
+  border-top:2px solid var(--gold-rule);
+  padding:2rem 1.75rem;
+  background:var(--parchment-2);
+  transition:background .2s;
+}
+.intensive-card:hover{background:var(--parchment-3)}
+.intensive-tag{
+  font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);display:inline-block;
+  border:1px solid var(--gold-rule);
+  padding:.2rem .65rem;margin-bottom:1rem;
+}
+.intensive-title{
+  font-size:clamp(1.25rem,2vw,1.6rem);
+  font-weight:400;font-style:italic;
+  color:var(--emerald);line-height:1.15;
+  margin-bottom:.6rem;
+}
+.intensive-meta{
+  font-size:.78rem;font-weight:300;
+  color:var(--muted);margin-bottom:1rem;
+}
+.intensive-desc{
+  font-size:.95rem;font-weight:300;
+  color:var(--muted);line-height:1.65;
+}
+
+/* ── Callout ──────────────────────────────────── */
+.coc-commitment{
   background:var(--emerald);
   padding:3rem 3.5rem;
   margin-top:4rem;
-  position:relative;overflow:hidden;
+  position:relative;
+  overflow:hidden;
 }
-.rp-contact::before{
-  content:'';position:absolute;top:0;left:0;right:0;
+.coc-commitment::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
   height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);
 }
-.rp-contact-label{
+.coc-commitment-label{
   font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;display:block;
+  color:var(--gold);margin-bottom:1rem;display:block;
 }
-.rp-contact h2{
-  font-size:clamp(1.6rem,3vw,2.2rem);
-  font-weight:300;font-style:italic;color:#fff;
-  margin-bottom:1.5rem;line-height:1.1;
-}
-.rp-contact-detail{
-  display:flex;flex-direction:column;gap:.6rem;
+.coc-commitment p{
+  font-size:clamp(1.2rem,2.2vw,1.6rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.85);line-height:1.55;
   margin-bottom:1.5rem;
 }
-.rp-contact-detail p{
-  font-size:.95rem;font-weight:300;
-  color:rgba(255,255,255,.55);line-height:1.6;
+.coc-commitment p:last-child{margin-bottom:0}
+.btn-gold{
+  display:inline-block;
+  padding:.65rem 2rem;
+  background:var(--gold);
+  color:var(--emerald);
+  font-size:.72rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  transition:background .2s;
 }
-.rp-contact-email{
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-size:1rem;font-weight:500;letter-spacing:.04em;
-  color:var(--gold);
-  border-bottom:1px solid var(--gold-rule);
-  padding-bottom:.15rem;
-  transition:border-color .2s;
-}
-.rp-contact-email:hover{border-color:var(--gold)}
-.rp-contact-list{
-  list-style:none;
-  display:flex;flex-direction:column;gap:.5rem;
-  margin-top:1rem;
-}
-.rp-contact-list li{
-  font-size:.95rem;font-weight:300;
-  color:rgba(255,255,255,.5);line-height:1.6;
-  padding-left:1.25rem;position:relative;
-}
-.rp-contact-list li::before{
-  content:'';position:absolute;left:0;top:.72em;
-  width:5px;height:1px;background:var(--gold);opacity:.6;
-}
-.rp-note{
-  margin-top:1.5rem;padding-top:1.5rem;
-  border-top:1px solid rgba(196,154,40,.15);
-  font-size:.85rem;font-style:italic;font-weight:300;
-  color:rgba(255,255,255,.35);line-height:1.6;
-}
+.btn-gold:hover{background:var(--gold-light)}
 
 /* ── Footer ───────────────────────────────────── */
 footer{background:var(--emerald-2)}
@@ -303,12 +331,12 @@ footer{background:var(--emerald-2)}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
 .footer-links a{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.4);transition:color .2s}
 .footer-links a:hover{color:rgba(255,255,255,.8)}
+.footer-links a[aria-current]{color:var(--gold)}
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-copy{font-size:.7rem;letter-spacing:.1em;color:rgba(255,255,255,.25)}
 .footer-policies{display:flex;gap:1.5rem;list-style:none}
 .footer-policies a{font-size:.7rem;letter-spacing:.08em;color:rgba(255,255,255,.25);transition:color .2s}
 .footer-policies a:hover{color:rgba(255,255,255,.5)}
-.footer-policies a[aria-current]{color:var(--gold)}
 .footer-social{display:flex;gap:.75rem;margin-top:1.5rem}
 .footer-social-link{
   width:36px;height:36px;border:1px solid rgba(255,255,255,.1);
@@ -317,7 +345,7 @@ footer{background:var(--emerald-2)}
 }
 .footer-social-link:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ── Utilities ────────────────────────────────── */
+/* ── Screen reader only ───────────────────────── */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ── Animation ────────────────────────────────── */
@@ -328,13 +356,21 @@ footer{background:var(--emerald-2)}
   .nav{padding:1.2rem 1.75rem}
   .nav-links{display:none}
   .nav-hamburger{display:flex}
+  .nav[data-open] .nav-links{
+    display:flex;flex-direction:column;align-items:center;
+    position:fixed;inset:0;top:60px;
+    background:rgba(9,25,16,.97);backdrop-filter:blur(20px);
+    padding:3rem 2rem;gap:1.5rem;z-index:99;
+  }
+  .nav[data-open] .nav-links a{font-size:1.4rem;color:rgba(255,255,255,.7)}
   .footer-top{grid-template-columns:1fr 1fr}
-  .rp-timeline-item{grid-template-columns:1fr}
+  .track-grid{grid-template-columns:1fr}
+  .intensive-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .page-header{padding:8rem 1.75rem 4rem}
-  .rp-wrap{padding:4rem 1.5rem 6rem}
-  .rp-contact{padding:2rem 1.75rem}
+  .ws-wrap{padding:4rem 1.5rem 6rem}
+  .coc-commitment{padding:2rem 1.75rem}
   .footer-top{grid-template-columns:1fr}
   .footer-inner{padding:3rem 1.5rem 1.5rem}
 }
@@ -350,12 +386,12 @@ footer{background:var(--emerald-2)}
 
 <!-- ── Navigation ──────────────────────────────── -->
 <header>
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" id="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-logo" aria-label="Irish Hypnotherapy Conference 2027 — home">
     <img src="logo.png" alt="IHC" />
     <div class="nav-logo-name">Irish Hypnotherapy Conference<span>Dublin · April 2027</span></div>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#speakers">Speakers</a></li>
     <li><a href="index.html#schedule">Programme</a></li>
@@ -371,91 +407,92 @@ footer{background:var(--emerald-2)}
 
 <!-- ── Page Header ──────────────────────────────── -->
 <div class="page-header" role="banner">
-  <div class="page-header-ghost" aria-hidden="true">Refunds</div>
+  <div class="page-header-ghost" aria-hidden="true">Workshops</div>
   <p class="page-eyebrow">Irish Hypnotherapy Conference 2027</p>
-  <h1 class="page-title">Refund &amp;<br><strong style="font-weight:700;font-style:normal">Cancellations</strong></h1>
+  <h1 class="page-title">Workshops &amp;<br><strong style="font-weight:700;font-style:normal">Masterclasses</strong></h1>
   <div class="page-rule" aria-hidden="true"></div>
 </div>
 
 <!-- ── Content ──────────────────────────────────── -->
 <main>
-<div class="rp-wrap">
+<div class="ws-wrap">
 
-  <p class="rp-intro">We understand that circumstances change. This policy sets out the terms under which ticket cancellations and refunds are handled for the Irish Hypnotherapy Conference 2027.</p>
+  <p class="coc-intro">The IHC 2027 workshop programme is designed to move beyond theory into practice. Led by experienced clinicians and researchers, each session offers hands-on learning, case-based discussion, and immediately applicable skills — whatever your specialism or stage of career.</p>
 
-  <article class="rp-section">
-    <span class="rp-section-num">01</span>
-    <h2>Cancellation Deadline</h2>
-    <div class="rp-timeline" role="table" aria-label="Refund timeline">
-      <div class="rp-timeline-item" role="row">
-        <div class="rp-timeline-period" role="cell">More than 30 days before</div>
-        <div class="rp-timeline-detail" role="cell">Full refund available</div>
+  <article class="coc-section">
+    <span class="coc-section-num">01</span>
+    <h2>Parallel Tracks</h2>
+    <p class="section-meta">Saturday 26 April · 14:30–16:00</p>
+    <p>Three simultaneous workshop streams run concurrently on Saturday afternoon. Choose the track that best fits your practice focus — full descriptions and presenter biographies will be published closer to the conference date.</p>
+    <div class="track-grid" role="list">
+
+      <div class="track-card" role="listitem">
+        <span class="track-label">Track A &mdash; Clinical Practice</span>
+        <h3 class="track-title">Advanced Pain Management Techniques</h3>
+        <p class="track-presenter">Presenter TBC</p>
+        <p class="track-room">Liffey Suite</p>
+        <p class="track-desc">An evidence-informed workshop exploring hypnotic approaches to acute and chronic pain, including direct suggestion, metaphor, and neuroscience-based frameworks for explaining change to clients.</p>
       </div>
-      <div class="rp-timeline-item" role="row">
-        <div class="rp-timeline-period" role="cell">14–30 days before</div>
-        <div class="rp-timeline-detail" role="cell">50% refund available</div>
+
+      <div class="track-card" role="listitem">
+        <span class="track-label">Track B &mdash; Research &amp; Evidence</span>
+        <h3 class="track-title">Translating Research into Practice</h3>
+        <p class="track-presenter">Presenter TBC</p>
+        <p class="track-room">Valley Suite</p>
+        <p class="track-desc">A practical guide to reading and applying current hypnotherapy research — including how to communicate efficacy to clients and GPs, and common pitfalls when interpreting study findings.</p>
       </div>
-      <div class="rp-timeline-item" role="row">
-        <div class="rp-timeline-period" role="cell">Within 14 days</div>
-        <div class="rp-timeline-detail" role="cell">No refund issued</div>
+
+      <div class="track-card" role="listitem">
+        <span class="track-label">Track C &mdash; Business &amp; Growth</span>
+        <h3 class="track-title">Building a Thriving Hypnotherapy Practice</h3>
+        <p class="track-presenter">Presenter TBC</p>
+        <p class="track-room">Salon A</p>
+        <p class="track-desc">From referral networks and pricing strategy to online presence and client retention — a practical session for practitioners looking to grow or restructure their practice with confidence.</p>
       </div>
+
     </div>
   </article>
 
-  <article class="rp-section">
-    <span class="rp-section-num">02</span>
-    <h2>Refund Process</h2>
-    <ul class="rp-list">
-      <li>All refund requests must be submitted via email to <a href="mailto:john@irishhypnotherapyconference.ie" style="color:var(--gold);border-bottom:1px solid var(--gold-rule)">john@irishhypnotherapyconference.ie</a></li>
-      <li>Refunds will be processed within 7–10 business days</li>
-      <li>Refunds will be credited to the original payment method</li>
+  <article class="coc-section">
+    <span class="coc-section-num">02</span>
+    <h2>Morning Intensives</h2>
+    <p class="section-meta">Sunday 27 April · 09:30–11:00</p>
+    <p>Two in-depth morning sessions run in parallel on Sunday, providing extended time to explore specialist topics with a smaller group. Places are limited — included in all 3-Day and Platinum VIP passes.</p>
+    <div class="intensive-grid" role="list">
+
+      <div class="intensive-card" role="listitem">
+        <span class="intensive-tag">Intensive &middot; 90 min</span>
+        <h3 class="intensive-title">Hypnosis for Trauma-Informed Care</h3>
+        <p class="intensive-meta">Various Speakers &middot; Liffey Suite</p>
+        <p class="intensive-desc">A careful, supervised exploration of working with trauma histories in a hypnotherapeutic context. Covers screening, pace-setting, safe language, and when to refer. Suitable for practitioners with at least two years of clinical experience.</p>
+      </div>
+
+      <div class="intensive-card" role="listitem">
+        <span class="intensive-tag">Intensive &middot; 90 min</span>
+        <h3 class="intensive-title">Advanced Ericksonian Techniques</h3>
+        <p class="intensive-meta">Various Speakers &middot; Valley Suite</p>
+        <p class="intensive-desc">A deep-dive into Erickson's indirect suggestion, confusion techniques, and utilisation approaches — with live demonstrations and supervised practice. Participants will leave with expanded induction and intervention repertoire.</p>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="coc-section">
+    <span class="coc-section-num">03</span>
+    <h2>Choosing Your Track</h2>
+    <p>All workshop streams are designed to be accessible to both newer and experienced practitioners. If you are unsure which track to attend, consider:</p>
+    <ul class="coc-list">
+      <li><strong>Track A (Clinical Practice)</strong> — best suited to those seeking new client-facing techniques and clinical frameworks</li>
+      <li><strong>Track B (Research &amp; Evidence)</strong> — ideal for practitioners wishing to deepen their academic literacy or engage with referral networks</li>
+      <li><strong>Track C (Business &amp; Growth)</strong> — recommended for those building, scaling, or repositioning their practice</li>
+      <li>The Sunday Intensives are open to all 3-Day Pass and Platinum VIP holders — no separate booking required</li>
     </ul>
   </article>
 
-  <article class="rp-section">
-    <span class="rp-section-num">03</span>
-    <h2>Ticket Transferability</h2>
-    <ul class="rp-list">
-      <li>Tickets are fully transferable to another attendee</li>
-      <li>Name change requests must be submitted at least 7 days before the conference</li>
-      <li>No additional fee for ticket transfer</li>
-    </ul>
-  </article>
-
-  <article class="rp-section">
-    <span class="rp-section-num">04</span>
-    <h2>Special Circumstances</h2>
-    <ul class="rp-list">
-      <li>In case of medical emergencies, documentation may be required</li>
-      <li>Partial credit or a future conference ticket may be offered at the conference organisers' discretion</li>
-    </ul>
-  </article>
-
-  <article class="rp-section">
-    <span class="rp-section-num">05</span>
-    <h2>Conference Cancellation</h2>
-    <ul class="rp-list">
-      <li>If the conference is cancelled by the organisers, a 100% full refund will be issued</li>
-      <li>Attendees will be notified via email and provided with alternative options</li>
-    </ul>
-  </article>
-
-  <!-- Contact callout -->
-  <div class="rp-contact" role="complementary" aria-label="How to request a refund">
-    <span class="rp-contact-label">How to Request a Refund</span>
-    <h2>Get in touch</h2>
-    <a href="mailto:john@irishhypnotherapyconference.ie" class="rp-contact-email">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-      john@irishhypnotherapyconference.ie
-    </a>
-    <p style="font-size:.8rem;font-weight:300;color:rgba(255,255,255,.35);margin-top:1.5rem;margin-bottom:.5rem;letter-spacing:.1em;text-transform:uppercase">Please include in your email:</p>
-    <ul class="rp-contact-list">
-      <li>Full name</li>
-      <li>Ticket reference number</li>
-      <li>Reason for cancellation</li>
-      <li>Preferred refund method</li>
-    </ul>
-    <p class="rp-note">All refunds are subject to review and approval by conference management.</p>
+  <div class="coc-commitment" role="complementary" aria-label="Workshops included in all passes">
+    <span class="coc-commitment-label">Included in Your Pass</span>
+    <p>All parallel workshop tracks are included with 3-Day and Platinum VIP passes. Day Pass holders may attend workshops on their registered day subject to capacity.</p>
+    <a href="index.html#tickets" class="btn-gold">View Ticket Options</a>
   </div>
 
 </div>
@@ -508,7 +545,7 @@ footer{background:var(--emerald-2)}
       <ul class="footer-links">
         <li><a href="blog.html">Blog</a></li>
         <li><a href="#">Gallery</a></li>
-        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="workshops.html" aria-current="page">Workshops</a></li>
         <li><a href="index.html#contact">Contact Us</a></li>
         <li><a href="#">Sponsorship</a></li>
       </ul>
@@ -518,7 +555,7 @@ footer{background:var(--emerald-2)}
     <p class="footer-copy">© 2027 Irish Hypnotherapy Conference. All rights reserved.</p>
     <ul class="footer-policies">
       <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="refund-policy.html" aria-current="page">Refund Policy</a></li>
+      <li><a href="refund-policy.html">Refund Policy</a></li>
       <li><a href="code-of-conduct.html">Code of Conduct</a></li>
     </ul>
   </div>
@@ -542,7 +579,7 @@ footer{background:var(--emerald-2)}
 
 /* Scroll reveal */
 (function(){
-  const els = document.querySelectorAll('.rp-section');
+  const els = document.querySelectorAll('.coc-section');
   if (!els.length) return;
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -555,22 +592,17 @@ footer{background:var(--emerald-2)}
 
 /* Mobile nav */
 (function(){
+  const nav = document.getElementById('nav');
   const btn = document.getElementById('nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (!btn || !links) return;
-  btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    links.style.display = open ? '' : 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '100%';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = 'rgba(9,25,16,.97)';
-    links.style.padding = '1.5rem 2rem';
-    links.style.gap = '1rem';
-  });
+  const links = document.getElementById('nav-links');
+  const toggle = open => {
+    nav.toggleAttribute('data-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  };
+  btn.addEventListener('click', () => toggle(!nav.hasAttribute('data-open')));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.hasAttribute('data-open')) toggle(false); });
 })();
 </script>
 </body>
