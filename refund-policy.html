@@ -95,7 +95,9 @@ body::after{
 }
 .nav-ticket:hover{background:var(--gold);color:var(--emerald) !important;border-color:var(--gold)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.6);transition:transform .3s}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.6);transition:transform .3s,opacity .3s}
+.nav[data-open] .nav-hamburger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav[data-open] .nav-hamburger span:nth-child(2){transform:translateY(-6px) rotate(-45deg)}
 
 /* ── Page header ──────────────────────────────── */
 .page-header{
@@ -328,6 +330,13 @@ footer{background:var(--emerald-2)}
   .nav{padding:1.2rem 1.75rem}
   .nav-links{display:none}
   .nav-hamburger{display:flex}
+  .nav[data-open] .nav-links{
+    display:flex;flex-direction:column;align-items:center;
+    position:fixed;inset:0;top:60px;
+    background:rgba(9,25,16,.97);backdrop-filter:blur(20px);
+    padding:3rem 2rem;gap:1.5rem;z-index:99;
+  }
+  .nav[data-open] .nav-links a{font-size:1.4rem;color:rgba(255,255,255,.7)}
   .footer-top{grid-template-columns:1fr 1fr}
   .rp-timeline-item{grid-template-columns:1fr}
 }
@@ -350,12 +359,12 @@ footer{background:var(--emerald-2)}
 
 <!-- ── Navigation ──────────────────────────────── -->
 <header>
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" id="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-logo" aria-label="Irish Hypnotherapy Conference 2027 — home">
     <img src="logo.png" alt="IHC" />
     <div class="nav-logo-name">Irish Hypnotherapy Conference<span>Dublin · April 2027</span></div>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#speakers">Speakers</a></li>
     <li><a href="index.html#schedule">Programme</a></li>
@@ -555,22 +564,17 @@ footer{background:var(--emerald-2)}
 
 /* Mobile nav */
 (function(){
+  const nav = document.getElementById('nav');
   const btn = document.getElementById('nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (!btn || !links) return;
-  btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    links.style.display = open ? '' : 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '100%';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = 'rgba(9,25,16,.97)';
-    links.style.padding = '1.5rem 2rem';
-    links.style.gap = '1rem';
-  });
+  const links = document.getElementById('nav-links');
+  const toggle = open => {
+    nav.toggleAttribute('data-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  };
+  btn.addEventListener('click', () => toggle(!nav.hasAttribute('data-open')));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.hasAttribute('data-open')) toggle(false); });
 })();
 </script>
 </body>
