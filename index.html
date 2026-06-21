@@ -1146,7 +1146,6 @@ textarea.contact-input{resize:vertical;min-height:120px}
   .awards-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  .marquee-track{animation-duration:55s}
   .nav-hamburger{display:flex}
   .nav-links{
     display:flex;flex-direction:column;
@@ -2235,6 +2234,15 @@ function handleContact(e){
     setTimeout(()=>success.style.display='none',5000);
   },800);
 }
+
+/* Marquee pace — target 60px/s desktop, 30px/s mobile */
+(function(){
+  const track = document.querySelector('.marquee-track');
+  if(!track) return;
+  const pxPerSec = window.innerWidth < 769 ? 30 : 60;
+  const halfWidth = track.scrollWidth / 2;
+  track.style.animationDuration = (halfWidth / pxPerSec).toFixed(1) + 's';
+})();
 
 </script>
 </body>
