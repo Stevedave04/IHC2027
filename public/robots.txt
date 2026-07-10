@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stevedave04.github.io/IHC2027/sitemap.xml
+Sitemap: https://ihc2027web.pages.dev/sitemap.xml

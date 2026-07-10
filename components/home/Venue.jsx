@@ -1,3 +1,4 @@
+import { BASE } from '../../lib/site';
 export default function Venue() {
   return (
     <>
@@ -25,7 +26,7 @@ export default function Venue() {
     </div>
     <div className="venue-card reveal">
       <div className="venue-card-bg-text" aria-hidden="true">IHC</div>
-      <img width="160" height="150" src="/IHC2027/logo.png" alt="" className="venue-logo" aria-hidden="true" />
+      <img width="160" height="150" src={BASE + "/logo.png"} alt="" className="venue-logo" aria-hidden="true" />
       <div className="venue-name">Clayton Hotel<br/>Liffey Valley</div>
       <div className="venue-date">16–18 April 2027 · Dublin, Ireland</div>
       <div className="venue-pin" aria-hidden="true"></div>

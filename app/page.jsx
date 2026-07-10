@@ -17,13 +17,14 @@ import Accommodation from '../components/home/Accommodation';
 import Faq from '../components/home/Faq';
 import Contact from '../components/home/Contact';
 import ScrollTop from '../components/shared/ScrollTop';
+import { SITE_URL } from '../lib/site';
 
 export const metadata = {
   alternates: { canonical: '/' },
   openGraph: { url: '/' },
 };
 
-const BASE = 'https://stevedave04.github.io/IHC2027';
+const BASE = SITE_URL;
 
 const EVENT_LD = {
   '@context': 'https://schema.org',

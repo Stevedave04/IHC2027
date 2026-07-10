@@ -25,6 +25,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /IHC2027
+          NEXT_PUBLIC_SITE_URL: https://stevedave04.github.io/IHC2027
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

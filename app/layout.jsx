@@ -3,12 +3,13 @@ import Cursor from '../components/shared/Cursor';
 import Nav from '../components/shared/Nav';
 import Footer from '../components/shared/Footer';
 import RevealManager from '../components/shared/RevealManager';
+import { BASE, SITE_URL } from '../lib/site';
 
 const FONT_URL =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap';
 
 export const metadata = {
-  metadataBase: new URL('https://stevedave04.github.io/IHC2027/'),
+  metadataBase: new URL(SITE_URL + '/'),
   title: {
     default: 'Irish Hypnotherapy Conference 2027 | Dublin · 16–18 April',
     template: '%s | Irish Hypnotherapy Conference 2027',
@@ -16,13 +17,13 @@ export const metadata = {
   description:
     "Ireland's premier hypnotherapy conference — three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
   icons: {
-    icon: [{ url: '/IHC2027/favicon-48.png', sizes: '48x48', type: 'image/png' }],
-    apple: [{ url: '/IHC2027/apple-touch-icon.png' }],
+    icon: [{ url: `${BASE}/favicon-48.png`, sizes: '48x48', type: 'image/png' }],
+    apple: [{ url: `${BASE}/apple-touch-icon.png` }],
   },
   openGraph: {
     type: 'website',
     siteName: 'Irish Hypnotherapy Conference 2027',
-    images: ['/IHC2027/ihc2026.jpeg'],
+    images: [`${BASE}/ihc2026.jpeg`],
   },
   twitter: { card: 'summary_large_image' },
 };

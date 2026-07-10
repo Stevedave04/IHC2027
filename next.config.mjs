@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/IHC2027',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   trailingSlash: false,
   images: { unoptimized: true },
 };

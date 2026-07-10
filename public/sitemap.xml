@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://stevedave04.github.io/IHC2027/</loc><priority>1.0</priority></url>
-  <url><loc>https://stevedave04.github.io/IHC2027/workshops</loc><priority>0.8</priority></url>
-  <url><loc>https://stevedave04.github.io/IHC2027/sponsorship</loc><priority>0.7</priority></url>
-  <url><loc>https://stevedave04.github.io/IHC2027/blog</loc><priority>0.6</priority></url>
-  <url><loc>https://stevedave04.github.io/IHC2027/code-of-conduct</loc><priority>0.3</priority></url>
-  <url><loc>https://stevedave04.github.io/IHC2027/privacy-policy</loc><priority>0.3</priority></url>
-  <url><loc>https://stevedave04.github.io/IHC2027/refund-policy</loc><priority>0.3</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/</loc><priority>1.0</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/workshops</loc><priority>0.8</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/sponsorship</loc><priority>0.7</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/blog</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/code-of-conduct</loc><priority>0.3</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/privacy-policy</loc><priority>0.3</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/refund-policy</loc><priority>0.3</priority></url>
 </urlset>

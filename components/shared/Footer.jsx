@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BASE } from '../../lib/site';
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-logo">
-              <img width="160" height="150" src="/IHC2027/logo.png" alt="IHC" />
+              <img width="160" height="150" src={BASE + "/logo.png"} alt="IHC" />
               <div className="footer-logo-name">
                 Irish Hypnotherapy Conference<span>Est. 2013 · Dublin</span>
               </div>
