@@ -4,8 +4,25 @@
     {
       "name": "ihc2027",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "4200", "."],
+      "runtimeArgs": [
+        "serve",
+        "-l",
+        "4200",
+        "."
+      ],
       "port": 4200
+    },
+    {
+      "name": "next-out",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "serve",
+        "-l",
+        "4310",
+        "--no-clipboard",
+        "/private/tmp/claude-501/-Users-geraldmcgill-IHC2027/5d570a8e-5048-4ec3-8aa3-f5dd34263be2/scratchpad/pages-root"
+      ],
+      "port": 4310
     }
   ]
 }

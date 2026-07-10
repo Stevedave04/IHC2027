@@ -199,9 +199,11 @@ html.has-cursor body,html.has-cursor a,html.has-cursor button{cursor:none}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .nav-links a:focus-visible,.footer-links a:focus-visible{outline-offset:5px}
 
-/* No-JS fallback — reveal-hidden content stays visible without JS */
-html:not(.js) .reveal,
-html:not(.js) .coc-section,
-html:not(.js) .blog-feature,
-html:not(.js) .blog-card,
-html:not(.js) .tier-card{opacity:1 !important;transform:none !important}
+
+
+/* ── GSAP reveal initial state ─────────────────── */
+html.js .reveal{opacity:0}
+html.js .wipe{opacity:0}
+@media(prefers-reduced-motion:reduce){
+  html.js .reveal,html.js .wipe{opacity:1}
+}
