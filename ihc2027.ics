@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Irish Hypnotherapy Conference//IHC 2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ihc2027@irishhypnotherapyconference.ie
+DTSTAMP:20260710T090000Z
+DTSTART;TZID=Europe/Dublin:20270416T090000
+DTEND;TZID=Europe/Dublin:20270418T180000
+SUMMARY:Irish Hypnotherapy Conference 2027
+DESCRIPTION:Three days of world-class hypnotherapy training\, 40+ internat
+ ional speakers\, workshops\, CPD hours and the gala awards dinner.\nhttps:
+ //stevedave04.github.io/IHC2027/
+LOCATION:Clayton Hotel Liffey Valley\, Dublin\, Ireland
+URL:https://stevedave04.github.io/IHC2027/
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:IHC 2027 is one week away
+END:VALARM
+END:VEVENT
+END:VCALENDAR

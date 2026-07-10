@@ -187,3 +187,21 @@ footer{
 #cursor{display:none}
 html.has-cursor #cursor{display:block}
 html.has-cursor body,html.has-cursor a,html.has-cursor button{cursor:none}
+
+/* ── Accessibility ─────────────────────────────── */
+.skip-link{
+  position:fixed;top:-60px;left:1rem;z-index:300;
+  background:var(--gold);color:var(--emerald);
+  padding:.65rem 1.4rem;font-weight:600;letter-spacing:.08em;
+  font-size:.85rem;transition:top .2s var(--ease);
+}
+.skip-link:focus{top:1rem}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.nav-links a:focus-visible,.footer-links a:focus-visible{outline-offset:5px}
+
+/* No-JS fallback — reveal-hidden content stays visible without JS */
+html:not(.js) .reveal,
+html:not(.js) .coc-section,
+html:not(.js) .blog-feature,
+html:not(.js) .blog-card,
+html:not(.js) .tier-card{opacity:1 !important;transform:none !important}

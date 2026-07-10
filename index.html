@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co; form-action 'self'; object-src 'none'; base-uri 'self'"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
+<script>document.documentElement.classList.add('js')</script>
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png"/>
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <title>Irish Hypnotherapy Conference 2027 | Dublin</title>
@@ -142,6 +143,15 @@
   display:flex;gap:2.5rem;
   opacity:0;animation:fade-up .8s var(--ease) .65s forwards;
 }
+.add-cal{
+  display:inline-flex;align-items:center;gap:.5rem;
+  margin-top:1.5rem;
+  font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);border-bottom:1px solid var(--gold-rule);
+  padding-bottom:.3rem;transition:color .2s,border-color .2s;
+  opacity:0;animation:fade-up .8s var(--ease) .8s forwards;
+}
+.add-cal:hover{color:var(--gold);border-color:var(--gold)}
 .cd-unit{text-align:center}
 .cd-num{
   font-size:clamp(2.2rem,5vw,4rem);
@@ -377,7 +387,9 @@
   opacity:0;transition:opacity .35s var(--ease);
   pointer-events:none;
 }
-.speaker-card:hover .speaker-bio-reveal{opacity:1;pointer-events:auto}
+.speaker-card:hover .speaker-bio-reveal,
+.speaker-card:focus-visible .speaker-bio-reveal,
+.speaker-card:focus-within .speaker-bio-reveal{opacity:1;pointer-events:auto}
 .speaker-bio-text{
   font-size:.95rem;font-weight:300;font-style:italic;
   line-height:1.7;color:rgba(255,255,255,.7);
@@ -777,6 +789,17 @@
 .awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 
 /* ── FAQ ──────────────────────────────────────── */
+.faq-search{margin-top:2.5rem}
+.faq-search input{
+  width:100%;max-width:460px;
+  background:transparent;border:1px solid rgba(255,255,255,.15);
+  padding:.8rem 1.2rem;font-family:var(--f);font-size:1rem;
+  color:#fff;transition:border-color .2s;
+}
+.faq-search input::placeholder{color:rgba(255,255,255,.35);font-style:italic}
+.faq-search input:focus{outline:none;border-color:var(--gold)}
+.faq-no-results{margin-top:1rem;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.55)}
+.faq-no-results a{color:var(--gold);border-bottom:1px solid var(--gold-rule)}
 .faq-grid{display:flex;flex-direction:column;gap:0;margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.08)}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
 .faq-trigger{
@@ -1011,8 +1034,10 @@ textarea.contact-input{resize:vertical;min-height:120px}
   .contact-row{grid-template-columns:1fr}
   .gallery-columns{columns:2}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "name": "Irish Hypnotherapy Conference 2027", "startDate": "2027-04-16T09:00:00+01:00", "endDate": "2027-04-18T18:00:00+01:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Clayton Hotel Liffey Valley", "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"}}, "image": ["https://stevedave04.github.io/IHC2027/ihc2026.jpeg"], "description": "Ireland's premier hypnotherapy conference — three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.", "offers": [{"@type": "Offer", "name": "Day Pass", "price": "195", "priceCurrency": "EUR", "url": "https://stevedave04.github.io/IHC2027/#tickets", "availability": "https://schema.org/InStock", "validFrom": "2026-01-01"}, {"@type": "Offer", "name": "3-Day Pass", "price": "450", "priceCurrency": "EUR", "url": "https://stevedave04.github.io/IHC2027/#tickets", "availability": "https://schema.org/InStock", "validFrom": "2026-01-01"}, {"@type": "Offer", "name": "VIP Platinum", "price": "650", "priceCurrency": "EUR", "url": "https://stevedave04.github.io/IHC2027/#tickets", "availability": "https://schema.org/LimitedAvailability", "validFrom": "2026-01-01"}], "performer": [{"@type": "Person", "name": "Melissa Tiers"}, {"@type": "Person", "name": "Mike Mandel"}, {"@type": "Person", "name": "Karl Smith"}, {"@type": "Person", "name": "Sheila Granger"}, {"@type": "Person", "name": "Scott Sandland"}, {"@type": "Person", "name": "Sean Michael Andrews"}, {"@type": "Person", "name": "Rob De Groof"}], "organizer": {"@type": "Organization", "name": "Irish Hypnotherapy Conference", "url": "https://irishhypnotherapyconference.ie", "logo": "https://stevedave04.github.io/IHC2027/logo.png"}}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ── Custom Cursor ────────────────────────────── -->
 <div id="cursor" aria-hidden="true"></div>
@@ -1039,7 +1064,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
 </header>
 
 <!-- ── Hero ────────────────────────────────────── -->
-<section class="hero" id="home" aria-labelledby="hero-hl">
+<section class="hero" id="main" aria-labelledby="hero-hl">
   <img width="1600" height="629" src="ihc2026.jpeg" alt="" class="hero-bg" aria-hidden="true" fetchpriority="high" />
   <div class="hero-ghost" aria-hidden="true">IHC</div>
   <div class="hero-corners" aria-hidden="true">
@@ -1086,6 +1111,10 @@ textarea.contact-input{resize:vertical;min-height:120px}
       <div class="cd-label">Seconds</div>
     </div>
   </div>
+  <a href="ihc2027.ics" download="ihc2027.ics" class="add-cal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg>
+    Add to Calendar
+  </a>
 </section>
 
 <!-- ── Marquee ──────────────────────────────────── -->
@@ -1209,7 +1238,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Melissa Tiers</h3>
         <p class="speaker-spec">Author · Trainer · Integrative Hypnotherapy Innovator</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"Internationally celebrated hypnotherapist, NLP coach and best-selling author of <em>Integrative Hypnosis</em> and <em>Keeping the Brain in Mind</em>. Melissa's work at the Centre for Integrative Hypnosis in New York blends cutting-edge neuroscience with practical therapeutic artistry — reshaping how the field thinks about change."</p>
         <span class="speaker-bio-name">Melissa Tiers</span>
       </div>
@@ -1222,7 +1251,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Mike Mandel</h3>
         <p class="speaker-spec">Founder, Mike Mandel Hypnosis Academy · World-Renowned Trainer</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"Eight-time winner of the World's Best Hypnotist award and founder of the Mike Mandel Hypnosis Academy — the gold standard in online hypnosis education with students in over 100 countries. Mike's infectious energy and masterful storytelling have captivated audiences worldwide for over four decades."</p>
         <span class="speaker-bio-name">Mike Mandel</span>
       </div>
@@ -1236,7 +1265,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Karl Smith</h3>
         <p class="speaker-spec">Clinical Hypnotherapist · PTSD Specialist</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"Pioneering clinical hypnotherapist specialising in trauma resolution, PTSD, and anxiety disorders. Karl's evidence-led protocols have helped thousands of clients reclaim their lives and are taught to practitioners across Ireland and the UK."</p>
         <span class="speaker-bio-name">Karl Smith</span>
       </div>
@@ -1250,7 +1279,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Dr Rebecca Clavell-Bate</h3>
         <p class="speaker-spec">Medical Doctor · Clinical Hypnotherapist</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"A practising medical doctor and accredited clinical hypnotherapist, Dr Clavell-Bate is a passionate advocate for integrating hypnotherapy into mainstream healthcare — backed by rigorous research and first-hand clinical experience."</p>
         <span class="speaker-bio-name">Dr Rebecca Clavell-Bate</span>
       </div>
@@ -1264,7 +1293,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Sheila Granger</h3>
         <p class="speaker-spec">Creator of the Virtual Gastric Band Programme</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"Creator of the globally acclaimed Virtual Gastric Band programme, used by thousands of practitioners across 40 countries. Sheila is widely recognised as one of the most influential hypnotherapists working in weight management and behaviour change today."</p>
         <span class="speaker-bio-name">Sheila Granger</span>
       </div>
@@ -1278,7 +1307,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Scott Sandland</h3>
         <p class="speaker-spec">Clinical Hypnotherapist · Researcher · Podcaster</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"Founder of The California Hypnosis Institute and host of the Hypnosis and Suggestion podcast, Scott brings the latest clinical research into accessible, actionable insights for practitioners at every level."</p>
         <span class="speaker-bio-name">Scott Sandland</span>
       </div>
@@ -1292,7 +1321,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Sean Michael Andrews</h3>
         <p class="speaker-spec">Master Hypnotherapist · Stage Hypnotist</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"Known as 'The World's Fastest Hypnotist', Sean is a master of rapid induction techniques and high-impact live demonstrations. His workshops combine awe-inspiring speed with deep practical skill-building for professional hypnotherapists."</p>
         <span class="speaker-bio-name">Sean Michael Andrews</span>
       </div>
@@ -1306,7 +1335,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
         <h3 class="speaker-name">Rob De Groof</h3>
         <p class="speaker-spec">European Hypnotherapy Leader · Author</p>
       </div>
-      <div class="speaker-bio-reveal" aria-hidden="true">
+      <div class="speaker-bio-reveal">
         <p class="speaker-bio-text">"A leading figure in European hypnotherapy, Rob brings a distinctive integrative approach rooted in Ericksonian traditions and modern therapeutic frameworks. He trains and supervises practitioners across Belgium and the Netherlands."</p>
         <span class="speaker-bio-name">Rob De Groof</span>
       </div>
@@ -1489,7 +1518,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
   <div class="eyebrow reveal" style="justify-content:center;text-align:center">What Attendees Say</div>
   <div class="testi-wrap reveal" style="transition-delay:.15s">
     <span class="testi-quote-mark" aria-hidden="true">"</span>
-    <div id="testi-container">
+    <div id="testi-container" aria-live="polite">
       <blockquote class="testi-text" id="testi-text">"The IHC is without question the most valuable event in the Irish hypnotherapy calendar. The quality of speakers is simply unmatched."</blockquote>
       <div class="testi-author">
         <div class="testi-line" aria-hidden="true"></div>
@@ -1659,6 +1688,11 @@ textarea.contact-input{resize:vertical;min-height:120px}
 <div class="section-wrap">
   <div class="eyebrow reveal">Frequently Asked Questions</div>
   <h2 class="reveal" id="faq-hl" style="font-size:clamp(2.2rem,4.5vw,4.5rem);font-weight:300;font-style:italic;line-height:1;letter-spacing:-.02em;color:#fff;margin-bottom:0;transition-delay:.1s">Everything<br><strong style="font-weight:700;font-style:normal">you need to know</strong></h2>
+  <div class="faq-search reveal" style="transition-delay:.15s">
+    <label for="faq-filter" class="sr-only">Search questions</label>
+    <input id="faq-filter" type="search" placeholder="Search questions… e.g. CPD, refund, parking" autocomplete="off"/>
+    <p class="faq-no-results" id="faq-no-results" hidden>No questions match — try a different word or <a href="#contact">ask us directly</a>.</p>
+  </div>
   <div class="faq-grid reveal" style="transition-delay:.2s" role="list">
 
     <div class="faq-item" role="listitem">
@@ -1890,7 +1924,7 @@ textarea.contact-input{resize:vertical;min-height:120px}
 /* Scroll-to-top */
 (function(){
   const btn=document.getElementById('scroll-top');
-  const heroH=document.getElementById('home')?.offsetHeight||600;
+  const heroH=document.getElementById('main')?.offsetHeight||600;
   window.addEventListener('scroll',()=>btn.classList.toggle('visible',window.scrollY>heroH),{passive:true});
   btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
@@ -1929,6 +1963,20 @@ document.querySelectorAll('.sched-tab').forEach(tab=>{
     document.getElementById('d'+day).classList.add('active');
   });
 });
+/* arrow-key navigation between schedule tabs (ARIA tabs pattern) */
+(function(){
+  const tabs=[...document.querySelectorAll('.sched-tab')];
+  tabs.forEach((tab,i)=>{
+    tab.addEventListener('keydown',e=>{
+      let to=null;
+      if(e.key==='ArrowRight')to=(i+1)%tabs.length;
+      else if(e.key==='ArrowLeft')to=(i-1+tabs.length)%tabs.length;
+      else if(e.key==='Home')to=0;
+      else if(e.key==='End')to=tabs.length-1;
+      if(to!==null){e.preventDefault();tabs[to].focus();tabs[to].click();}
+    });
+  });
+})();
 
 /* Testimonials */
 (function(){
@@ -1959,7 +2007,14 @@ document.querySelectorAll('.sched-tab').forEach(tab=>{
   document.getElementById('testi-next').addEventListener('click',()=>show(cur+1));
   dots.forEach(d=>d.addEventListener('click',()=>show(+d.dataset.i)));
   txt.style.transition=nm.style.transition=rl.style.transition='opacity .25s';
-  setInterval(()=>show(cur+1),5500);
+  /* auto-rotate, pausing while hovered or focused so quotes are readable */
+  const wrap=document.getElementById('testi-container').closest('.testi-wrap');
+  let paused=false;
+  wrap.addEventListener('mouseenter',()=>paused=true);
+  wrap.addEventListener('mouseleave',()=>paused=false);
+  wrap.addEventListener('focusin',()=>paused=true);
+  wrap.addEventListener('focusout',()=>paused=false);
+  setInterval(()=>{if(!paused)show(cur+1)},5500);
 })();
 
 /* Ticket CTAs — prefill the contact subject until a live ticketing link exists */
@@ -2017,6 +2072,23 @@ document.querySelectorAll('.faq-trigger').forEach(btn=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleFaq(btn);}
   });
 });
+/* FAQ search filter */
+(function(){
+  const input=document.getElementById('faq-filter');
+  if(!input)return;
+  const items=[...document.querySelectorAll('.faq-item')];
+  const empty=document.getElementById('faq-no-results');
+  input.addEventListener('input',()=>{
+    const q=input.value.trim().toLowerCase();
+    let visible=0;
+    items.forEach(item=>{
+      const hit=!q||item.textContent.toLowerCase().includes(q);
+      item.style.display=hit?'':'none';
+      if(hit)visible++;
+    });
+    empty.hidden=visible>0;
+  });
+})();
 
 /* Contact form */
 function handleContact(e){
