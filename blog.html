@@ -418,7 +418,7 @@ footer{background:var(--emerald-2)}
       </div>
       <h2 class="blog-feature-title">Meet Our Headline Speaker: Melissa Tiers</h2>
       <p class="blog-excerpt">New York-based educator, author, and practitioner Melissa Tiers has spent over two decades at the intersection of neuroscience and hypnotherapy. We spoke with her about her approach to the IHC keynote, what she hopes attendees will take home, and why she believes Irish practitioners are among the most open-minded in Europe.</p>
-      <a href="#" class="blog-link" aria-label="Read full article: Meet Our Headline Speaker">Read Article &rarr;</a>
+      <span class="blog-link" style="opacity:.55" aria-hidden="true">Full Article Coming Soon</span>
     </div>
   </article>
 
@@ -449,7 +449,7 @@ footer{background:var(--emerald-2)}
       </div>
       <h3 class="blog-card-title">New Research: Hypnotherapy and Chronic Pain Management</h3>
       <p class="blog-card-excerpt">A landmark meta-analysis published in the <em>International Journal of Clinical and Experimental Hypnosis</em> this month reinforces what many IHC speakers will be discussing in April.</p>
-      <a href="#" class="blog-link" aria-label="Read the research summary">Read More &rarr;</a>
+      <span class="blog-link" style="opacity:.55" aria-hidden="true">Full Article Coming Soon</span>
     </article>
 
     <article class="blog-card" role="listitem">
@@ -460,7 +460,7 @@ footer{background:var(--emerald-2)}
       </div>
       <h3 class="blog-card-title">What to Expect at IHC 2027: A First-Timer's Guide</h3>
       <p class="blog-card-excerpt">Attending IHC for the first time? We've put together a practical guide covering registration, the venue, workshop selection, networking, and how to get the most from three intensive days.</p>
-      <a href="#" class="blog-link" aria-label="Read the first-timer's guide">Read More &rarr;</a>
+      <span class="blog-link" style="opacity:.55" aria-hidden="true">Full Article Coming Soon</span>
     </article>
 
     <article class="blog-card" role="listitem">
@@ -482,7 +482,7 @@ footer{background:var(--emerald-2)}
       </div>
       <h3 class="blog-card-title">The Evolution of Irish Hypnotherapy: 2013–2027</h3>
       <p class="blog-card-excerpt">As IHC marks its fourth edition, we reflect on how the profession has changed since our first gathering in 2013 — from fringe curiosity to evidence-informed mainstream practice.</p>
-      <a href="#" class="blog-link" aria-label="Read the retrospective article">Read More &rarr;</a>
+      <span class="blog-link" style="opacity:.55" aria-hidden="true">Full Article Coming Soon</span>
     </article>
 
   </div>
@@ -492,9 +492,10 @@ footer{background:var(--emerald-2)}
     <span class="blog-newsletter-label">Stay Informed</span>
     <h2>Never miss an update</h2>
     <p>Conference news, speaker announcements, and early-access offers — straight to your inbox.</p>
-    <form class="newsletter-form" onsubmit="return false" aria-label="Newsletter sign-up form">
+    <form class="newsletter-form" onsubmit="handleSub(event)" aria-label="Newsletter sign-up form">
       <label for="blog-email" class="sr-only">Email address</label>
       <input class="cta-input" type="email" id="blog-email" name="email" placeholder="your@email.com" autocomplete="email" required/>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <button class="btn-gold" type="submit">Subscribe</button>
     </form>
   </div>
@@ -512,17 +513,6 @@ footer{background:var(--emerald-2)}
         <div class="footer-logo-name">Irish Hypnotherapy Conference<span>Est. 2013 · Dublin</span></div>
       </div>
       <p class="footer-desc">Ireland's premier gathering for hypnotherapy professionals. Advancing the science and art of hypnotherapy through world-class education, community and connection.</p>
-      <div class="footer-social">
-        <a href="#" class="footer-social-link" aria-label="Follow IHC on Instagram">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="#" class="footer-social-link" aria-label="Follow IHC on Facebook">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-        <a href="#" class="footer-social-link" aria-label="Follow IHC on X / Twitter">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4l16 16M4 20L20 4"/></svg>
-        </a>
-      </div>
     </div>
     <div>
       <h3 class="footer-col-title">Conference</h3>
@@ -548,7 +538,7 @@ footer{background:var(--emerald-2)}
       <h3 class="footer-col-title">Information</h3>
       <ul class="footer-links">
         <li><a href="blog.html" aria-current="page">Blog</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li><a href="https://irishhypnotherapyconference.ie/gallery/" rel="noopener">Gallery (2026)</a></li>
         <li><a href="workshops.html">Workshops</a></li>
         <li><a href="index.html#contact">Contact Us</a></li>
         <li><a href="sponsorship.html">Sponsorship</a></li>
@@ -606,6 +596,31 @@ footer{background:var(--emerald-2)}
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.hasAttribute('data-open')) toggle(false); });
 })();
+
+/* Newsletter (FormSubmit AJAX) */
+function handleSub(e){
+  e.preventDefault();
+  const form=e.target;
+  const btn=form.querySelector('button[type="submit"]');
+  const inp=form.querySelector('#blog-email');
+  const honey=form.querySelector('[name="_honey"]');
+  if(!inp.value||!inp.value.includes('@')){inp.style.borderColor='rgba(200,80,80,.6)';setTimeout(()=>inp.style.borderColor='',2000);return}
+  if(honey&&honey.value)return;
+  const original=btn.textContent;
+  btn.textContent='Subscribing…';btn.disabled=true;
+  fetch('https://formsubmit.co/ajax/john@irishhypnotherapyconference.ie',{
+    method:'POST',
+    headers:{'Content-Type':'application/json',Accept:'application/json'},
+    body:JSON.stringify({email:inp.value,_subject:'IHC 2027 — Newsletter signup (blog)',form:'newsletter'})
+  }).then(r=>{
+    if(!r.ok)throw new Error('send failed');
+    btn.textContent='Subscribed';inp.value='';
+    setTimeout(()=>{btn.textContent=original;btn.disabled=false},3000);
+  }).catch(()=>{
+    btn.textContent='Try again';btn.disabled=false;
+    setTimeout(()=>btn.textContent=original,3000);
+  });
+}
 </script>
 </body>
 </html>
