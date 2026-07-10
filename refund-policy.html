@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <title>Refund &amp; Cancellations Policy | Irish Hypnotherapy Conference 2027</title>
 <meta name="description" content="Refund and cancellations policy for the Irish Hypnotherapy Conference 2027 — ticket cancellation terms, transfer rules, and how to request a refund."/>
 <link rel="canonical" href="https://stevedave04.github.io/IHC2027/refund-policy.html"/>
@@ -14,94 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/site.css"/>
 <style>
-/* ── Tokens ───────────────────────────────────── */
-:root {
-  --f: 'Cormorant Garamond', Georgia, serif;
-  --emerald:   #091910;
-  --emerald-2: #112218;
-  --emerald-3: #1C3525;
-  --parchment:   #F5EDDC;
-  --gold:       #C49A28;
-  --gold-rule:  rgba(196,154,40,0.28);
-  --ink:   #0A0E08;
-  --text:  #1C1F14;
-  --muted: #5A5548;
-  --ease: cubic-bezier(0.16,1,0.3,1);
-}
-
-/* ── Reset ────────────────────────────────────── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{
-  font-family:var(--f);
-  background:var(--parchment);
-  color:var(--text);
-  overflow-x:hidden;
-  cursor:none;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font-family:var(--f);cursor:none;border:none;background:none}
-
-/* ── Grain ────────────────────────────────────── */
-body::after{
-  content:'';position:fixed;inset:0;
-  pointer-events:none;z-index:9999;opacity:.038;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size:220px 220px;
-}
-
-/* ── Custom cursor ────────────────────────────── */
-#cursor{
-  position:fixed;width:9px;height:9px;border-radius:50%;
-  background:var(--gold);pointer-events:none;z-index:10000;
-  transform:translate(-50%,-50%);
-  transition:width .25s var(--ease),height .25s var(--ease),opacity .2s;
-  mix-blend-mode:multiply;
-}
-#cursor.large{width:36px;height:36px;background:transparent;border:1px solid var(--gold);mix-blend-mode:normal}
-
-/* ── Navigation ───────────────────────────────── */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.5rem 3rem;
-  transition:padding .5s var(--ease),background .5s,border-color .5s;
-  border-bottom:1px solid transparent;
-}
-.nav.scrolled{
-  padding:1rem 3rem;
-  background:rgba(9,25,16,.94);
-  backdrop-filter:blur(16px);
-  border-color:var(--gold-rule);
-}
-.nav-logo{display:flex;align-items:center;gap:.9rem}
-.nav-logo img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
-.nav-logo-name{
-  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.75);line-height:1.4;
-}
-.nav-logo-name span{display:block;font-size:.62rem;color:rgba(255,255,255,.38);letter-spacing:.18em}
-.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
-.nav-links a{
-  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);transition:color .2s;
-}
-.nav-links a:hover{color:rgba(255,255,255,.9)}
-.nav-ticket{
-  display:inline-block;padding:.5rem 1.4rem;
-  border:1px solid var(--gold-rule);color:var(--gold) !important;
-  font-weight:600;letter-spacing:.1em;transition:background .2s,border-color .2s !important;
-}
-.nav-ticket:hover{background:var(--gold);color:var(--emerald) !important;border-color:var(--gold)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.6);transition:transform .3s,opacity .3s}
-.nav[data-open] .nav-hamburger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.nav[data-open] .nav-hamburger span:nth-child(2){transform:translateY(-6px) rotate(-45deg)}
-
 /* ── Page header ──────────────────────────────── */
 .page-header{
   background:var(--emerald);
@@ -291,72 +207,19 @@ body::after{
   color:rgba(255,255,255,.35);line-height:1.6;
 }
 
-/* ── Footer ───────────────────────────────────── */
-footer{background:var(--emerald-2)}
-.footer-inner{max-width:1360px;margin:0 auto;padding:4rem 3rem 2rem}
-.footer-top{
-  display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;
-  gap:3rem;margin-bottom:3rem;
-  padding-bottom:3rem;border-bottom:1px solid var(--gold-rule);
-}
-.footer-logo{display:flex;align-items:center;gap:.85rem;margin-bottom:1.25rem}
-.footer-logo img{width:36px;height:36px;object-fit:contain}
-.footer-logo-name{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.4}
-.footer-logo-name span{display:block;font-size:.6rem;color:rgba(255,255,255,.3);letter-spacing:.18em}
-.footer-desc{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.75;max-width:28ch}
-.footer-col-title{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.4);transition:color .2s}
-.footer-links a:hover{color:rgba(255,255,255,.8)}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.7rem;letter-spacing:.1em;color:rgba(255,255,255,.25)}
-.footer-policies{display:flex;gap:1.5rem;list-style:none}
-.footer-policies a{font-size:.7rem;letter-spacing:.08em;color:rgba(255,255,255,.25);transition:color .2s}
-.footer-policies a:hover{color:rgba(255,255,255,.5)}
-.footer-policies a[aria-current]{color:var(--gold)}
-.footer-social{display:flex;gap:.75rem;margin-top:1.5rem}
-.footer-social-link{
-  width:36px;height:36px;border:1px solid rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.35);transition:border-color .2s,color .2s;flex-shrink:0;
-}
-.footer-social-link:hover{border-color:var(--gold);color:var(--gold)}
-
 /* ── Utilities ────────────────────────────────── */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* ── Animation ────────────────────────────────── */
-@keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-
 /* ── Responsive ───────────────────────────────── */
 @media(max-width:768px){
-  .nav-hamburger{display:flex}
-  .nav-links{
-    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
-    position:fixed;inset:0;top:60px;
-    background:rgba(9,25,16,.97);backdrop-filter:blur(20px);
-    padding:3rem 2rem;gap:1.5rem;z-index:99;
-    opacity:0;pointer-events:none;
-    transform:translateY(-12px);
-    transition:opacity .3s var(--ease),transform .3s var(--ease);
-  }
-  .nav[data-open] .nav-links{opacity:1;pointer-events:auto;transform:none}
-  .nav-links a{font-size:1.6rem;color:rgba(255,255,255,.7);letter-spacing:.06em}
-  .nav-links .nav-ticket{font-size:1rem}
-  .nav{padding:1.25rem 1.5rem}
-  .nav.scrolled{padding:.9rem 1.5rem}
   .footer-top{grid-template-columns:1fr 1fr}
-  .rp-timeline-item{grid-template-columns:1fr}
-}
+  .rp-timeline-item{grid-template-columns:1fr}}
 @media(max-width:600px){
   .page-header{padding:8rem 1.75rem 4rem}
   .rp-wrap{padding:4rem 1.5rem 6rem}
   .rp-contact{padding:2rem 1.75rem}
   .footer-top{grid-template-columns:1fr}
   .footer-inner{padding:3rem 1.5rem 1.5rem}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
 }
 </style>
 </head>
@@ -369,7 +232,7 @@ footer{background:var(--emerald-2)}
 <header>
 <nav class="nav" id="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-logo" aria-label="Irish Hypnotherapy Conference 2027 — home">
-    <img src="logo.png" alt="IHC" />
+    <img width="160" height="150" src="logo.png" alt="IHC" />
     <div class="nav-logo-name">Irish Hypnotherapy Conference<span>Dublin · April 2027</span></div>
   </a>
   <ul class="nav-links" id="nav-links">
@@ -484,7 +347,7 @@ footer{background:var(--emerald-2)}
   <div class="footer-top">
     <div>
       <div class="footer-logo">
-        <img src="logo.png" alt="IHC" />
+        <img width="160" height="150" src="logo.png" alt="IHC" />
         <div class="footer-logo-name">Irish Hypnotherapy Conference<span>Est. 2013 · Dublin</span></div>
       </div>
       <p class="footer-desc">Ireland's premier gathering for hypnotherapy professionals. Advancing the science and art of hypnotherapy through world-class education, community and connection.</p>
@@ -532,19 +395,8 @@ footer{background:var(--emerald-2)}
 </footer>
 
 <!-- ── Scripts ───────────────────────────────────── -->
+<script src="js/site.js" defer></script>
 <script>
-/* Custom cursor */
-(function(){
-  const c = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    c.style.left = e.clientX + 'px';
-    c.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a,button').forEach(el => {
-    el.addEventListener('mouseenter', () => c.classList.add('large'));
-    el.addEventListener('mouseleave', () => c.classList.remove('large'));
-  });
-})();
 
 /* Scroll reveal */
 (function(){
@@ -559,21 +411,6 @@ footer{background:var(--emerald-2)}
   });
 })();
 
-/* Nav scroll + mobile nav */
-(function(){
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive:true});
-  const btn = document.getElementById('nav-toggle');
-  const links = document.getElementById('nav-links');
-  const toggle = open => {
-    nav.toggleAttribute('data-open', open);
-    btn.setAttribute('aria-expanded', String(open));
-    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-  };
-  btn.addEventListener('click', () => toggle(!nav.hasAttribute('data-open')));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.hasAttribute('data-open')) toggle(false); });
-})();
 </script>
 </body>
 </html>
