@@ -1,0 +1,6 @@
+# Cloudflare Pages build configuration.
+# Ensures git-triggered builds publish the Next.js static export in out/
+# (root base path — no /IHC2027 prefix, which is GitHub Pages-only).
+name = "ihc2027web"
+pages_build_output_dir = "out"
+compatibility_date = "2025-01-15"
