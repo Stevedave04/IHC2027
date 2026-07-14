@@ -2,9 +2,9 @@ import './refund-policy.css';
 
 export const metadata = {
   title: "Refund &amp; Cancellations Policy",
-  description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027 \u2014 ticket cancellation terms, transfer rules, and how to request a refund.",
+  description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027, ticket cancellation terms, transfer rules, and how to request a refund.",
   alternates: { canonical: '/refund-policy' },
-  openGraph: { title: "Refund &amp; Cancellations Policy", description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027 \u2014 ticket cancellation terms, transfer rules, and how to request a refund.", url: '/refund-policy' },
+  openGraph: { title: "Refund &amp; Cancellations Policy", description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027, ticket cancellation terms, transfer rules, and how to request a refund.", url: '/refund-policy' },
 };
 
 export default function Page() {

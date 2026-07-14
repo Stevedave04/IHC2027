@@ -2,9 +2,9 @@ import './workshops.css';
 
 export const metadata = {
   title: "Workshops &amp; Masterclasses",
-  description: "Explore the IHC 2027 workshop programme \u2014 three parallel tracks on Saturday 17 April and morning intensives on Sunday 18 April, covering clinical practice, research, and business growth.",
+  description: "Explore the IHC 2027 workshop programme, three parallel tracks on Saturday 17 April and morning intensives on Sunday 18 April, covering clinical practice, research, and business growth.",
   alternates: { canonical: '/workshops' },
-  openGraph: { title: "Workshops &amp; Masterclasses", description: "Explore the IHC 2027 workshop programme \u2014 three parallel tracks on Saturday 17 April and morning intensives on Sunday 18 April, covering clinical practice, research, and business growth.", url: '/workshops' },
+  openGraph: { title: "Workshops &amp; Masterclasses", description: "Explore the IHC 2027 workshop programme, three parallel tracks on Saturday 17 April and morning intensives on Sunday 18 April, covering clinical practice, research, and business growth.", url: '/workshops' },
 };
 
 export default function Page() {
@@ -31,7 +31,7 @@ export default function Page() {
     <div className="track-grid" role="list">
 
       <div className="track-card" role="listitem">
-        <span className="track-label">Track A &mdash; Clinical Practice</span>
+        <span className="track-label">Track A · Clinical Practice</span>
         <h3 className="track-title">Advanced Pain Management Techniques</h3>
         <p className="track-presenter">Presenter TBC</p>
         <p className="track-room">Liffey Suite</p>
@@ -39,7 +39,7 @@ export default function Page() {
       </div>
 
       <div className="track-card" role="listitem">
-        <span className="track-label">Track B &mdash; Research &amp; Evidence</span>
+        <span className="track-label">Track B · Research &amp; Evidence</span>
         <h3 className="track-title">Translating Research into Practice</h3>
         <p className="track-presenter">Presenter TBC</p>
         <p className="track-room">Valley Suite</p>
@@ -47,7 +47,7 @@ export default function Page() {
       </div>
 
       <div className="track-card" role="listitem">
-        <span className="track-label">Track C &mdash; Business &amp; Growth</span>
+        <span className="track-label">Track C · Business &amp; Growth</span>
         <h3 className="track-title">Building a Thriving Hypnotherapy Practice</h3>
         <p className="track-presenter">Presenter TBC</p>
         <p className="track-room">Salon A</p>
