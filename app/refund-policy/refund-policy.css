@@ -155,7 +155,7 @@
 }
 .rp-contact-detail p{
   font-size:.95rem;font-weight:300;
-  color:rgba(255,255,255,.55);line-height:1.6;
+  color:rgba(255,255,255,.74);line-height:1.6;
 }
 .rp-contact-email{
   display:inline-flex;align-items:center;gap:.6rem;
@@ -173,7 +173,7 @@
 }
 .rp-contact-list li{
   font-size:.95rem;font-weight:300;
-  color:rgba(255,255,255,.5);line-height:1.6;
+  color:rgba(255,255,255,.68);line-height:1.6;
   padding-left:1.25rem;position:relative;
 }
 .rp-contact-list li::before{

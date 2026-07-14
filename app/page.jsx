@@ -16,7 +16,6 @@ import Venue from '../components/home/Venue';
 import Accommodation from '../components/home/Accommodation';
 import Faq from '../components/home/Faq';
 import Contact from '../components/home/Contact';
-import ScrollTop from '../components/shared/ScrollTop';
 import { SITE_URL } from '../lib/site';
 
 export const metadata = {
@@ -71,7 +70,6 @@ export default function Home() {
       <Accommodation />
       <Faq />
       <Contact />
-      <ScrollTop />
     </>
   );
 }

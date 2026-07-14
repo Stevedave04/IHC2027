@@ -167,7 +167,7 @@
 }
 .blog-newsletter p{
   font-size:1rem;font-weight:300;
-  color:rgba(255,255,255,.5);
+  color:rgba(255,255,255,.68);
   margin-bottom:2rem;
 }
 .newsletter-form{
@@ -211,3 +211,20 @@
   .footer-top{grid-template-columns:1fr}
   .footer-inner{padding:3rem 1.5rem 1.5rem}
 }
+
+/* ── Linked image placeholders (Gaelic word cards) ── */
+.blog-img-link{
+  text-decoration:none;
+  transition:background .3s;
+}
+.blog-img-link span{
+  font-family:var(--f);
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  font-style:italic;font-weight:500;
+  color:rgba(196,154,40,.55);
+  letter-spacing:.02em;
+}
+.blog-img-link:hover{background:var(--emerald-2)}
+.blog-img-link:hover span{color:var(--gold)}
+.blog-feature-title a,.blog-card-title a{transition:color .2s}
+.blog-feature-title a:hover,.blog-card-title a:hover{color:var(--gold)}

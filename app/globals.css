@@ -20,7 +20,7 @@
 
   --ink:   #0A0E08;
   --text:  #1C1F14;
-  --muted: #5A5548;
+  --muted: #4E4A3E;
   --faint: #8A8275;
 
   --ease: cubic-bezier(0.16,1,0.3,1);
@@ -94,7 +94,7 @@ body::after{
 .nav-links a{
   font-size:.72rem;font-weight:500;
   letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);
+  color:rgba(255,255,255,.65);
   transition:color .2s;position:relative;
 }
 .nav-links a:hover{color:rgba(255,255,255,.9)}
@@ -207,3 +207,37 @@ html.js .wipe{opacity:0}
 @media(prefers-reduced-motion:reduce){
   html.js .reveal,html.js .wipe{opacity:1}
 }
+
+/* ── Readable body face ────────────────────────── */
+/* Cormorant Garamond is a display face; EB Garamond is its text-optimised
+   sibling. Headings/decorative text keep var(--f); reading copy uses this. */
+:root{--f-body:'EB Garamond',Georgia,serif}
+p,li,dd,td,input,textarea,select,figcaption,blockquote{
+  font-family:var(--f-body);
+}
+/* decorative small-caps strips rendered as <p> stay in the display face */
+.hero-eyebrow,.hero-year,.page-eyebrow,.cd-label,.ticket-period,
+.ticket-installments,.exhibit-price-note,.contact-route-label{
+  font-family:var(--f);
+}
+/* testimonials + article pull quotes keep the italic display voice */
+.testi-text{font-family:var(--f)}
+
+/* ── Scroll-to-top ────────────────────────────── */
+.scroll-top{
+  position:fixed;bottom:2rem;right:2rem;z-index:200;
+  width:44px;height:44px;
+  border:1px solid var(--gold-rule);
+  background:rgba(9,25,16,.85);
+  backdrop-filter:blur(12px);
+  color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  opacity:0;pointer-events:none;
+  transform:translateY(10px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),border-color .2s,background .2s;
+}
+.scroll-top.visible{opacity:1;pointer-events:auto;transform:none}
+.scroll-top:hover{border-color:var(--gold);background:var(--gold);color:var(--emerald)}
+.scroll-top svg{transition:transform .2s var(--ease)}
+.scroll-top:hover svg{transform:translateY(-2px)}

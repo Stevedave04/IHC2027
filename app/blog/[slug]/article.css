@@ -1,0 +1,108 @@
+/* ── Article page ─────────────────────────────── */
+.article-header{padding-bottom:4rem}
+.article-title{font-size:clamp(2.2rem,5vw,4.2rem);max-width:22ch;margin:0 auto}
+
+.article-wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:4.5rem 1.75rem 6rem;
+}
+.article-standfirst{
+  font-size:1.25rem;
+  font-style:italic;
+  color:var(--muted);
+  line-height:1.7;
+  border-left:2px solid var(--gold);
+  padding-left:1.5rem;
+  margin-bottom:3rem;
+}
+.article-h2{
+  font-family:var(--f);
+  font-size:1.85rem;
+  font-weight:600;
+  font-style:italic;
+  color:var(--emerald);
+  letter-spacing:-.01em;
+  margin:3rem 0 1.1rem;
+  line-height:1.15;
+}
+.article-p{
+  font-size:1.12rem;
+  line-height:1.85;
+  color:var(--text);
+  margin-bottom:1.4rem;
+}
+.article-wrap section:first-of-type .article-p:first-of-type::first-letter{
+  font-family:var(--f);
+  font-size:3.4em;
+  font-weight:600;
+  float:left;
+  line-height:.82;
+  padding:.06em .12em 0 0;
+  color:var(--gold);
+}
+.article-quote{
+  font-family:var(--f);
+  font-size:1.6rem;
+  font-weight:500;
+  font-style:italic;
+  line-height:1.45;
+  color:var(--emerald);
+  text-align:center;
+  max-width:32ch;
+  margin:3.25rem auto;
+  padding:2rem 0;
+  border-top:1px solid var(--gold-rule);
+  border-bottom:1px solid var(--gold-rule);
+}
+.article-cta{
+  background:var(--emerald);
+  padding:2.75rem 2.5rem;
+  text-align:center;
+  margin:4rem 0 3rem;
+}
+.article-cta-eyebrow{
+  display:block;
+  font-family:var(--f);
+  font-size:.65rem;font-weight:600;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1rem;
+}
+.article-cta p{
+  color:rgba(255,255,255,.78);
+  max-width:44ch;margin:0 auto 1.75rem;
+  line-height:1.7;
+}
+.article-cta .btn-gold{
+  display:inline-block;
+  background:var(--gold);color:var(--emerald);
+  font-family:var(--f);
+  padding:.85rem 2.2rem;
+  font-size:.78rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  transition:background .2s;
+}
+.article-cta .btn-gold:hover{background:var(--gold-light)}
+
+.article-pager{
+  display:flex;justify-content:space-between;gap:2rem;
+  border-top:1px solid var(--gold-rule);
+  padding-top:2rem;
+}
+.pager-link{
+  font-family:var(--f);
+  font-size:.95rem;font-weight:600;font-style:italic;
+  color:var(--muted);
+  max-width:38ch;
+  transition:color .2s;
+}
+.pager-link:hover{color:var(--gold)}
+.pager-next{text-align:right;margin-left:auto}
+
+@media(max-width:600px){
+  .article-wrap{padding:3rem 1.4rem 4.5rem}
+  .article-standfirst{font-size:1.12rem}
+  .article-pager{flex-direction:column}
+  .pager-next{text-align:left;margin-left:0}
+}

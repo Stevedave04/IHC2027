@@ -22,7 +22,7 @@
   color:#fff;line-height:1.1;margin-bottom:.75rem;
 }
 .exhibit-body{
-  font-size:.95rem;font-weight:300;color:rgba(255,255,255,.55);
+  font-size:.95rem;font-weight:300;color:rgba(255,255,255,.74);
   line-height:1.65;margin-bottom:1.1rem;
 }
 .exhibit-sectors{
@@ -30,7 +30,7 @@
 }
 .exhibit-sectors span{
   font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.4);
+  color:rgba(255,255,255,.58);
   border:1px solid rgba(255,255,255,.1);
   padding:.2rem .6rem;
 }
@@ -99,7 +99,7 @@
 .testi-btn{
   width:40px;height:40px;
   border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.5);
+  color:rgba(255,255,255,.68);
   display:flex;align-items:center;justify-content:center;
   font-size:1.1rem;
   transition:border-color .2s,color .2s;
@@ -230,7 +230,7 @@
 }
 .faq-search input::placeholder{color:rgba(255,255,255,.35);font-style:italic}
 .faq-search input:focus{outline:none;border-color:var(--gold)}
-.faq-no-results{margin-top:1rem;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.55)}
+.faq-no-results{margin-top:1rem;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.74)}
 .faq-no-results a{color:var(--gold);border-bottom:1px solid var(--gold-rule)}
 .faq-grid{display:flex;flex-direction:column;gap:0;margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.08)}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
@@ -271,7 +271,7 @@
 .faq-item.open .faq-body-inner{padding-bottom:1.75rem}
 .faq-answer{
   font-size:1rem;font-weight:300;line-height:1.75;
-  color:rgba(255,255,255,.5);
+  color:rgba(255,255,255,.68);
   padding-left:2.5rem;
   max-width:65ch;
 }
@@ -300,7 +300,7 @@
 }
 .accom-card p{
   font-size:.95rem;font-weight:300;
-  color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1rem;
+  color:rgba(255,255,255,.68);line-height:1.7;margin-bottom:1rem;
 }
 .accom-detail{
   font-size:.82rem;font-weight:500;letter-spacing:.04em;
@@ -310,7 +310,7 @@
   list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;
 }
 .accom-list li{
-  font-size:.9rem;font-weight:300;color:rgba(255,255,255,.5);
+  font-size:.9rem;font-weight:300;color:rgba(255,255,255,.68);
   padding-left:1.2rem;position:relative;line-height:1.5;
 }
 .accom-list li::before{
@@ -410,24 +410,6 @@ textarea.contact-input{resize:vertical;min-height:120px}
   color:var(--gold);padding:1rem 0;display:none;
 }
 
-/* ── Scroll-to-top ────────────────────────────── */
-#scroll-top{
-  position:fixed;bottom:2rem;right:2rem;z-index:200;
-  width:44px;height:44px;
-  border:1px solid var(--gold-rule);
-  background:rgba(9,25,16,.85);
-  backdrop-filter:blur(12px);
-  color:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-  opacity:0;pointer-events:none;
-  transform:translateY(10px);
-  transition:opacity .3s var(--ease),transform .3s var(--ease),border-color .2s,background .2s;
-}
-#scroll-top.visible{opacity:1;pointer-events:auto;transform:none}
-#scroll-top:hover{border-color:var(--gold);background:var(--gold);color:var(--emerald)}
-#scroll-top svg{transition:transform .2s var(--ease)}
-#scroll-top:hover svg{transform:translateY(-2px)}
 
 /* ── Responsive ───────────────────────────────── */
 @media(max-width:1100px){

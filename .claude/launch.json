@@ -23,6 +23,18 @@
         "/private/tmp/claude-501/-Users-geraldmcgill-IHC2027/5d570a8e-5048-4ec3-8aa3-f5dd34263be2/scratchpad/pages-root"
       ],
       "port": 4310
+    },
+    {
+      "name": "next-root",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "serve",
+        "-l",
+        "4311",
+        "--no-clipboard",
+        "out"
+      ],
+      "port": 4311
     }
   ]
 }
