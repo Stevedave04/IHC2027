@@ -21,7 +21,7 @@ export default function Page() {
 <main id="main">
 <div className="coc-wrap">
 
-  <p className="coc-intro">The Irish Hypnotherapy Conference is committed to creating a professional, respectful, and collaborative environment. All participants — including presenters, attendees, volunteers, and exhibitors — agree to uphold the following standards.</p>
+  <p className="coc-intro">The Irish Hypnotherapy Conference is committed to creating a professional, respectful, and collaborative environment. All participants, including presenters, attendees, volunteers, and exhibitors, agree to uphold the following standards.</p>
 
   <article className="coc-section reveal">
     <span className="coc-section-num">01</span>

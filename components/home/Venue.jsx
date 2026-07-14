@@ -14,7 +14,7 @@ export default function Venue() {
       </div>
       <p className="venue-body reveal">A 4-star conference hotel set just off the M50 motorway, adjacent to Liffey Valley Shopping Centre. State-of-the-art meeting and event facilities accommodating up to 300 delegates, with Globe Restaurant &amp; Bar, Red Bean Roastery café, and a full leisure centre on site. Easy access by road and rail from Dublin city centre.</p>
       <div className="venue-feats reveal">
-        <div className="venue-feat">Meeting Rooms — Up to 300 Delegates</div>
+        <div className="venue-feat">Meeting Rooms, Up to 300 Delegates</div>
         <div className="venue-feat">Globe Restaurant &amp; Bar</div>
         <div className="venue-feat">Overnight Parking €10</div>
         <div className="venue-feat">Off M50 Motorway</div>

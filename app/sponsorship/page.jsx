@@ -20,20 +20,20 @@ export default function Page() {
 <main id="main">
 <div className="sp-wrap">
 
-  <p className="coc-intro">The Irish Hypnotherapy Conference brings together over 200 practitioners, trainers, researchers, and students across three days in Dublin. Sponsoring IHC 2027 puts your brand in front of a highly engaged, specialist professional audience — at the most influential event in the Irish hypnotherapy calendar.</p>
+  <p className="coc-intro">The Irish Hypnotherapy Conference brings together over 200 practitioners, trainers, researchers, and students across three days in Dublin. Sponsoring IHC 2027 puts your brand in front of a highly engaged, specialist professional audience, at the most influential event in the Irish hypnotherapy calendar.</p>
 
   
   <article className="coc-section reveal">
     <span className="coc-section-num">01</span>
     <h2>Exhibition Tables</h2>
     <p className="section-meta">Full Weekend · 16–18 April 2027 · 6 Tables Available</p>
-    <p>Showcase your products, services, or organisation from a dedicated exhibition table in the main delegate thoroughfare. Tables are allocated by sector — one per sector — to ensure variety for attendees and a clear audience for exhibitors.</p>
+    <p>Showcase your products, services, or organisation from a dedicated exhibition table in the main delegate thoroughfare. Tables are allocated by sector, one per sector, to ensure variety for attendees and a clear audience for exhibitors.</p>
 
     <div className="table-hero" role="region" aria-label="Exhibition table pricing">
       <div>
-        <span className="table-hero-label">Exhibition Table — Full Weekend</span>
+        <span className="table-hero-label">Exhibition Table · Full Weekend</span>
         <h3>Three days of direct<br/>access to delegates</h3>
-        <p>Your table is positioned in high-traffic areas between sessions and during networking breaks — exactly when delegates are open to conversation and discovery. Includes table, two chairs, your organisation's name in the delegate programme, and a listing on the IHC 2027 website.</p>
+        <p>Your table is positioned in high-traffic areas between sessions and during networking breaks, exactly when delegates are open to conversation and discovery. Includes table, two chairs, your organisation's name in the delegate programme, and a listing on the IHC 2027 website.</p>
         <span className="table-avail">6 Tables · One Per Sector · Limited Availability</span><br/>
         <a href="mailto:john@irishhypnotherapyconference.ie?subject=Exhibition%20Table%20Enquiry" className="btn-gold">Enquire About a Table</a>
       </div>
@@ -89,7 +89,7 @@ export default function Page() {
     <span className="coc-section-num">02</span>
     <h2>Sponsorship Packages</h2>
     <p className="section-meta">Packages from €500 · Enquire for Custom Options</p>
-    <p>Full sponsorship packages offer deeper brand integration across the conference — from digital and print visibility to delegate communications and on-stage presence. All packages are inclusive of VAT. Prices below are indicative; contact us to discuss a tailored arrangement.</p>
+    <p>Full sponsorship packages offer deeper brand integration across the conference, from digital and print visibility to delegate communications and on-stage presence. All packages are inclusive of VAT. Prices below are indicative; contact us to discuss a tailored arrangement.</p>
 
     <div className="tier-grid" role="list">
 
@@ -146,7 +146,7 @@ export default function Page() {
         <div className="tier-sep"></div>
         <ul className="tier-features">
           <li className="tier-feature">Everything in Gold</li>
-          <li className="tier-feature">Headline sponsor — named on all materials</li>
+          <li className="tier-feature">Headline sponsor, named on all materials</li>
           <li className="tier-feature">Keynote session naming rights</li>
           <li className="tier-feature">Dedicated email to all 200+ delegates</li>
           <li className="tier-feature">Premium venue signage and backdrop</li>
@@ -164,7 +164,7 @@ export default function Page() {
   <article className="coc-section reveal">
     <span className="coc-section-num">03</span>
     <h2>Who Attends IHC</h2>
-    <p>IHC delegates are practising professionals — not students browsing for free content. They invest in their practice and are actively looking for quality tools, training, and services. Our 2026 audience included:</p>
+    <p>IHC delegates are practising professionals, not students browsing for free content. They invest in their practice and are actively looking for quality tools, training, and services. Our 2026 audience included:</p>
     <ul className="coc-list">
       <li>Independent hypnotherapy practitioners (sole traders and small clinics)</li>
       <li>Hypnotherapy trainers and school owners</li>

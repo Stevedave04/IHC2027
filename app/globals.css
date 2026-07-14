@@ -1,4 +1,4 @@
-/* ═══ IHC 2027 — shared site styles (all pages) ═══ */
+/* ═══ IHC 2027 - shared site styles (all pages) ═══ */
 
 /* ── Tokens ───────────────────────────────────── */
 :root {
@@ -90,7 +90,10 @@ body::after{
   color:rgba(255,255,255,.75);line-height:1.4;
 }
 .nav-logo-name span{display:block;font-size:.62rem;color:rgba(255,255,255,.38);letter-spacing:.18em}
-.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nav-links{display:flex;align-items:center}
+.nav-primary{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nav-secondary{display:none;list-style:none}
+.nav-overlay-meta{display:none}
 .nav-links a{
   font-size:.72rem;font-weight:500;
   letter-spacing:.14em;text-transform:uppercase;
@@ -155,26 +158,101 @@ footer{
 .footer-policies a[aria-current]{color:var(--gold)}
 
 
-/* ── Mobile navigation (shared) ────────────────── */
+/* ── Mobile navigation overlay ─────────────────── */
 @media(max-width:768px){
   .nav-hamburger{display:flex}
   .nav-links{
     display:flex;flex-direction:column;
-    align-items:center;justify-content:flex-start;
-    position:fixed;inset:0;top:60px;
-    background:rgba(9,25,16,.97);
-    backdrop-filter:blur(20px);
-    padding:3rem 2rem;gap:1.5rem;
+    align-items:flex-start;justify-content:flex-start;
+    position:fixed;inset:0;
+    background:rgba(9,25,16,.98);
+    backdrop-filter:blur(24px);
+    padding:6.5rem 2.25rem 2.25rem;
     z-index:99;
+    overflow-y:auto;
     opacity:0;pointer-events:none;
     transform:translateY(-12px);
-    transition:opacity .3s var(--ease),transform .3s var(--ease);
+    transition:opacity .35s var(--ease),transform .35s var(--ease);
   }
   .nav[data-open] .nav-links{opacity:1;pointer-events:auto;transform:none}
-  .nav-links a{font-size:1.6rem;color:rgba(255,255,255,.7);letter-spacing:.06em}
-  .nav-links .nav-ticket{font-size:1rem}
+
+  /* primary: large numbered serif links */
+  .nav-primary{
+    display:flex;flex-direction:column;align-items:stretch;
+    gap:0;width:100%;
+    counter-reset:navi;
+  }
+  .nav-primary li{counter-increment:navi}
+  .nav-primary li a{
+    display:flex;align-items:baseline;gap:1.1rem;
+    font-family:var(--f);
+    font-size:2rem;font-weight:500;font-style:italic;
+    letter-spacing:0;text-transform:none;
+    color:rgba(255,255,255,.88);
+    padding:.55rem 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    opacity:0;transform:translateY(10px);
+    transition:opacity .4s var(--ease),transform .4s var(--ease),color .2s;
+  }
+  .nav-primary li a::before{
+    content:counter(navi,decimal-leading-zero);
+    font-family:var(--f);
+    font-size:.6rem;font-weight:600;font-style:normal;
+    letter-spacing:.22em;
+    color:var(--gold);
+    min-width:1.6rem;
+  }
+  .nav-primary li a:hover{color:var(--gold)}
+  .nav[data-open] .nav-primary li a{opacity:1;transform:none}
+  .nav[data-open] .nav-primary li:nth-child(1) a{transition-delay:.08s}
+  .nav[data-open] .nav-primary li:nth-child(2) a{transition-delay:.13s}
+  .nav[data-open] .nav-primary li:nth-child(3) a{transition-delay:.18s}
+  .nav[data-open] .nav-primary li:nth-child(4) a{transition-delay:.23s}
+  .nav[data-open] .nav-primary li:nth-child(5) a{transition-delay:.28s}
+  .nav[data-open] .nav-primary li:nth-child(6) a{transition-delay:.33s}
+
+  /* ticket CTA inside the primary list */
+  .nav-primary .nav-ticket-item{counter-increment:none;margin-top:1.75rem}
+  .nav-primary .nav-ticket-item a{
+    display:block;text-align:center;
+    background:var(--gold);color:var(--emerald) !important;
+    font-size:.85rem;font-weight:700;font-style:normal;
+    letter-spacing:.18em;text-transform:uppercase;
+    padding:1.05rem 1rem;
+    border:none;
+  }
+  .nav-primary .nav-ticket-item a::before{content:none}
+  .nav-primary .nav-ticket-item a:hover{background:var(--gold-light);color:var(--emerald)}
+
+  /* secondary page links */
+  .nav-secondary{
+    display:flex;flex-wrap:wrap;
+    gap:.85rem 1.9rem;
+    margin-top:2.25rem;padding-top:1.9rem;width:100%;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+  .nav-secondary a{
+    font-size:.74rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;
+    color:rgba(255,255,255,.55);
+    transition:color .2s;
+  }
+  .nav-secondary a:hover{color:var(--gold)}
+
+  /* event meta pinned to the bottom */
+  .nav-overlay-meta{
+    display:block;
+    margin-top:auto;padding-top:2.5rem;
+    font-family:var(--f);
+    font-size:.62rem;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;
+    color:rgba(255,255,255,.38);
+  }
+
   .nav{padding:1.25rem 1.5rem}
   .nav.scrolled{padding:.9rem 1.5rem}
+  /* solid bar behind the logo/close button while the overlay is open */
+  .nav[data-open]{background:rgba(9,25,16,.98)}
 }
 
 /* ── Reduced motion ────────────────────────────── */
@@ -183,7 +261,7 @@ footer{
   .marquee-track{animation:none}
 }
 
-/* ── Cursor guard — hide OS cursor only when custom cursor is live ── */
+/* ── Cursor guard, hide OS cursor only when custom cursor is live ── */
 #cursor{display:none}
 html.has-cursor #cursor{display:block}
 html.has-cursor body,html.has-cursor a,html.has-cursor button{cursor:none}

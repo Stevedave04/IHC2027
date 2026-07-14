@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { POSTS, getPost } from '../../../lib/posts';
-import { SITE_URL } from '../../../lib/site';
+import { BASE, SITE_URL } from '../../../lib/site';
 import '../blog.css';
 import './article.css';
 
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { title: post.title, description: post.excerpt, url: `/blog/${post.slug}`, type: 'article' },
+    openGraph: { title: post.title, description: post.excerpt, url: `/blog/${post.slug}`, type: 'article', images: [post.image.src] },
   };
 }
 
@@ -62,6 +62,10 @@ export default async function ArticlePage({ params }) {
         <div className="page-rule" aria-hidden="true"></div>
       </header>
 
+      <div className="article-hero">
+        <img src={BASE + post.image.src} alt={post.image.alt} width="1400" height="933" fetchPriority="high" />
+      </div>
+
       <main id="main" className="article-wrap">
         <p className="article-standfirst">{post.excerpt}</p>
 
@@ -81,7 +85,7 @@ export default async function ArticlePage({ params }) {
         <aside className="article-cta">
           <span className="article-cta-eyebrow">See it for yourself</span>
           <p>
-            IHC 2027 runs 16–18 April at the Clayton Hotel Liffey Valley, Dublin — three days of
+            IHC 2027 runs 16–18 April at the Clayton Hotel Liffey Valley, Dublin, three days of
             world-class hypnotherapy training with the city on your doorstep.
           </p>
           <Link href="/#tickets" className="btn-gold">View Tickets &amp; Pricing</Link>

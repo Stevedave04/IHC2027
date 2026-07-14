@@ -8,7 +8,7 @@ const ITEMS = [
   '16–18 April 2027', 'Dublin, Ireland', '50+ World-Class Speakers',
 ];
 
-/** GSAP seamless marquee loop — 60px/s desktop, 30px/s mobile, pauses on hover. */
+/** GSAP seamless marquee loop, 60px/s desktop, 30px/s mobile, pauses on hover. */
 export default function Marquee() {
   const trackRef = useRef(null);
 

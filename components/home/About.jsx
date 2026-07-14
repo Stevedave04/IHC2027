@@ -7,7 +7,7 @@ export default function About() {
     <div className="about-left">
       <div className="about-index reveal" aria-hidden="true">01</div>
       <blockquote className="about-pull reveal">
-        "Ireland's only conference where 200+ hypnotherapy professionals meet the world's leading voices — then go home better."
+        "Ireland's only conference where 200+ hypnotherapy professionals meet the world's leading voices, then go home better."
       </blockquote>
       <div className="about-rule wipe"></div>
       <p className="about-sub reveal">Irish Hypnotherapy Conference</p>
@@ -18,10 +18,10 @@ export default function About() {
         You work hard at your practice. The training you deserve is harder to find.
       </h2>
       <p className="about-body reveal">
-        World-class training, honest peer conversation, and access to the researchers pushing this field forward — that is harder to find than it should be. IHC 2027 is where Irish practitioners come to close that gap. Three days, 40+ international speakers, and a community that understands exactly what you do.
+        World-class training, honest peer conversation, and access to the researchers pushing this field forward, that is harder to find than it should be. IHC 2027 is where Irish practitioners come to close that gap. Three days, 40+ international speakers, and a community that understands exactly what you do.
       </p>
       <p className="about-body reveal">
-        The 2027 theme is <strong>Empowering Connections, Advancing Expertise, Embracing Clarity</strong> — our most ambitious programme to date, with 24+ CPD hours across every ticket.
+        The 2027 theme is <strong>Empowering Connections, Advancing Expertise, Embracing Clarity</strong>: our most ambitious programme to date, with 24+ CPD hours across every ticket.
       </p>
       <div className="about-pillars">
         <div className="pillar-row reveal">

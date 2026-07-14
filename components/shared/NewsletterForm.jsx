@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/john@irishhypnotherapyconference.ie';
 
-export default function NewsletterForm({ id = 'newsletter-email', label = 'Subscribe', subject = 'IHC 2027 — Newsletter signup', className = 'cta-form', style }) {
+export default function NewsletterForm({ id = 'newsletter-email', label = 'Subscribe', subject = 'IHC 2027 - Newsletter signup', className = 'cta-form', style }) {
   const [state, setState] = useState('idle'); // idle | busy | done | error
   const inputRef = useRef(null);
   const honeyRef = useRef(null);

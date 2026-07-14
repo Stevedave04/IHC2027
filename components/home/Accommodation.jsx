@@ -9,7 +9,7 @@ export default function Accommodation() {
     <div className="accom-card reveal">
       <span className="accom-badge">Official Conference Hotel</span>
       <h3>Clayton Hotel<br/>Liffey Valley</h3>
-      <p>Stay at the conference venue itself — no commute, no stress. Deluxe rooms, family suites, and accessible bedrooms available. All guests enjoy complimentary use of the 20m heated pool, gym, jacuzzi, and steam room. Overnight parking is just €10. Book direct and save 10% every night.</p>
+      <p>Stay at the conference venue itself, no commute, no stress. Deluxe rooms, family suites, and accessible bedrooms available. All guests enjoy complimentary use of the 20m heated pool, gym, jacuzzi, and steam room. Overnight parking is just €10. Book direct and save 10% every night.</p>
       <div className="accom-detail">Book direct at claytonhotels.com · Mention IHC 2027 for delegate enquiries</div>
       <a href="https://www.claytonhotels.com/liffey-valley/" className="accom-link" target="_blank" rel="noopener">
         Book at Clayton Hotels
@@ -21,10 +21,10 @@ export default function Accommodation() {
       <h3>Alternative<br/>Hotels Nearby</h3>
       <p>Several well-regarded hotels are located within 10–20 minutes of the venue by car or public transport.</p>
       <ul className="accom-list">
-        <li>Citywest Hotel &amp; Conference Centre — approx. 10 min by car</li>
-        <li>Maldron Hotel Newlands Cross — approx. 8 min by car</li>
-        <li>Bewley's Hotel Newlands Cross — approx. 8 min by car, budget-friendly</li>
-        <li>Travelodge Dublin Liffey Valley — adjacent to the venue</li>
+        <li>Citywest Hotel &amp; Conference Centre, approx. 10 min by car</li>
+        <li>Maldron Hotel Newlands Cross, approx. 8 min by car</li>
+        <li>Bewley's Hotel Newlands Cross, approx. 8 min by car, budget-friendly</li>
+        <li>Travelodge Dublin Liffey Valley, adjacent to the venue</li>
       </ul>
     </div>
   </div>

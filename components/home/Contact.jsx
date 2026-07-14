@@ -34,7 +34,7 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           name, email, message: msg,
-          _subject: 'IHC 2027 — ' + (get('cf-subject').value.trim() || 'Contact form enquiry'),
+          _subject: 'IHC 2027 - ' + (get('cf-subject').value.trim() || 'Contact form enquiry'),
           form: 'contact',
         }),
       });
@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   const btnLabel =
-    state === 'busy' ? 'Sending…' : state === 'error' ? 'Something went wrong — try again' : 'Send Message';
+    state === 'busy' ? 'Sending…' : state === 'error' ? 'Something went wrong, try again' : 'Send Message';
 
   return (
     <section className="dark-section" id="contact" aria-labelledby="contact-hl" style={{ background: 'var(--emerald-2)', borderTop: '1px solid rgba(196,154,40,.12)' }}>
@@ -76,7 +76,7 @@ export default function Contact() {
               <span className="cta-label" style={{ marginBottom: '.5rem' }}>Not ready to book yet?</span>
               <p style={{ fontSize: '.9rem', fontWeight: 300, color: 'rgba(255,255,255,.55)', marginBottom: '1.25rem', maxWidth: '38ch', lineHeight: 1.6 }}>
                 Get speaker announcements, early-bird alerts, and programme updates straight to your
-                inbox — so you do not miss the window.
+                inbox, so you do not miss the window.
               </p>
               <NewsletterForm id="cta-email" label="Keep Me Updated" style={{ maxWidth: '420px' }} />
             </div>
@@ -106,7 +106,7 @@ export default function Contact() {
                 {btnLabel}
               </button>
               <p className="contact-success" role="status" style={state === 'done' ? { display: 'block' } : undefined}>
-                Thank you — we will be in touch shortly.
+                Thank you, we will be in touch shortly.
               </p>
             </form>
           </div>

@@ -12,24 +12,24 @@ export default function Gallery() {
       <p className="gallery-caption">Main plenary session, IHC 2026</p>
     </div>
     <div className="gallery-item">
-      <div className="gallery-placeholder" style={{height:'220px'}}>Photo coming soon</div>
-      <p className="gallery-caption">Gala Dinner &amp; Awards Ceremony</p>
-    </div>
-    <div className="gallery-item">
-      <div className="gallery-placeholder" style={{height:'300px'}}>Photo coming soon</div>
-      <p className="gallery-caption">Networking &amp; Exhibition Hall</p>
+      <img width="1400" height="983" src={BASE + "/images/dublin/stone-bridge.jpg"} alt="An old stone bridge over an Irish river" loading="lazy" />
+      <p className="gallery-caption">The River Liffey at Grattan Bridge, twenty minutes from the venue</p>
     </div>
     <div className="gallery-item">
       <div className="gallery-placeholder" style={{height:'260px'}}>Photo coming soon</div>
-      <p className="gallery-caption">Workshop sessions, Day 2</p>
+      <p className="gallery-caption">Gala Dinner &amp; Awards Ceremony</p>
+    </div>
+    <div className="gallery-item">
+      <img width="1400" height="933" src={BASE + "/images/dublin/church-street.jpg"} alt="Anne Street South leading towards St Ann's Church, Dublin" loading="lazy" />
+      <p className="gallery-caption">Anne Street South at dusk, Dublin on your doorstep</p>
     </div>
     <div className="gallery-item">
       <div className="gallery-placeholder" style={{height:'200px'}}>Photo coming soon</div>
-      <p className="gallery-caption">Keynote address, IHC 2026</p>
+      <p className="gallery-caption">Workshop sessions, Day 2</p>
     </div>
     <div className="gallery-item">
-      <div className="gallery-placeholder" style={{height:'280px'}}>Photo coming soon</div>
-      <p className="gallery-caption">Delegate registration &amp; welcome coffee</p>
+      <img width="1400" height="933" src={BASE + "/images/dublin/telephone-booth.jpg"} alt="The Temple Bar pub in Dublin's Temple Bar district" loading="lazy" />
+      <p className="gallery-caption">The Temple Bar, first stop on any delegate&rsquo;s evening</p>
     </div>
   </div>
 </div>

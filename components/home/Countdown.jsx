@@ -17,7 +17,7 @@ function remaining() {
 }
 
 export default function Countdown() {
-  const [t, setT] = useState({ d: '—', h: '—', m: '—', s: '—' });
+  const [t, setT] = useState({ d: '00', h: '00', m: '00', s: '00' });
 
   useEffect(() => {
     setT(remaining());

@@ -29,7 +29,7 @@ export default function Speakers() {
         <p className="speaker-spec">Author · Trainer · Integrative Hypnotherapy Innovator</p>
       </div>
       <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Internationally celebrated hypnotherapist, NLP coach and best-selling author of <em>Integrative Hypnosis</em> and <em>Keeping the Brain in Mind</em>. Melissa's work at the Centre for Integrative Hypnosis in New York blends cutting-edge neuroscience with practical therapeutic artistry — reshaping how the field thinks about change."</p>
+        <p className="speaker-bio-text">"Internationally celebrated hypnotherapist, NLP coach and best-selling author of <em>Integrative Hypnosis</em> and <em>Keeping the Brain in Mind</em>. Melissa's work at the Centre for Integrative Hypnosis in New York blends cutting-edge neuroscience with practical therapeutic artistry, reshaping how the field thinks about change."</p>
         <span className="speaker-bio-name">Melissa Tiers</span>
       </div>
     </article>
@@ -42,7 +42,7 @@ export default function Speakers() {
         <p className="speaker-spec">Founder, Mike Mandel Hypnosis Academy · World-Renowned Trainer</p>
       </div>
       <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Eight-time winner of the World's Best Hypnotist award and founder of the Mike Mandel Hypnosis Academy — the gold standard in online hypnosis education with students in over 100 countries. Mike's infectious energy and masterful storytelling have captivated audiences worldwide for over four decades."</p>
+        <p className="speaker-bio-text">"Eight-time winner of the World's Best Hypnotist award and founder of the Mike Mandel Hypnosis Academy, the gold standard in online hypnosis education with students in over 100 countries. Mike's infectious energy and masterful storytelling have captivated audiences worldwide for over four decades."</p>
         <span className="speaker-bio-name">Mike Mandel</span>
       </div>
     </article>
@@ -70,7 +70,7 @@ export default function Speakers() {
         <p className="speaker-spec">Medical Doctor · Clinical Hypnotherapist</p>
       </div>
       <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"A practising medical doctor and accredited clinical hypnotherapist, Dr Clavell-Bate is a passionate advocate for integrating hypnotherapy into mainstream healthcare — backed by rigorous research and first-hand clinical experience."</p>
+        <p className="speaker-bio-text">"A practising medical doctor and accredited clinical hypnotherapist, Dr Clavell-Bate is a passionate advocate for integrating hypnotherapy into mainstream healthcare, backed by rigorous research and first-hand clinical experience."</p>
         <span className="speaker-bio-name">Dr Rebecca Clavell-Bate</span>
       </div>
     </article>

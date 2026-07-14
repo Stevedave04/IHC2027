@@ -9,7 +9,7 @@ export default function HowItWorks() {
     <div className="how-step reveal">
       <div className="how-num" aria-hidden="true">01</div>
       <h3 className="how-title">Choose your ticket</h3>
-      <p className="how-body">Day Pass, 3-Day Pass, or Platinum VIP — all include full CPD accreditation. Flexible payment plans available. Takes two minutes to book.</p>
+      <p className="how-body">Day Pass, 3-Day Pass, or Platinum VIP, all include full CPD accreditation. Flexible payment plans available. Takes two minutes to book.</p>
     </div>
     <div className="how-step reveal">
       <div className="how-num" aria-hidden="true">02</div>

@@ -2,23 +2,16 @@ import Link from 'next/link';
 import './blog.css';
 import NewsletterForm from '../../components/shared/NewsletterForm';
 import { POSTS } from '../../lib/posts';
+import { BASE } from '../../lib/site';
 
 const DESC =
-  'Dublin city guides, day trips, travel tips and Irish culture — why the setting is half the reason to attend the Irish Hypnotherapy Conference 2027.';
+  'Dublin city guides, day trips, travel tips and Irish culture, why the setting is half the reason to attend the Irish Hypnotherapy Conference 2027.';
 
 export const metadata = {
   title: 'Discover Dublin & Ireland',
   description: DESC,
   alternates: { canonical: '/blog' },
   openGraph: { title: 'Discover Dublin & Ireland', description: DESC, url: '/blog' },
-};
-
-const PLACEHOLDER_WORDS = {
-  'delegates-guide-to-dublin': 'Baile Átha Cliath',
-  'day-trips-from-dublin': 'Wicklow',
-  'literary-dublin-for-therapists': 'Ulysses',
-  'getting-to-ihc-2027': 'Fáilte',
-  'why-ireland': 'Craic',
 };
 
 export default function Page() {
@@ -38,8 +31,8 @@ export default function Page() {
       <main id="main">
         <div className="blog-wrap">
           <article className="blog-feature reveal" aria-label="Featured article">
-            <Link href={`/blog/${feature.slug}`} className="blog-img-placeholder blog-img-link" aria-hidden="true" tabIndex={-1} style={{ height: '360px' }}>
-              <span>{PLACEHOLDER_WORDS[feature.slug]}</span>
+            <Link href={`/blog/${feature.slug}`} className="blog-img-link" aria-hidden="true" tabIndex={-1}>
+              <img src={BASE + feature.image.src} alt={feature.image.alt} className="blog-img" style={{ height: '360px' }} loading="eager" />
             </Link>
             <div>
               <div className="blog-eyebrow">
@@ -64,8 +57,8 @@ export default function Page() {
           <div className="blog-grid" role="list">
             {rest.map(post => (
               <article className="blog-card reveal" role="listitem" key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="blog-img-placeholder blog-img-link" aria-hidden="true" tabIndex={-1}>
-                  <span>{PLACEHOLDER_WORDS[post.slug]}</span>
+                <Link href={`/blog/${post.slug}`} className="blog-img-link" aria-hidden="true" tabIndex={-1}>
+                  <img src={BASE + post.image.src} alt={post.image.alt} className="blog-img blog-img-card" loading="lazy" />
                 </Link>
                 <div className="blog-eyebrow" style={{ marginTop: 0 }}>
                   <span className="blog-cat">{post.category}</span>
@@ -85,8 +78,8 @@ export default function Page() {
           <div className="blog-newsletter" role="complementary" aria-label="Newsletter sign-up">
             <span className="blog-newsletter-label">Stay Informed</span>
             <h2>Never miss an update</h2>
-            <p>Conference news, speaker announcements, and early-access offers — straight to your inbox.</p>
-            <NewsletterForm className="newsletter-form" id="blog-email" subject="IHC 2027 — Newsletter signup (blog)" />
+            <p>Conference news, speaker announcements, and early-access offers, straight to your inbox.</p>
+            <NewsletterForm className="newsletter-form" id="blog-email" subject="IHC 2027 - Newsletter signup (blog)" />
           </div>
         </div>
       </main>

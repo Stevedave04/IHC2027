@@ -16,7 +16,7 @@ export const metadata = {
     template: '%s | Irish Hypnotherapy Conference 2027',
   },
   description:
-    "Ireland's premier hypnotherapy conference — three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
+    "Ireland's premier hypnotherapy conference, three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
   icons: {
     icon: [{ url: `${BASE}/favicon-48.png`, sizes: '48x48', type: 'image/png' }],
     apple: [{ url: `${BASE}/apple-touch-icon.png` }],

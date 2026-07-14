@@ -40,7 +40,7 @@ const EVENT_LD = {
   },
   image: [`${BASE}/ihc2026.jpeg`],
   description:
-    "Ireland's premier hypnotherapy conference — three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
+    "Ireland's premier hypnotherapy conference, three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
   offers: [
     { '@type': 'Offer', name: 'Day Pass', price: '175', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/InStock', validFrom: '2026-01-01' },
     { '@type': 'Offer', name: '3-Day Pass', price: '450', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/InStock', validFrom: '2026-01-01' },

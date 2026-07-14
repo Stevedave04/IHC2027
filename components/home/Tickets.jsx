@@ -7,20 +7,20 @@ const TIERS = [
     cls: 'ticket-card reveal', bg: '175', tier: 'Day Pass', name: 'Single Day', price: '175',
     period: 'per day · early bird available',
     features: ['Access to all sessions on chosen day', 'CPD certificate for attended sessions', 'Networking lunch included', 'Conference materials'],
-    cta: ['Book Day Pass', 'tc-secondary', 'Day Pass booking enquiry — €175'],
+    cta: ['Book Day Pass', 'tc-secondary', 'Day Pass booking enquiry - €175'],
   },
   {
     cls: 'ticket-card featured reveal', badge: 'Most Popular', bg: '450', tier: 'Full Conference', name: '3-Day Pass', price: '450',
     period: 'all 3 days · payment plan available',
     features: ['Full 3-day conference access', 'All keynotes and workshops', 'Gala Dinner and Awards Night', 'Full CPD certificate (24+ hours)', 'Session recordings (90 days)', 'Priority seating at keynotes'],
-    cta: ['Secure Your Place', 'tc-primary', '3-Day Pass booking enquiry — €450'],
+    cta: ['Secure Your Place', 'tc-primary', '3-Day Pass booking enquiry - €450'],
     installments: 'Or 3 instalments of €150',
   },
   {
     cls: 'ticket-card reveal', bg: '650', tier: 'VIP Access', name: 'Platinum', price: '650',
     period: 'all 3 days · limited places',
     features: ['Everything in the 3-Day Pass', 'VIP Speaker Meet and Greet', 'Front-row keynote seating', 'Exclusive pre-dinner drinks reception', 'Lifetime session recordings access', 'IHC 2027 premium gift pack'],
-    cta: ['Enquire About VIP', 'tc-secondary', 'VIP Platinum enquiry — €650'],
+    cta: ['Enquire About VIP', 'tc-secondary', 'VIP Platinum enquiry - €650'],
   },
 ];
 
@@ -73,7 +73,7 @@ export default function Tickets() {
             <div className="exhibit-eyebrow">Exhibition Tables</div>
             <div className="exhibit-title">Exhibiting at IHC 2027?</div>
             <p className="exhibit-body">
-              Six exhibition tables are available for the full weekend — one per sector. Position your
+              Six exhibition tables are available for the full weekend, one per sector. Position your
               brand directly in the delegate experience across all three days.
             </p>
             <div className="exhibit-sectors" aria-label="Available sectors">

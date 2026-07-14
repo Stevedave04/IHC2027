@@ -8,7 +8,7 @@ const Mail = () => <a href={`mailto:${EMAIL}`}>{EMAIL}</a>;
 
 const ITEMS = [
   ['Can I attend on a single day only?',
-    <>Yes — a Day Pass (€175) grants full access to your chosen day, including all sessions, lunch, and conference materials. You select which day at the time of booking.</>],
+    <>Yes: a Day Pass (€175) grants full access to your chosen day, including all sessions, lunch, and conference materials. You select which day at the time of booking.</>],
   ['Are group bookings available, and is there a discount?',
     <>Group bookings are welcome. For parties of 5 or more, please contact us directly at <Mail /> to discuss pricing and logistics.</>],
   ['What is the refund and cancellation policy?',
@@ -16,7 +16,7 @@ const ITEMS = [
   ['Will sessions be recorded, and for how long?',
     <>3-Day Pass holders receive 90-day access to session recordings. Platinum VIP ticket holders receive lifetime access. Day Pass holders do not receive recordings.</>],
   ['Is the Gala Dinner included in all ticket types?',
-    <>The Saturday evening Gala Dinner and Awards Ceremony is included in the 3-Day Pass and Platinum VIP ticket. Day Pass holders may purchase a Gala Dinner add-on separately — contact us for availability.</>],
+    <>The Saturday evening Gala Dinner and Awards Ceremony is included in the 3-Day Pass and Platinum VIP ticket. Day Pass holders may purchase a Gala Dinner add-on separately, contact us for availability.</>],
   ['Is the venue fully accessible?',
     <>Yes. Clayton Hotel Liffey Valley is fully accessible with step-free access throughout, accessible restrooms, and designated parking. If you have specific accessibility requirements, please contact us in advance and we will ensure appropriate arrangements are in place.</>],
   ['Are there accommodation deals at the Clayton Hotel?',
@@ -67,7 +67,7 @@ export default function Faq() {
             onChange={e => setQuery(e.target.value)}
           />
           <p className="faq-no-results" hidden={anyMatch}>
-            No questions match — try a different word or <a href="#contact">ask us directly</a>.
+            No questions match, try a different word or <a href="#contact">ask us directly</a>.
           </p>
         </div>
         <div className="faq-grid reveal" role="list">
