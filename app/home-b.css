@@ -18,11 +18,11 @@
   color:var(--gold);margin-bottom:.5rem;
 }
 .exhibit-title{
-  font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;font-style:italic;
+  font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;font-style:italic;
   color:#fff;line-height:1.1;margin-bottom:.75rem;
 }
 .exhibit-body{
-  font-size:.95rem;font-weight:300;color:rgba(255,255,255,.74);
+  font-size:.95rem;font-weight:400;color:rgba(255,255,255,.74);
   line-height:1.65;margin-bottom:1.1rem;
 }
 .exhibit-sectors{
@@ -36,7 +36,7 @@
 }
 .exhibit-right{text-align:right;flex-shrink:0;}
 .exhibit-price{
-  font-size:clamp(3rem,6vw,5rem);font-weight:300;font-style:italic;
+  font-size:clamp(3rem,6vw,5rem);font-weight:400;font-style:italic;
   color:#fff;line-height:.9;letter-spacing:-.03em;
 }
 .exhibit-price sup{
@@ -72,7 +72,7 @@
 }
 .testi-text{
   font-size:clamp(1.5rem,2.8vw,2.4rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   line-height:1.5;letter-spacing:-.01em;
   color:#fff;margin-bottom:2.5rem;
 }
@@ -110,7 +110,7 @@
 .venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
 .venue-hl{
   font-size:clamp(2.5rem,4.5vw,5rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   line-height:1;letter-spacing:-.02em;
   color:var(--text);margin-bottom:1.5rem;
 }
@@ -122,7 +122,7 @@
 }
 .venue-addr svg{flex-shrink:0;margin-top:2px;color:var(--gold)}
 .venue-body{
-  font-size:1.05rem;font-weight:300;
+  font-size:1.05rem;font-weight:400;
   line-height:1.85;color:var(--muted);
   margin-bottom:2.5rem;
 }
@@ -184,7 +184,7 @@
 }
 .cta-hl{
   font-size:clamp(2.5rem,5vw,5rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   line-height:1.1;letter-spacing:-.015em;
   color:#fff;margin-bottom:2.5rem;
 }
@@ -194,7 +194,7 @@
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12);
   padding:.8rem 1.2rem;
-  font-family:var(--f);font-size:.9rem;
+  font-family:var(--f-sans);font-size:.9rem;
   color:#fff;outline:none;
   transition:border-color .2s;
 }
@@ -225,7 +225,7 @@
 .faq-search input{
   width:100%;max-width:460px;
   background:transparent;border:1px solid rgba(255,255,255,.15);
-  padding:.8rem 1.2rem;font-family:var(--f);font-size:1rem;
+  padding:.8rem 1.2rem;font-family:var(--f-sans);font-size:1rem;
   color:#fff;transition:border-color .2s;
 }
 .faq-search input::placeholder{color:rgba(255,255,255,.35);font-style:italic}
@@ -238,7 +238,7 @@
   width:100%;display:flex;align-items:baseline;justify-content:space-between;
   gap:2rem;padding:1.6rem 0;
   background:none;border:none;cursor:pointer;
-  text-align:left;font-family:var(--f);
+  text-align:left;font-family:var(--f-sans);
 }
 .faq-num{
   font-size:.6rem;font-weight:600;letter-spacing:.22em;
@@ -253,7 +253,7 @@
 .faq-icon{
   flex-shrink:0;width:22px;height:22px;
   display:flex;align-items:center;justify-content:center;
-  font-size:1.4rem;font-weight:300;line-height:1;
+  font-size:1.4rem;font-weight:400;line-height:1;
   color:var(--gold);transition:transform .3s var(--ease);
   font-style:normal;
 }
@@ -270,7 +270,7 @@
 }
 .faq-item.open .faq-body-inner{padding-bottom:1.75rem}
 .faq-answer{
-  font-size:1rem;font-weight:300;line-height:1.75;
+  font-size:1rem;font-weight:400;line-height:1.75;
   color:rgba(255,255,255,.68);
   padding-left:2.5rem;
   max-width:65ch;
@@ -299,7 +299,7 @@
   color:#fff;line-height:1.1;margin-bottom:.75rem;
 }
 .accom-card p{
-  font-size:.95rem;font-weight:300;
+  font-size:.95rem;font-weight:400;
   color:rgba(255,255,255,.68);line-height:1.7;margin-bottom:1rem;
 }
 .accom-detail{
@@ -310,7 +310,7 @@
   list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;
 }
 .accom-list li{
-  font-size:.9rem;font-weight:300;color:rgba(255,255,255,.68);
+  font-size:.9rem;font-weight:400;color:rgba(255,255,255,.68);
   padding-left:1.2rem;position:relative;line-height:1.5;
 }
 .accom-list li::before{
@@ -351,7 +351,7 @@
 .gallery-feature img{aspect-ratio:16 / 6}
 .gallery-frame:hover img{filter:none;transform:scale(1.03)}
 .gallery-caption{
-  font-size:.68rem;font-weight:300;font-style:italic;
+  font-size:.68rem;font-weight:400;font-style:italic;
   color:var(--muted);margin-top:.55rem;line-height:1.4;
 }
 @media(max-width:640px){
@@ -368,7 +368,7 @@
 }
 .contact-hl{
   font-size:clamp(2.2rem,5vw,4.5rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   color:#fff;line-height:.95;letter-spacing:-.02em;
   margin-bottom:2.5rem;
 }
@@ -383,7 +383,7 @@
   color:var(--gold);margin-bottom:.2rem;display:block;
 }
 .contact-route a{
-  font-size:1rem;font-weight:300;color:rgba(255,255,255,.65);
+  font-size:1rem;font-weight:400;color:rgba(255,255,255,.65);
   border-bottom:1px solid rgba(196,154,40,.2);
   transition:color .2s,border-color .2s;
 }
@@ -396,7 +396,7 @@
   color:rgba(255,255,255,.35);
 }
 .contact-input{
-  font-family:var(--f);font-size:1rem;font-weight:300;
+  font-family:var(--f-sans);font-size:1rem;font-weight:400;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.1);
   color:#fff;
@@ -409,7 +409,7 @@
 .contact-input::placeholder{color:rgba(255,255,255,.2)}
 textarea.contact-input{resize:vertical;min-height:120px}
 .contact-success{
-  font-size:1rem;font-style:italic;font-weight:300;
+  font-size:1rem;font-style:italic;font-weight:400;
   color:var(--gold);padding:1rem 0;display:none;
 }
 

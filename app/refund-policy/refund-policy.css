@@ -22,7 +22,7 @@
 }
 .page-title{
   font-size:clamp(2.6rem,6vw,6rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   color:#fff;line-height:.95;letter-spacing:-.02em;
   opacity:0;animation:fade-up .8s var(--ease) .2s forwards;
 }
@@ -43,7 +43,7 @@
 /* ── Intro ────────────────────────────────────── */
 .rp-intro{
   font-size:clamp(1.15rem,2vw,1.45rem);
-  font-weight:300;line-height:1.65;
+  font-weight:400;line-height:1.65;
   color:var(--muted);
   margin-bottom:4rem;
   padding-bottom:3rem;
@@ -72,7 +72,7 @@
   margin-bottom:1.5rem;
 }
 .rp-section p{
-  font-size:1.05rem;font-weight:300;
+  font-size:1.05rem;font-weight:400;
   color:var(--muted);line-height:1.75;
   margin-bottom:1rem;
 }
@@ -106,7 +106,7 @@
 }
 .rp-timeline-detail{
   padding:1rem 1.25rem;
-  font-size:.95rem;font-weight:300;
+  font-size:.95rem;font-weight:400;
   color:var(--text);line-height:1.5;
   display:flex;align-items:center;
 }
@@ -118,7 +118,7 @@
   display:flex;flex-direction:column;gap:.6rem;
 }
 .rp-list li{
-  font-size:1.05rem;font-weight:300;
+  font-size:1.05rem;font-weight:400;
   color:var(--text);line-height:1.65;
   padding-left:1.5rem;
   position:relative;
@@ -146,7 +146,7 @@
 }
 .rp-contact h2{
   font-size:clamp(1.6rem,3vw,2.2rem);
-  font-weight:300;font-style:italic;color:#fff;
+  font-weight:400;font-style:italic;color:#fff;
   margin-bottom:1.5rem;line-height:1.1;
 }
 .rp-contact-detail{
@@ -154,7 +154,7 @@
   margin-bottom:1.5rem;
 }
 .rp-contact-detail p{
-  font-size:.95rem;font-weight:300;
+  font-size:.95rem;font-weight:400;
   color:rgba(255,255,255,.74);line-height:1.6;
 }
 .rp-contact-email{
@@ -172,7 +172,7 @@
   margin-top:1rem;
 }
 .rp-contact-list li{
-  font-size:.95rem;font-weight:300;
+  font-size:.95rem;font-weight:400;
   color:rgba(255,255,255,.68);line-height:1.6;
   padding-left:1.25rem;position:relative;
 }
@@ -183,7 +183,7 @@
 .rp-note{
   margin-top:1.5rem;padding-top:1.5rem;
   border-top:1px solid rgba(196,154,40,.15);
-  font-size:.85rem;font-style:italic;font-weight:300;
+  font-size:.85rem;font-style:italic;font-weight:400;
   color:rgba(255,255,255,.35);line-height:1.6;
 }
 

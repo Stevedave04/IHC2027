@@ -7,7 +7,7 @@ import ScrollTop from '../components/shared/ScrollTop';
 import { BASE, SITE_URL } from '../lib/site';
 
 const FONT_URL =
-  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap';
+  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL + '/'),

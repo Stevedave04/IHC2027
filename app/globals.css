@@ -2,7 +2,9 @@
 
 /* ── Tokens ───────────────────────────────────── */
 :root {
+  /* --f = display serif (large headlines only); --f-sans = everything you read */
   --f: 'Cormorant Garamond', Georgia, serif;
+  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --emerald:   #091910;
   --emerald-2: #112218;
@@ -30,16 +32,22 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{
-  font-family:var(--f);
+  font-family:var(--f-sans);
   background:var(--parchment);
   color:var(--text);
   overflow-x:hidden;
-  line-height:1.65;
+  line-height:1.6;
+  font-size:1.02rem;
+  letter-spacing:-0.003em;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-button{font-family:var(--f);border:none;background:none}
+button,input,textarea,select{font-family:var(--f-sans);border:none;background:none}
+
+/* Display serif reserved for large headlines; everything else is the sans */
+h1,h2,.hero-title,.page-title,.ticket-name,.testi-quote-mark{font-family:var(--f)}
 
 /* ── Grain overlay ────────────────────────────── */
 body::after{
@@ -132,10 +140,10 @@ footer{
 .footer-logo img{width:36px;height:36px;object-fit:contain}
 .footer-logo-name{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.4}
 .footer-logo-name span{display:block;font-size:.6rem;color:rgba(255,255,255,.3);letter-spacing:.18em}
-.footer-desc{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.75;max-width:28ch}
+.footer-desc{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.38);line-height:1.75;max-width:28ch}
 .footer-col-title{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.4);transition:color .2s}
+.footer-links a{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4);transition:color .2s}
 .footer-links a:hover{color:rgba(255,255,255,.8)}
 .footer-bottom{
   display:flex;align-items:center;justify-content:space-between;
@@ -286,20 +294,19 @@ html.js .wipe{opacity:0}
   html.js .reveal,html.js .wipe{opacity:1}
 }
 
-/* ── Readable body face ────────────────────────── */
-/* Cormorant Garamond is a display face; EB Garamond is its text-optimised
-   sibling. Headings/decorative text keep var(--f); reading copy uses this. */
-:root{--f-body:'EB Garamond',Georgia,serif}
-p,li,dd,td,input,textarea,select,figcaption,blockquote{
-  font-family:var(--f-body);
+/* ── Type system ───────────────────────────────── */
+/* Body, navigation, labels, buttons, forms and all reading copy use the sans
+   (inherited from body). Only large headlines and short decorative pull quotes
+   use the Cormorant display serif. */
+.hero-eyebrow,.page-eyebrow,.eyebrow,.cd-label,.nav-links a,.nav-logo-name,
+.footer-col-title,.footer-links a,.footer-policies a,.ticket-tier,
+.blog-cat,.contact-route-label,.exhibit-eyebrow,.sched-type{
+  font-family:var(--f-sans);
 }
-/* decorative small-caps strips rendered as <p> stay in the display face */
-.hero-eyebrow,.hero-year,.page-eyebrow,.cd-label,.ticket-period,
-.ticket-installments,.exhibit-price-note,.contact-route-label{
-  font-family:var(--f);
-}
-/* testimonials + article pull quotes keep the italic display voice */
-.testi-text{font-family:var(--f)}
+/* Short, large pull quotes keep the elegant italic serif as a deliberate accent */
+.testi-text,.hero-year{font-family:var(--f)}
+/* Uppercase micro-labels read better with a hair less tracking in the sans */
+.eyebrow,.page-eyebrow,.hero-eyebrow{letter-spacing:.2em}
 
 /* ── Scroll-to-top ────────────────────────────── */
 .scroll-top{

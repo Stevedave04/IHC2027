@@ -3,9 +3,9 @@
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;position:relative}
 .how-grid::before{content:'';position:absolute;top:2rem;left:calc(33.33% + 1.25rem);right:calc(33.33% + 1.25rem);height:1px;background:var(--gold-rule);pointer-events:none}
 .how-step{padding:2rem 0}
-.how-num{font-size:3.5rem;font-weight:300;font-style:italic;color:var(--gold-rule);line-height:1;margin-bottom:1rem;letter-spacing:-.03em}
+.how-num{font-size:3.5rem;font-weight:400;font-style:italic;color:var(--gold-rule);line-height:1;margin-bottom:1rem;letter-spacing:-.03em}
 .how-title{font-size:1.25rem;font-weight:600;color:var(--emerald);margin-bottom:.75rem;line-height:1.2}
-.how-body{font-size:.95rem;font-weight:300;color:var(--muted);line-height:1.75}
+.how-body{font-size:.95rem;font-weight:400;color:var(--muted);line-height:1.75}
 @media(max-width:768px){
   .how-grid{grid-template-columns:1fr;gap:0}
   .how-grid::before{display:none}
@@ -63,7 +63,7 @@
 .hero-title{
   position:relative;z-index:1;
   font-size:clamp(3.6rem,9.5vw,10rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   line-height:.92;letter-spacing:-.015em;
   color:#fff;
   margin-bottom:.75rem;
@@ -73,7 +73,7 @@
 .hero-year{
   position:relative;z-index:1;
   font-size:clamp(1.2rem,2.5vw,2rem);
-  font-weight:300;letter-spacing:.3em;
+  font-weight:400;letter-spacing:.3em;
   color:var(--gold);text-transform:uppercase;
   margin-bottom:2.5rem;
   
@@ -127,7 +127,7 @@
 .cd-unit{text-align:center}
 .cd-num{
   font-size:clamp(2.2rem,5vw,4rem);
-  font-weight:300;color:#fff;
+  font-weight:400;color:#fff;
   line-height:1;font-variant-numeric:tabular-nums;
   font-feature-settings:"kern"1,"liga"1;
 }
@@ -138,7 +138,7 @@
 }
 .cd-sep{
   font-size:clamp(2rem,4vw,3.5rem);
-  font-weight:300;color:var(--gold-rule);
+  font-weight:400;color:var(--gold-rule);
   line-height:1;align-self:flex-start;margin-top:.1em;
 }
 
@@ -201,7 +201,7 @@
 .number-item:last-child{border-right:none}
 .number-fig{
   font-size:clamp(5rem,7vw,8.5rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   color:var(--emerald);line-height:.9;
   letter-spacing:-.02em;
   display:block;margin-bottom:.75rem;
@@ -254,7 +254,7 @@
   color:#fff;margin-bottom:2rem;
 }
 .about-body{
-  font-size:1.15rem;font-weight:300;
+  font-size:1.15rem;font-weight:400;
   line-height:1.85;color:rgba(255,255,255,.62);
   margin-bottom:1.5rem;
 }
@@ -271,7 +271,7 @@
   font-style:normal;
 }
 .pillar-text strong{display:block;font-size:1rem;font-weight:500;color:#fff;margin-bottom:.2rem}
-.pillar-text p{font-size:.9rem;color:rgba(255,255,255,.68);line-height:1.6;font-weight:300}
+.pillar-text p{font-size:.9rem;color:rgba(255,255,255,.68);line-height:1.6;font-weight:400}
 
 /* ── Speakers ─────────────────────────────────── */
 .speakers-header{
@@ -280,7 +280,7 @@
 }
 .speakers-hl{
   font-size:clamp(3rem,6vw,7rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   line-height:.95;letter-spacing:-.02em;
   color:var(--text);
 }
@@ -346,7 +346,7 @@
 .sp-featured .speaker-name{font-size:clamp(2rem,4vw,3.2rem)}
 .speaker-spec{
   font-size:.8rem;color:var(--muted);
-  font-weight:300;line-height:1.5;
+  font-weight:400;line-height:1.5;
 }
 .speaker-bio-reveal{
   position:absolute;inset:0;
@@ -360,7 +360,7 @@
 .speaker-card:focus-visible .speaker-bio-reveal,
 .speaker-card:focus-within .speaker-bio-reveal{opacity:1;pointer-events:auto}
 .speaker-bio-text{
-  font-size:.95rem;font-weight:300;font-style:italic;
+  font-size:.95rem;font-weight:400;font-style:italic;
   line-height:1.7;color:rgba(255,255,255,.7);
   margin-bottom:1rem;
 }
@@ -381,7 +381,7 @@
 .speaker-more:hover{border-color:var(--gold)}
 .speaker-more-num{
   font-size:clamp(3rem,5vw,5rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   color:var(--gold);line-height:1;
 }
 .speaker-more-label{
@@ -429,7 +429,7 @@
 }
 .sched-speaker{
   font-size:.82rem;color:rgba(255,255,255,.62);
-  margin-top:.25rem;font-weight:300;
+  margin-top:.25rem;font-weight:400;
 }
 .sched-type{
   font-size:.6rem;font-weight:600;
@@ -486,7 +486,7 @@
 .ticket-sep{width:32px;height:1px;background:var(--gold-rule);margin:1.5rem 0}
 .ticket-price{
   font-size:clamp(3.5rem,5.5vw,5.5rem);
-  font-weight:300;font-style:italic;
+  font-weight:400;font-style:italic;
   line-height:.9;letter-spacing:-.02em;
   color:var(--text);margin-bottom:.4rem;
 }
@@ -501,7 +501,7 @@
 .ticket-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.5rem}
 .ticket-feature{
   display:flex;align-items:flex-start;gap:.75rem;
-  font-size:.92rem;font-weight:300;color:var(--muted);line-height:1.5;
+  font-size:.92rem;font-weight:400;color:var(--muted);line-height:1.5;
 }
 .ticket-card.featured .ticket-feature{color:rgba(255,255,255,.74)}
 .tf-check{
