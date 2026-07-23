@@ -1,0 +1,73 @@
+/* ── Page header ──────────────────────────────── */
+.page-header{
+  background:var(--emerald);
+  padding:10rem 3rem 5rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.page-header-ghost{
+  position:absolute;
+  font-size:clamp(8rem,18vw,18rem);
+  font-weight:700;font-style:italic;
+  color:rgba(255,255,255,.018);
+  letter-spacing:-.04em;line-height:.85;
+  user-select:none;pointer-events:none;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  white-space:nowrap;
+}
+.page-eyebrow{
+  font-size:.65rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.25rem;
+  opacity:0;animation:fade-up .7s var(--ease) .1s forwards;
+}
+.page-title{
+  font-size:clamp(3rem,7vw,6.5rem);
+  font-weight:400;font-style:italic;
+  color:#fff;line-height:.95;letter-spacing:-.02em;
+  opacity:0;animation:fade-up .8s var(--ease) .2s forwards;
+}
+.page-rule{
+  width:1px;height:48px;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+  margin:2.5rem auto 0;
+  opacity:0;animation:fade-up .7s var(--ease) .35s forwards;
+}
+
+/* ── Apply layout ─────────────────────────────── */
+.apply-wrap{
+  max-width:820px;
+  margin:0 auto;
+  padding:5rem 1.75rem 6rem;
+}
+.apply-intro{
+  font-size:1.15rem;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:60ch;
+  margin:0 auto 1.5rem;
+  text-align:center;
+}
+.apply-points{
+  list-style:none;
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:.6rem 1rem;
+  margin:0 auto 3.5rem;
+}
+.apply-points li{
+  font-size:.72rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);
+  border:1px solid var(--gold-rule);
+  padding:.4rem .9rem;
+}
+.apply-form{
+  border-top:1px solid var(--gold-rule);
+  padding-top:2.5rem;
+}
+
+@media(max-width:600px){
+  .page-header{padding:8rem 1.75rem 4rem}
+  .apply-wrap{padding:3.5rem 1.4rem 4.5rem}
+  .apply-intro{font-size:1.05rem}
+}

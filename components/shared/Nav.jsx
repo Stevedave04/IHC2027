@@ -13,6 +13,7 @@ const PRIMARY = [
 ];
 
 const SECONDARY = [
+  ['/apply-to-speak', 'Apply to Speak'],
   ['/workshops', 'Workshops'],
   ['/sponsorship', 'Sponsorship'],
   ['/#awards', 'Awards'],

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Countdown from './Countdown';
 import HeroIntro from './HeroIntro';
 import { BASE } from '../../lib/site';
@@ -29,7 +30,7 @@ export default function Hero() {
 
       <div className="hero-actions">
         <a href="#tickets" className="btn-gold">Secure Your Place</a>
-        <a href="#speakers" className="btn-outline">View Speakers</a>
+        <Link href="/apply-to-speak" className="btn-outline">Apply to Speak</Link>
       </div>
 
       <Countdown />
