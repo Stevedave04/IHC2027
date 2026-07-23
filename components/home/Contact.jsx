@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import NewsletterForm from '../shared/NewsletterForm';
 
@@ -69,7 +70,7 @@ export default function Contact() {
               </div>
               <div className="contact-route">
                 <span className="contact-route-label">Speaker Submissions</span>
-                <a href={`mailto:${EMAIL}?subject=Speaker%20Submission`}>{EMAIL}</a>
+                <Link href="/apply-to-speak">Apply to speak online</Link>
               </div>
             </div>
             <div className="cta-inner" style={{ textAlign: 'left', alignItems: 'flex-start', padding: 0 }}>
