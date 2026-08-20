@@ -6,6 +6,7 @@ import Marquee from '../components/home/Marquee';
 import Numbers from '../components/home/Numbers';
 import About from '../components/home/About';
 import Speakers from '../components/home/Speakers';
+import FirstTimeSpeakers from '../components/home/FirstTimeSpeakers';
 import HowItWorks from '../components/home/HowItWorks';
 import Schedule from '../components/home/Schedule';
 import Tickets from '../components/home/Tickets';
@@ -60,6 +61,7 @@ export default function Home() {
       <Numbers />
       <About />
       <Speakers />
+      <FirstTimeSpeakers />
       <HowItWorks />
       <Schedule />
       <Tickets />

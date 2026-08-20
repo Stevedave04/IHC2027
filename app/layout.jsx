@@ -1,5 +1,4 @@
 import './globals.css';
-import Cursor from '../components/shared/Cursor';
 import Nav from '../components/shared/Nav';
 import Footer from '../components/shared/Footer';
 import RevealManager from '../components/shared/RevealManager';
@@ -44,7 +43,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
-        <Cursor />
         <Nav />
         {children}
         <Footer />
