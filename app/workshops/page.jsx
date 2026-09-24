@@ -61,7 +61,7 @@ export default function Page() {
     <span className="coc-section-num">02</span>
     <h2>Morning Intensives</h2>
     <p className="section-meta">Sunday 18 April · 09:30–11:00</p>
-    <p>Two in-depth morning sessions run in parallel on Sunday, providing extended time to explore specialist topics with a smaller group. Places are limited, included in all 3-Day and Platinum VIP passes.</p>
+    <p>Two in-depth morning sessions run in parallel on Sunday, providing extended time to explore specialist topics with a smaller group. Places are limited and included in every conference ticket.</p>
     <div className="intensive-grid" role="list">
 
       <div className="intensive-card" role="listitem">
@@ -89,13 +89,13 @@ export default function Page() {
       <li><strong>Track A (Clinical Practice)</strong>: best suited to those seeking new client-facing techniques and clinical frameworks</li>
       <li><strong>Track B (Research &amp; Evidence)</strong>: ideal for practitioners wishing to deepen their academic literacy or engage with referral networks</li>
       <li><strong>Track C (Business &amp; Growth)</strong>: recommended for those building, scaling, or repositioning their practice</li>
-      <li>The Sunday Intensives are open to all 3-Day Pass and Platinum VIP holders, no separate booking required</li>
+      <li>The Sunday Intensives are open to every ticket holder, no separate booking required</li>
     </ul>
   </article>
 
   <div className="coc-commitment" role="complementary" aria-label="Workshops included in all passes">
     <span className="coc-commitment-label">Included in Your Pass</span>
-    <p>All parallel workshop tracks are included with 3-Day and Platinum VIP passes. Day Pass holders may attend workshops on their registered day subject to capacity.</p>
+    <p>All parallel workshop tracks are included in every conference ticket, subject to room capacity.</p>
     <a href="/#tickets" className="btn-gold">View Ticket Options</a>
   </div>
 

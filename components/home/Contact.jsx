@@ -76,7 +76,7 @@ export default function Contact() {
             <div className="cta-inner" style={{ textAlign: 'left', alignItems: 'flex-start', padding: 0 }}>
               <span className="cta-label" style={{ marginBottom: '.5rem' }}>Not ready to book yet?</span>
               <p style={{ fontSize: '.9rem', fontWeight: 300, color: 'rgba(255,255,255,.55)', marginBottom: '1.25rem', maxWidth: '38ch', lineHeight: 1.6 }}>
-                Get speaker announcements, early-bird alerts, and programme updates straight to your
+                Get speaker announcements, ticket news and programme updates straight to your
                 inbox, so you do not miss the window.
               </p>
               <NewsletterForm id="cta-email" label="Keep Me Updated" style={{ maxWidth: '420px' }} />

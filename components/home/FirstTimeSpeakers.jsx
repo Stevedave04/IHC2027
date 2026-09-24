@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { SPEAKER_COUNT, ATTENDEE_COUNT } from '../../lib/event';
 
 const STATS = [
-  { fig: '40', label: 'Speakers on the 2027 bill' },
+  { fig: SPEAKER_COUNT, label: 'Speakers on the 2027 bill' },
   { fig: '3', label: 'Days of sessions' },
-  { fig: '200+', label: 'Attendees planned' },
+  { fig: ATTENDEE_COUNT, label: 'Attendees planned' },
 ];
 
 export default function FirstTimeSpeakers() {
@@ -23,7 +24,7 @@ export default function FirstTimeSpeakers() {
               you know.
             </p>
             <p className="fts-body">
-              This year that room is bigger than ever: 40 speakers across three days, in front of
+              This year that room is bigger than ever: {SPEAKER_COUNT} speakers across three days, in front of
               more than 200 practitioners who came to listen, learn and cheer you on.
             </p>
             <Link href="/apply-to-speak" className="fts-cta">Apply to Speak</Link>

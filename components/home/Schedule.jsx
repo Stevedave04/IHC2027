@@ -66,6 +66,10 @@ export default function Schedule() {
         >
           Three days, one<br />extraordinary journey
         </h2>
+        <p className="sched-provisional reveal">
+          <span>Provisional programme</span> The 2027 schedule is being finalised. Sessions and times
+          below are indicative and will be confirmed as speakers are announced.
+        </p>
 
         <div className="schedule-tabs reveal" role="tablist" aria-label="Conference days">
           {DAYS.map((day, i) => (

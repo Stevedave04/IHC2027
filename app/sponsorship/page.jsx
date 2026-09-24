@@ -102,7 +102,7 @@ export default function Page() {
           <li className="tier-feature">Logo in the digital delegate programme</li>
           <li className="tier-feature">Social media mention (1 post per platform)</li>
           <li className="tier-feature">Name listing on IHC 2027 website</li>
-          <li className="tier-feature">1 complimentary Day Pass ticket</li>
+          <li className="tier-feature">1 complimentary conference ticket</li>
         </ul>
         <a href="mailto:john@irishhypnotherapyconference.ie?subject=Bronze%20Sponsorship%20Enquiry" className="tier-cta">Enquire</a>
       </div>
@@ -117,7 +117,7 @@ export default function Page() {
           <li className="tier-feature">Banner in the conference venue</li>
           <li className="tier-feature">Sponsored session listing in programme</li>
           <li className="tier-feature">Logo on conference signage</li>
-          <li className="tier-feature">2 complimentary 3-Day Pass tickets</li>
+          <li className="tier-feature">2 complimentary conference tickets</li>
         </ul>
         <a href="mailto:john@irishhypnotherapyconference.ie?subject=Silver%20Sponsorship%20Enquiry" className="tier-cta">Enquire</a>
       </div>
@@ -134,7 +134,7 @@ export default function Page() {
           <li className="tier-feature">Speaker introduction slot</li>
           <li className="tier-feature">Logo on all email communications</li>
           <li className="tier-feature">Dedicated social post series (3 posts)</li>
-          <li className="tier-feature">4 complimentary 3-Day Pass tickets</li>
+          <li className="tier-feature">4 complimentary conference tickets</li>
         </ul>
         <a href="mailto:john@irishhypnotherapyconference.ie?subject=Gold%20Sponsorship%20Enquiry" className="tier-cta">Enquire</a>
       </div>
@@ -151,7 +151,7 @@ export default function Page() {
           <li className="tier-feature">Dedicated email to all 200+ delegates</li>
           <li className="tier-feature">Premium venue signage and backdrop</li>
           <li className="tier-feature">VIP Gala Dinner table (6 seats)</li>
-          <li className="tier-feature">6 complimentary Platinum VIP tickets</li>
+          <li className="tier-feature">6 complimentary conference tickets</li>
           <li className="tier-feature">Speaker meet &amp; greet access</li>
         </ul>
         <a href="mailto:john@irishhypnotherapyconference.ie?subject=Platinum%20Sponsorship%20Enquiry" className="tier-cta">Enquire</a>

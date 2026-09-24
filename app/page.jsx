@@ -43,9 +43,7 @@ const EVENT_LD = {
   description:
     "Ireland's premier hypnotherapy conference, three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
   offers: [
-    { '@type': 'Offer', name: 'Day Pass', price: '175', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/InStock', validFrom: '2026-01-01' },
-    { '@type': 'Offer', name: '3-Day Pass', price: '450', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/InStock', validFrom: '2026-01-01' },
-    { '@type': 'Offer', name: 'VIP Platinum', price: '650', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/LimitedAvailability', validFrom: '2026-01-01' },
+    { '@type': 'Offer', name: 'Full Conference Pass', price: '450', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/InStock', validFrom: '2026-01-01' },
   ],
   performer: ['Melissa Tiers', 'Mike Mandel', 'Karl Smith', 'Sheila Granger', 'Scott Sandland', 'Sean Michael Andrews', 'Rob De Groof']
     .map(name => ({ '@type': 'Person', name })),

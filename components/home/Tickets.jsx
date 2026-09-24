@@ -1,27 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { TICKET_PRICE } from '../../lib/event';
 
-const TIERS = [
-  {
-    cls: 'ticket-card reveal', bg: '175', tier: 'Day Pass', name: 'Single Day', price: '175',
-    period: 'per day · early bird available',
-    features: ['Access to all sessions on chosen day', 'CPD certificate for attended sessions', 'Networking lunch included', 'Conference materials'],
-    cta: ['Book Day Pass', 'tc-secondary', 'Day Pass booking enquiry - €175'],
-  },
-  {
-    cls: 'ticket-card featured reveal', badge: 'Most Popular', bg: '450', tier: 'Full Conference', name: '3-Day Pass', price: '450',
-    period: 'all 3 days · payment plan available',
-    features: ['Full 3-day conference access', 'All keynotes and workshops', 'Gala Dinner and Awards Night', 'Full CPD certificate (24+ hours)', 'Session recordings (90 days)', 'Priority seating at keynotes'],
-    cta: ['Secure Your Place', 'tc-primary', '3-Day Pass booking enquiry - €450'],
-    installments: 'Or 3 instalments of €150',
-  },
-  {
-    cls: 'ticket-card reveal', bg: '650', tier: 'VIP Access', name: 'Platinum', price: '650',
-    period: 'all 3 days · limited places',
-    features: ['Everything in the 3-Day Pass', 'VIP Speaker Meet and Greet', 'Front-row keynote seating', 'Exclusive pre-dinner drinks reception', 'Lifetime session recordings access', 'IHC 2027 premium gift pack'],
-    cta: ['Enquire About VIP', 'tc-secondary', 'VIP Platinum enquiry - €650'],
-  },
+const INCLUDED = [
+  'Full access to all three days',
+  'Every keynote, workshop and panel',
+  'Sunday intensive sessions',
+  'Gala Dinner and Awards Night',
+  'Full CPD certificate (24+ hours)',
+  'Session recordings for 90 days',
+  'Lunch and refreshments each day',
+  'Conference materials',
 ];
 
 export default function Tickets() {
@@ -34,38 +24,41 @@ export default function Tickets() {
     <section className="light-section" id="tickets" aria-labelledby="tickets-hl">
       <div className="section-wrap">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <div className="eyebrow reveal" style={{ justifyContent: 'center' }}>Tickets and Pricing</div>
+          <div className="eyebrow reveal" style={{ justifyContent: 'center' }}>Tickets</div>
           <h2 className="reveal" id="tickets-hl" style={{ fontSize: 'clamp(2.5rem,5vw,5.5rem)', fontWeight: 300, fontStyle: 'italic', lineHeight: 1, letterSpacing: '-.02em', color: 'var(--text)' }}>
-            Choose your experience
+            One ticket.<br /><strong style={{ fontWeight: 700, fontStyle: 'normal' }}>Everything included.</strong>
           </h2>
-          <p className="reveal" style={{ fontSize: '1rem', color: 'var(--muted)', marginTop: '1rem', fontWeight: 300 }}>
-            All tickets include full CPD accreditation. Flexible payment plans available.
+          <p className="reveal" style={{ fontSize: '1rem', color: 'var(--muted)', marginTop: '1rem' }}>
+            A single price for every delegate, with full CPD accreditation.
           </p>
         </div>
 
-        <div className="tickets-grid">
-          {TIERS.map(t => (
-            <div className={t.cls} key={t.name}>
-              {t.badge && <div className="ticket-badge">{t.badge}</div>}
-              <div className="ticket-bg-price" aria-hidden="true">{t.bg}</div>
-              <div className="ticket-tier">{t.tier}</div>
-              <h3 className="ticket-name">{t.name}</h3>
-              <div className="ticket-sep"></div>
-              <div className="ticket-price"><sup>€</sup>{t.price}</div>
-              <p className="ticket-period">{t.period}</p>
-              <ul className="ticket-features">
-                {t.features.map(f => (
-                  <li className="ticket-feature" key={f}>
-                    <span className="tf-check" aria-hidden="true">✓</span>{f}
-                  </li>
-                ))}
-              </ul>
-              <a href="#contact" className={`ticket-cta ${t.cta[1]}`} onClick={() => prefill(t.cta[2])}>
-                {t.cta[0]}
-              </a>
-              {t.installments && <p className="ticket-installments">{t.installments}</p>}
-            </div>
-          ))}
+        <div className="ticket-single reveal">
+          <div className="ticket-card featured ticket-single-price">
+            <div className="ticket-bg-price" aria-hidden="true">{TICKET_PRICE}</div>
+            <div className="ticket-tier">Full Conference Pass</div>
+            <h3 className="ticket-name">16–18 April 2027</h3>
+            <div className="ticket-sep"></div>
+            <div className="ticket-price"><sup>€</sup>{TICKET_PRICE}</div>
+            <p className="ticket-period">per delegate · all three days</p>
+            <a
+              href="#contact"
+              className="ticket-cta tc-primary"
+              onClick={() => prefill(`Conference ticket booking enquiry - €${TICKET_PRICE}`)}
+            >
+              Secure Your Place
+            </a>
+          </div>
+          <div className="ticket-single-features">
+            <div className="ticket-single-label">What&rsquo;s included</div>
+            <ul className="ticket-features">
+              {INCLUDED.map(f => (
+                <li className="ticket-feature" key={f}>
+                  <span className="tf-check" aria-hidden="true">✓</span>{f}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="exhibit-band reveal" role="region" aria-label="Exhibition table availability">

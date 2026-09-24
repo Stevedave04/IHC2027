@@ -3,6 +3,7 @@ import Nav from '../components/shared/Nav';
 import Footer from '../components/shared/Footer';
 import RevealManager from '../components/shared/RevealManager';
 import ScrollTop from '../components/shared/ScrollTop';
+import MobileTicketBar from '../components/shared/MobileTicketBar';
 import { BASE, SITE_URL } from '../lib/site';
 
 const FONT_URL =
@@ -30,8 +31,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-GB" className="js">
+    <html lang="en-GB" suppressHydrationWarning>
       <head>
+        {/* Mark JS as available before first paint so reveal animations only hide
+            content when a script can bring it back; without JS everything stays visible. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <meta
           httpEquiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-src https://form.jotform.com https://*.jotform.com; form-action 'self'; object-src 'none'; base-uri 'self'"
@@ -47,6 +51,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <ScrollTop />
+        <MobileTicketBar />
         <RevealManager />
       </body>
     </html>

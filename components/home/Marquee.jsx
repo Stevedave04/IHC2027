@@ -2,10 +2,11 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap, prefersReducedMotion } from '../../lib/gsap';
+import { SPEAKER_COUNT } from '../../lib/event';
 
 const ITEMS = [
   'Empowering Connections', 'Advancing Expertise', 'Embracing Clarity',
-  '16–18 April 2027', 'Dublin, Ireland', '50+ World-Class Speakers',
+  '16–18 April 2027', 'Dublin, Ireland', `${SPEAKER_COUNT} World-Class Speakers`,
 ];
 
 /** GSAP seamless marquee loop, 60px/s desktop, 30px/s mobile, pauses on hover. */

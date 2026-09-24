@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="footer-logo">
               <img width="160" height="150" src={BASE + "/logo.png"} alt="IHC" />
               <div className="footer-logo-name">
-                Irish Hypnotherapy Conference<span>Est. 2013 · Dublin</span>
+                Irish Hypnotherapy Conference<span>Dublin · 16–18 April 2027</span>
               </div>
             </div>
             <p className="footer-desc">
@@ -31,11 +31,11 @@ export default function Footer() {
           <div>
             <h3 className="footer-col-title">Tickets</h3>
             <ul className="footer-links">
-              <li><Link href="/#tickets">Day Pass</Link></li>
-              <li><Link href="/#tickets">3-Day Pass</Link></li>
-              <li><Link href="/#tickets">Platinum VIP</Link></li>
-              <li><Link href="/#tickets">Gala Dinner</Link></li>
-              <li><Link href="/#tickets">Group Bookings</Link></li>
+              <li><Link href="/#tickets">Conference Pass</Link></li>
+              <li><Link href="/#tickets">What&rsquo;s Included</Link></li>
+              <li><Link href="/#faq">Group Bookings</Link></li>
+              <li><Link href="/refund-policy">Refunds</Link></li>
+              <li><Link href="/apply-to-speak">Apply to Speak</Link></li>
             </ul>
           </div>
           <div>

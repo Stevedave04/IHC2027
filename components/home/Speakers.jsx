@@ -131,9 +131,9 @@ export default function Speakers() {
       </div>
     </article>
 
-    <div className="speaker-more reveal" aria-label="42 more speakers to be announced">
-      <div className="speaker-more-num">42+</div>
-      <div className="speaker-more-label">More speakers<br/>to be announced</div>
+    <div className="speaker-more reveal" aria-label="40 plus speakers on the 2027 programme, more announced soon">
+      <div className="speaker-more-num">40+</div>
+      <div className="speaker-more-label">Speakers in 2027<br/>more announced soon</div>
       <a href="#tickets" style={{fontSize:'.72rem',letterSpacing:'.14em',textTransform:'uppercase',color:'var(--gold)',fontWeight:'600',marginTop:'.5rem',borderBottom:'1px solid var(--gold-rule)',paddingBottom:'.2rem'}}>Register for updates</a>
     </div>
   </div>

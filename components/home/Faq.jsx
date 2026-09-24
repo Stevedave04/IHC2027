@@ -7,33 +7,33 @@ const EMAIL = 'john@irishhypnotherapyconference.ie';
 const Mail = () => <a href={`mailto:${EMAIL}`}>{EMAIL}</a>;
 
 const ITEMS = [
-  ['Can I attend on a single day only?',
-    <>Yes: a Day Pass (€175) grants full access to your chosen day, including all sessions, lunch, and conference materials. You select which day at the time of booking.</>],
+  ['What does a ticket include?',
+    <>There is one ticket for every delegate: €450 gives you all three days, every keynote, workshop and panel, the Sunday intensives, the Gala Dinner and Awards Night, lunch each day, 90 days of session recordings and a full CPD certificate.</>],
   ['Are group bookings available, and is there a discount?',
     <>Group bookings are welcome. For parties of 5 or more, please contact us directly at <Mail /> to discuss pricing and logistics.</>],
   ['What is the refund and cancellation policy?',
     <>Full refunds are available up to 30 days before the conference. A 50% refund applies between 14 and 30 days prior. No refunds are issued within 14 days of the start date. Tickets are fully transferable at no extra charge. See our <Link href="/refund-policy">Refund Policy</Link> for full details.</>],
   ['Will sessions be recorded, and for how long?',
-    <>3-Day Pass holders receive 90-day access to session recordings. Platinum VIP ticket holders receive lifetime access. Day Pass holders do not receive recordings.</>],
-  ['Is the Gala Dinner included in all ticket types?',
-    <>The Saturday evening Gala Dinner and Awards Ceremony is included in the 3-Day Pass and Platinum VIP ticket. Day Pass holders may purchase a Gala Dinner add-on separately, contact us for availability.</>],
+    <>Yes. Every delegate receives 90-day access to the session recordings after the conference.</>],
+  ['Is the Gala Dinner included?',
+    <>Yes. The Saturday evening Gala Dinner and Awards Ceremony is included in every ticket.</>],
   ['Is the venue fully accessible?',
     <>Yes. Clayton Hotel Liffey Valley is fully accessible with step-free access throughout, accessible restrooms, and designated parking. If you have specific accessibility requirements, please contact us in advance and we will ensure appropriate arrangements are in place.</>],
   ['Are there accommodation deals at the Clayton Hotel?',
     <>Delegate room rates are available at the conference venue. Mention the Irish Hypnotherapy Conference 2027 when booking direct with the hotel, or contact us for details of the room block arrangement once confirmed.</>],
   ['Will the full speaker programme be announced before I book?',
-    <>The full programme is announced in phases. The keynote speakers and core schedule are confirmed above. Additional speaker announcements will be made in the months leading up to April 2027. Sign up below to be notified as each announcement is made.</>],
+    <>Speakers are announced in phases, and the full 2027 schedule will be published once it is confirmed. More announcements will follow in the months leading up to April 2027. Sign up below to be notified as each announcement is made.</>],
   ['Is there a student or early-career rate?',
     <>We offer a limited number of reduced-rate places for student hypnotherapists and those in their first year of practice. Please email <Mail /> with a brief note on your situation to enquire about availability.</>],
 ];
 
 // plain-text copies of the answers so the filter can search them
 const SEARCH_TEXT = [
-  'day pass €175 single day sessions lunch materials booking',
+  'ticket include price €450 three days keynotes workshops gala dinner lunch recordings cpd',
   'group bookings discount parties 5 contact pricing logistics email',
   'refund cancellation policy 30 days 50% 14 days transferable',
-  'recordings recorded 90-day access platinum vip lifetime day pass',
-  'gala dinner awards ceremony saturday 3-day platinum add-on',
+  'recordings recorded 90-day access',
+  'gala dinner awards ceremony saturday included',
   'venue accessible clayton hotel liffey valley step-free restrooms parking accessibility',
   'accommodation deals clayton hotel delegate room rates booking',
   'speaker programme announced phases keynote schedule announcements',
