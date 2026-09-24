@@ -1,14 +1,15 @@
+import Link from 'next/link';
 import './apply.css';
-import JotformEmbed from '../../components/shared/JotformEmbed';
+import NewsletterForm from '../../components/shared/NewsletterForm';
 
 const DESC =
-  'Present at the Irish Hypnotherapy Conference 2027. Submit your session, workshop or keynote proposal for the 16 to 18 April programme in Dublin.';
+  'Speaker applications for the Irish Hypnotherapy Conference are now closed. Applications reopen in April 2027. Sign up to be notified.';
 
 export const metadata = {
   title: 'Apply to Speak',
   description: DESC,
   alternates: { canonical: '/apply-to-speak' },
-  openGraph: { title: 'Apply to Speak at IHC 2027', description: DESC, url: '/apply-to-speak' },
+  openGraph: { title: 'Apply to Speak at IHC', description: DESC, url: '/apply-to-speak' },
 };
 
 export default function ApplyToSpeakPage() {
@@ -23,20 +24,35 @@ export default function ApplyToSpeakPage() {
 
       <main id="main">
         <div className="apply-wrap">
-          <p className="apply-intro">
-            IHC 2027 brings together more than 200 practitioners, trainers and researchers across three
-            days in Dublin. If you have a technique, a piece of research or a story the field needs to
-            hear, we would love to read your proposal.
-          </p>
-          <ul className="apply-points">
-            <li>Keynotes</li>
-            <li>Workshops</li>
-            <li>Research talks</li>
-            <li>Panels</li>
-          </ul>
-          <div className="apply-form">
-            <JotformEmbed formId="250962582497066" title="Apply to speak at IHC 2027" />
-          </div>
+          <section className="apply-closed" aria-labelledby="apply-closed-hl">
+            <span className="apply-status">Applications closed</span>
+            <h2 className="apply-closed-hl" id="apply-closed-hl">
+              Applications reopen<br /><strong>in April 2027</strong>
+            </h2>
+            <p className="apply-closed-body">
+              Thank you to everyone who applied to speak at IHC 2027. Our line-up is now being
+              finalised, and we will be in touch with applicants directly.
+            </p>
+            <p className="apply-closed-body">
+              Applications open again in April 2027. Whether you are a seasoned presenter or have
+              never spoken at a conference before, we would love to hear from you then.
+            </p>
+
+            <div className="apply-notify">
+              <p className="apply-notify-label">Notify me when applications reopen</p>
+              <NewsletterForm
+                className="apply-notify-form"
+                id="apply-notify-email"
+                label="Notify Me"
+                subject="IHC - Speaker applications reopening notification"
+              />
+            </div>
+
+            <div className="apply-links">
+              <Link href="/#speakers">View the 2027 speakers</Link>
+              <Link href="/#tickets">Get tickets</Link>
+            </div>
+          </section>
         </div>
       </main>
     </>
