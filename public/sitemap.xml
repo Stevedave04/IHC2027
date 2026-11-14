@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ihc2027web.pages.dev/</loc><priority>1.0</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers</loc><priority>0.9</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/adam-cox</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/alexandra-holovitz</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/amy-cinnamond</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/amy-dalwood-fairbanks</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/andy-wood</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/dr-anemona-peres</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/ayla-oostrom</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/belle-stevenson</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/beverly-pember</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/caitriona-morrison</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/cara-robins</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/caroline-faulkner</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/cheryl-elman</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/chris-priebe</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/clare-mortimer</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/conny-wladkowski</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/cormac-colleran</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/david-elliot</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/david-fernandez</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/fabian-wesselink</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/fiachra-morrison</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/garry-coles</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/giancarlo-russo</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/gila-zak</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/hansruedi-wipf</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/hellen-buttigieg</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/jason-simmons</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/john-scanlon</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/justyna-anna-nowakowska</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/kate-beaven-marks</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/lily-masco</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/lori-hammond</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/louise-baker</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/melissa-tiers</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/michelle-stricker</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/mike-mandel</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/dr-paulina-trevena</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/rebecca-wagner</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/robert-cabry-md</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/ronia-fraser</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/sarah-jane-oneill</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/shash-mbrsa</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/sheila-granger</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/stephanie-skiba</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/stephen-mcgill</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/stephen-travers</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/suzanne-dennehy</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/suzy-elks</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/tom-faith</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/tracey-mcgill</loc><priority>0.6</priority></url>
+  <url><loc>https://ihc2027web.pages.dev/speakers/turan-mirza</loc><priority>0.6</priority></url>
   <url><loc>https://ihc2027web.pages.dev/apply-to-speak</loc><priority>0.8</priority></url>
   <url><loc>https://ihc2027web.pages.dev/workshops</loc><priority>0.8</priority></url>
   <url><loc>https://ihc2027web.pages.dev/sponsorship</loc><priority>0.7</priority></url>

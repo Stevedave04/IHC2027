@@ -18,6 +18,9 @@ import Accommodation from '../components/home/Accommodation';
 import Faq from '../components/home/Faq';
 import Contact from '../components/home/Contact';
 import { SITE_URL } from '../lib/site';
+import { TICKETS } from '../lib/event';
+import { SPEAKERS } from '../lib/speakers';
+import { buildProgramme } from '../lib/programme';
 
 export const metadata = {
   alternates: { canonical: '/' },
@@ -41,12 +44,12 @@ const EVENT_LD = {
   },
   image: [`${BASE}/ihc2026.jpeg`],
   description:
-    "Ireland's premier hypnotherapy conference, three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
-  offers: [
-    { '@type': 'Offer', name: 'Full Conference Pass', price: '450', priceCurrency: 'EUR', url: `${BASE}/#tickets`, availability: 'https://schema.org/InStock', validFrom: '2026-01-01' },
-  ],
-  performer: ['Melissa Tiers', 'Mike Mandel', 'Karl Smith', 'Sheila Granger', 'Scott Sandland', 'Sean Michael Andrews', 'Rob De Groof']
-    .map(name => ({ '@type': 'Person', name })),
+    "Ireland's premier hypnotherapy conference, three days of world-class training, 50+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
+  offers: TICKETS.map(t => ({
+    '@type': 'Offer', name: t.name, price: String(t.price), priceCurrency: 'EUR', url: t.url,
+    availability: 'https://schema.org/InStock', validFrom: '2026-01-01',
+  })),
+  performer: SPEAKERS.map(s => ({ '@type': 'Person', name: s.name, url: `${BASE}/speakers/${s.slug}` })),
   organizer: { '@type': 'Organization', name: 'Irish Hypnotherapy Conference', url: 'https://irishhypnotherapyconference.ie' },
 };
 
@@ -61,7 +64,7 @@ export default function Home() {
       <Speakers />
       <FirstTimeSpeakers />
       <HowItWorks />
-      <Schedule />
+      <Schedule days={buildProgramme()} />
       <Tickets />
       <Testimonials />
       <Gallery />

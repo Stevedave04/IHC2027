@@ -6,7 +6,7 @@ import { BASE } from '../../lib/site';
 
 const PRIMARY = [
   ['/#about', 'About'],
-  ['/#speakers', 'Speakers'],
+  ['/speakers', 'Speakers'],
   ['/#schedule', 'Programme'],
   ['/#venue', 'Venue'],
   ['/blog', 'Blog'],

@@ -1,144 +1,94 @@
+import Link from 'next/link';
 import { BASE } from '../../lib/site';
-export default function Speakers() {
+import { SPEAKERS, KEYNOTES, DAY_LABELS, getSpeaker, initials } from '../../lib/speakers';
+
+/** Names shown in the homepage roster strip, in display order. */
+const ROSTER_SLUGS = [
+  'sheila-granger', 'adam-cox', 'kate-beaven-marks', 'hansruedi-wipf',
+  'lori-hammond', 'cara-robins', 'ronia-fraser', 'fabian-wesselink',
+  'giancarlo-russo', 'turan-mirza', 'chris-priebe',
+];
+
+const KEYNOTE_LAYOUT = { 'melissa-tiers': 'sp-featured', 'john-scanlon': 'sp-wide', 'mike-mandel': 'sp-wide' };
+
+const firstSentence = text => (text.match(/^.+?[.!?](\s|$)/) || [text])[0].trim();
+
+const slotLabel = s => {
+  if (!s.day) return 'Session to be announced';
+  const day = DAY_LABELS[s.day].short;
+  return s.start ? `${day} · ${s.start}` : day;
+};
+
+function KeynoteCard({ s }) {
+  const layout = KEYNOTE_LAYOUT[s.slug] || 'sp-wide';
   return (
-    <>
-<section className="light-section" id="speakers" aria-labelledby="speakers-hl">
-<div className="section-wrap-wide">
-  <div className="speakers-header">
-    <div>
-      <div className="eyebrow reveal" style={{'--eyebrow-c':'var(--gold)'}}>2027 Speakers</div>
-      <h2 className="speakers-hl reveal" id="speakers-hl">
-        <em>Leading Voices</em>
-        Voices shaping<br/>the future
-      </h2>
-    </div>
-    <a href="#tickets" className="speakers-link reveal">
-      View Full Line-up
-      <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><line x1="0" y1="5" x2="13" y2="5"/><polyline points="9 1 14 5 9 9"/></svg>
-    </a>
-  </div>
-
-  <div className="speaker-grid">
-    
-    <article className="speaker-card sp-featured reveal" tabIndex="0" aria-label="Melissa Tiers, Keynote Speaker">
-      <img width="480" height="302" src={BASE + "/images/speakers/melissa-tiers.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">MT</span>
+    <Link href={`/speakers/${s.slug}`} className={`speaker-card ${layout} reveal`} aria-label={`${s.name}, keynote speaker. View profile`}>
+      {s.photo && (
+        <img width="480" height="600" src={BASE + s.photo} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
+      )}
+      <span className="speaker-initial" aria-hidden="true">{initials(s.name)}</span>
       <div>
-        <div className="speaker-role">Keynote Speaker</div>
-        <h3 className="speaker-name">Melissa Tiers</h3>
-        <p className="speaker-spec">Author · Trainer · Integrative Hypnotherapy Innovator</p>
+        <div className="speaker-role">Keynote · {slotLabel(s)}</div>
+        <h3 className="speaker-name">{s.name}</h3>
+        <p className="speaker-spec">{s.session || 'Keynote session to be announced'}</p>
       </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Internationally celebrated hypnotherapist, NLP coach and best-selling author of <em>Integrative Hypnosis</em> and <em>Keeping the Brain in Mind</em>. Melissa's work at the Centre for Integrative Hypnosis in New York blends cutting-edge neuroscience with practical therapeutic artistry, reshaping how the field thinks about change."</p>
-        <span className="speaker-bio-name">Melissa Tiers</span>
+      <div className="speaker-bio-reveal" aria-hidden="true">
+        <p className="speaker-bio-text">{layout === 'sp-featured' ? s.bio : firstSentence(s.bio)}</p>
+        <span className="speaker-bio-name">{s.name}</span>
       </div>
-    </article>
+    </Link>
+  );
+}
 
-    <article className="speaker-card sp-wide reveal" tabIndex="0" aria-label="Mike Mandel, Keynote Speaker">
-      <span className="speaker-initial" aria-hidden="true" style={{display:'flex'}}>MM</span>
-      <div>
-        <div className="speaker-role">Keynote Speaker</div>
-        <h3 className="speaker-name">Mike Mandel</h3>
-        <p className="speaker-spec">Founder, Mike Mandel Hypnosis Academy · World-Renowned Trainer</p>
-      </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Eight-time winner of the World's Best Hypnotist award and founder of the Mike Mandel Hypnosis Academy, the gold standard in online hypnosis education with students in over 100 countries. Mike's infectious energy and masterful storytelling have captivated audiences worldwide for over four decades."</p>
-        <span className="speaker-bio-name">Mike Mandel</span>
-      </div>
-    </article>
+export default function Speakers() {
+  const roster = ROSTER_SLUGS.map(getSpeaker).filter(Boolean);
+  const remaining = SPEAKERS.length - KEYNOTES.length - roster.length;
 
-    <article className="speaker-card sp-mid reveal" tabIndex="0" aria-label="Karl Smith, Speaker">
-      <img width="480" height="480" src={BASE + "/images/speakers/karl-smith.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">KS</span>
-      <div>
-        <div className="speaker-role">Speaker</div>
-        <h3 className="speaker-name">Karl Smith</h3>
-        <p className="speaker-spec">Clinical Hypnotherapist · PTSD Specialist</p>
-      </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Pioneering clinical hypnotherapist specialising in trauma resolution, PTSD, and anxiety disorders. Karl's evidence-led protocols have helped thousands of clients reclaim their lives and are taught to practitioners across Ireland and the UK."</p>
-        <span className="speaker-bio-name">Karl Smith</span>
-      </div>
-    </article>
+  return (
+    <section className="light-section" id="speakers" aria-labelledby="speakers-hl">
+      <div className="section-wrap-wide">
+        <div className="speakers-header">
+          <div>
+            <div className="eyebrow reveal" style={{ '--eyebrow-c': 'var(--gold)' }}>2027 Speakers</div>
+            <h2 className="speakers-hl reveal" id="speakers-hl">
+              <em>{SPEAKERS.length} confirmed speakers</em>
+              Voices shaping<br />the future
+            </h2>
+          </div>
+          <Link href="/speakers" className="speakers-link reveal">
+            View Full Line-up
+            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><line x1="0" y1="5" x2="13" y2="5" /><polyline points="9 1 14 5 9 9" /></svg>
+          </Link>
+        </div>
 
-    <article className="speaker-card sp-small reveal" tabIndex="0" aria-label="Dr Rebecca Clavell-Bate, Keynote Speaker">
-      <img width="480" height="320" src={BASE + "/images/speakers/at-desk.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">RC</span>
-      <div>
-        <div className="speaker-role">Keynote</div>
-        <h3 className="speaker-name">Dr Rebecca Clavell-Bate</h3>
-        <p className="speaker-spec">Medical Doctor · Clinical Hypnotherapist</p>
-      </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"A practising medical doctor and accredited clinical hypnotherapist, Dr Clavell-Bate is a passionate advocate for integrating hypnotherapy into mainstream healthcare, backed by rigorous research and first-hand clinical experience."</p>
-        <span className="speaker-bio-name">Dr Rebecca Clavell-Bate</span>
-      </div>
-    </article>
+        <div className="speaker-grid">
+          {[...KEYNOTES]
+            .sort((a, b) => (KEYNOTE_LAYOUT[b.slug] === 'sp-featured') - (KEYNOTE_LAYOUT[a.slug] === 'sp-featured'))
+            .map(s => <KeynoteCard s={s} key={s.slug} />)}
+        </div>
 
-    <article className="speaker-card sp-wide reveal" tabIndex="0" aria-label="Sheila Granger, Keynote Speaker">
-      <img width="480" height="321" src={BASE + "/images/speakers/sheila-granger.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">SG</span>
-      <div>
-        <div className="speaker-role">Keynote</div>
-        <h3 className="speaker-name">Sheila Granger</h3>
-        <p className="speaker-spec">Creator of the Virtual Gastric Band Programme</p>
+        <ul className="speaker-roster" aria-label="More 2027 speakers">
+          {roster.map(s => (
+            <li key={s.slug} className="reveal">
+              <Link href={`/speakers/${s.slug}`} className="roster-item">
+                <span className="roster-photo">
+                  {s.photo
+                    ? <img width="240" height="240" src={BASE + s.photo} alt="" loading="lazy" />
+                    : <span aria-hidden="true">{initials(s.name)}</span>}
+                </span>
+                <span className="roster-name">{s.name}</span>
+                <span className="roster-session">{s.session || 'Session to be announced'}</span>
+              </Link>
+            </li>
+          ))}
+          <li className="reveal">
+            <Link href="/speakers" className="roster-item roster-more">
+              <span className="roster-more-num">+{remaining}</span>
+              <span className="roster-more-label">more speakers<br />see the full line-up</span>
+            </Link>
+          </li>
+        </ul>
       </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Creator of the globally acclaimed Virtual Gastric Band programme, used by thousands of practitioners across 40 countries. Sheila is widely recognised as one of the most influential hypnotherapists working in weight management and behaviour change today."</p>
-        <span className="speaker-bio-name">Sheila Granger</span>
-      </div>
-    </article>
-
-    <article className="speaker-card sp-trio reveal" tabIndex="0" aria-label="Scott Sandland, Speaker">
-      <img width="270" height="480" src={BASE + "/images/speakers/scott-sandland.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">SS</span>
-      <div>
-        <div className="speaker-role">Speaker</div>
-        <h3 className="speaker-name">Scott Sandland</h3>
-        <p className="speaker-spec">Clinical Hypnotherapist · Researcher · Podcaster</p>
-      </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Founder of The California Hypnosis Institute and host of the Hypnosis and Suggestion podcast, Scott brings the latest clinical research into accessible, actionable insights for practitioners at every level."</p>
-        <span className="speaker-bio-name">Scott Sandland</span>
-      </div>
-    </article>
-
-    <article className="speaker-card sp-trio reveal" tabIndex="0" aria-label="Sean Michael Andrews, Workshop Leader">
-      <img width="480" height="480" src={BASE + "/images/speakers/sean-michael-andrews.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">SA</span>
-      <div>
-        <div className="speaker-role">Workshop Leader</div>
-        <h3 className="speaker-name">Sean Michael Andrews</h3>
-        <p className="speaker-spec">Master Hypnotherapist · Stage Hypnotist</p>
-      </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"Known as 'The World's Fastest Hypnotist', Sean is a master of rapid induction techniques and high-impact live demonstrations. His workshops combine awe-inspiring speed with deep practical skill-building for professional hypnotherapists."</p>
-        <span className="speaker-bio-name">Sean Michael Andrews</span>
-      </div>
-    </article>
-
-    <article className="speaker-card sp-trio reveal" tabIndex="0" aria-label="Rob De Groof, Speaker">
-      <img width="480" height="480" src={BASE + "/images/speakers/rob-de-groof.jpg"} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
-      <span className="speaker-initial" aria-hidden="true">RG</span>
-      <div>
-        <div className="speaker-role">Speaker</div>
-        <h3 className="speaker-name">Rob De Groof</h3>
-        <p className="speaker-spec">European Hypnotherapy Leader · Author</p>
-      </div>
-      <div className="speaker-bio-reveal">
-        <p className="speaker-bio-text">"A leading figure in European hypnotherapy, Rob brings a distinctive integrative approach rooted in Ericksonian traditions and modern therapeutic frameworks. He trains and supervises practitioners across Belgium and the Netherlands."</p>
-        <span className="speaker-bio-name">Rob De Groof</span>
-      </div>
-    </article>
-
-    <div className="speaker-more reveal" aria-label="40 plus speakers on the 2027 programme, more announced soon">
-      <div className="speaker-more-num">40+</div>
-      <div className="speaker-more-label">Speakers in 2027<br/>more announced soon</div>
-      <a href="#tickets" style={{fontSize:'.72rem',letterSpacing:'.14em',textTransform:'uppercase',color:'var(--gold)',fontWeight:'600',marginTop:'.5rem',borderBottom:'1px solid var(--gold-rule)',paddingBottom:'.2rem'}}>Register for updates</a>
-    </div>
-  </div>
-</div>
-</section>
-    </>
+    </section>
   );
 }

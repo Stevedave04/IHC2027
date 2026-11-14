@@ -1,65 +1,51 @@
-'use client';
-
 import Link from 'next/link';
-import { TICKET_PRICE } from '../../lib/event';
-
-const INCLUDED = [
-  'Full access to all three days',
-  'Every keynote, workshop and panel',
-  'Sunday intensive sessions',
-  'Gala Dinner and Awards Night',
-  'Full CPD certificate (24+ hours)',
-  'Session recordings for 90 days',
-  'Lunch and refreshments each day',
-  'Conference materials',
-];
+import { TICKETS } from '../../lib/event';
 
 export default function Tickets() {
-  const prefill = subject => {
-    const el = document.getElementById('cf-subject');
-    if (el) el.value = subject;
-  };
-
   return (
     <section className="light-section" id="tickets" aria-labelledby="tickets-hl">
       <div className="section-wrap">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <div className="eyebrow reveal" style={{ justifyContent: 'center' }}>Tickets</div>
           <h2 className="reveal" id="tickets-hl" style={{ fontSize: 'clamp(2.5rem,5vw,5.5rem)', fontWeight: 300, fontStyle: 'italic', lineHeight: 1, letterSpacing: '-.02em', color: 'var(--text)' }}>
-            One ticket.<br /><strong style={{ fontWeight: 700, fontStyle: 'normal' }}>Everything included.</strong>
+            Two passes.<br /><strong style={{ fontWeight: 700, fontStyle: 'normal' }}>Every session included.</strong>
           </h2>
           <p className="reveal" style={{ fontSize: '1rem', color: 'var(--muted)', marginTop: '1rem' }}>
-            A single price for every delegate, with full CPD accreditation.
+            Both passes cover all three days, 16 to 18 April 2027. The Full Pass adds lunch, the Gala Dinner and the evening entertainment.
           </p>
         </div>
 
-        <div className="ticket-single reveal">
-          <div className="ticket-card featured ticket-single-price">
-            <div className="ticket-bg-price" aria-hidden="true">{TICKET_PRICE}</div>
-            <div className="ticket-tier">Full Conference Pass</div>
-            <h3 className="ticket-name">16–18 April 2027</h3>
-            <div className="ticket-sep"></div>
-            <div className="ticket-price"><sup>€</sup>{TICKET_PRICE}</div>
-            <p className="ticket-period">per delegate · all three days</p>
-            <a
-              href="#contact"
-              className="ticket-cta tc-primary"
-              onClick={() => prefill(`Conference ticket booking enquiry - €${TICKET_PRICE}`)}
-            >
-              Secure Your Place
-            </a>
-          </div>
-          <div className="ticket-single-features">
-            <div className="ticket-single-label">What&rsquo;s included</div>
-            <ul className="ticket-features">
-              {INCLUDED.map(f => (
-                <li className="ticket-feature" key={f}>
-                  <span className="tf-check" aria-hidden="true">✓</span>{f}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="ticket-pair reveal">
+          {TICKETS.map(t => (
+            <article className={`ticket-card${t.featured ? ' featured' : ''}`} key={t.id} aria-labelledby={`ticket-${t.id}`}>
+              <div className="ticket-bg-price" aria-hidden="true">{t.price}</div>
+              {t.featured && <span className="ticket-badge">Includes Gala Dinner</span>}
+              <div className="ticket-tier">{t.tier}</div>
+              <h3 className="ticket-name" id={`ticket-${t.id}`}>{t.name}</h3>
+              <div className="ticket-sep"></div>
+              <div className="ticket-price"><sup>€</sup>{t.price}</div>
+              <p className="ticket-period">per delegate · Friday to Sunday</p>
+              <ul className="ticket-features">
+                {t.includes.map(f => (
+                  <li className="ticket-feature" key={f}>
+                    <span className="tf-check" aria-hidden="true">✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={t.url}
+                rel="noopener"
+                className={`ticket-cta ${t.featured ? 'tc-primary' : 'tc-secondary'}`}
+                aria-label={`Buy the ${t.name}, €${t.price}`}
+              >
+                Buy {t.featured ? 'Full Pass' : 'Conference Pass'}
+              </a>
+            </article>
+          ))}
         </div>
+        <p className="ticket-note reveal">
+          Secure checkout on irishhypnotherapyconference.ie. Questions about group bookings? <Link href="/#contact">Get in touch</Link>.
+        </p>
 
         <div className="exhibit-band reveal" role="region" aria-label="Exhibition table availability">
           <div className="exhibit-left">

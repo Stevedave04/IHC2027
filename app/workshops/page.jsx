@@ -1,106 +1,89 @@
+import Link from 'next/link';
+import { BASE } from '../../lib/site';
 import './workshops.css';
 
+const DESC =
+  'Pre and post-conference workshops at the Irish Hypnotherapy Conference 2027 in Dublin, including Procrastination Lab with Melissa Tiers. More workshops to be announced.';
+
+const MELISSA_BOOKING = 'https://www.melissatiers.com/ireland';
+
 export const metadata = {
-  title: "Workshops &amp; Masterclasses",
-  description: "Explore the IHC 2027 workshop programme, three parallel tracks on Saturday 17 April and morning intensives on Sunday 18 April, covering clinical practice, research, and business growth.",
+  title: 'Workshops',
+  description: DESC,
   alternates: { canonical: '/workshops' },
-  openGraph: { title: "Workshops &amp; Masterclasses", description: "Explore the IHC 2027 workshop programme, three parallel tracks on Saturday 17 April and morning intensives on Sunday 18 April, covering clinical practice, research, and business growth.", url: '/workshops' },
+  openGraph: { title: 'IHC 2027 Workshops', description: DESC, url: '/workshops' },
 };
 
 export default function Page() {
   return (
     <>
-<div className="page-header" role="banner">
-  <div className="page-header-ghost" aria-hidden="true">Workshops</div>
-  <p className="page-eyebrow">Irish Hypnotherapy Conference 2027</p>
-  <h1 className="page-title">Workshops &amp;<br/><strong style={{fontWeight:'700',fontStyle:'normal'}}>Masterclasses</strong></h1>
-  <div className="page-rule" aria-hidden="true"></div>
-</div>
-
-
-<main id="main">
-<div className="ws-wrap">
-
-  <p className="coc-intro">The IHC 2027 workshop programme is designed to move beyond theory into practice. Led by experienced clinicians and researchers, each session offers hands-on learning, case-based discussion, and immediately applicable skills, whatever your specialism or stage of career.</p>
-
-  <article className="coc-section reveal">
-    <span className="coc-section-num">01</span>
-    <h2>Parallel Tracks</h2>
-    <p className="section-meta">Saturday 17 April · 14:30–16:00</p>
-    <p>Three simultaneous workshop streams run concurrently on Saturday afternoon. Choose the track that best fits your practice focus, full descriptions and presenter biographies will be published closer to the conference date.</p>
-    <div className="track-grid" role="list">
-
-      <div className="track-card" role="listitem">
-        <span className="track-label">Track A · Clinical Practice</span>
-        <h3 className="track-title">Advanced Pain Management Techniques</h3>
-        <p className="track-presenter">Presenter TBC</p>
-        <p className="track-room">Liffey Suite</p>
-        <p className="track-desc">An evidence-informed workshop exploring hypnotic approaches to acute and chronic pain, including direct suggestion, metaphor, and neuroscience-based frameworks for explaining change to clients.</p>
+      <div className="page-header" role="banner">
+        <div className="page-header-ghost" aria-hidden="true">Workshops</div>
+        <p className="page-eyebrow">Irish Hypnotherapy Conference 2027</p>
+        <h1 className="page-title">Pre &amp; post-conference<br /><strong style={{ fontWeight: 700, fontStyle: 'normal' }}>workshops</strong></h1>
+        <div className="page-rule" aria-hidden="true"></div>
       </div>
 
-      <div className="track-card" role="listitem">
-        <span className="track-label">Track B · Research &amp; Evidence</span>
-        <h3 className="track-title">Translating Research into Practice</h3>
-        <p className="track-presenter">Presenter TBC</p>
-        <p className="track-room">Valley Suite</p>
-        <p className="track-desc">A practical guide to reading and applying current hypnotherapy research, including how to communicate efficacy to clients and GPs, and common pitfalls when interpreting study findings.</p>
-      </div>
+      <main id="main">
+        <div className="ws-wrap">
+          <p className="coc-intro">
+            Extend your time in Dublin with a smaller-group workshop either side of the main conference.
+            Workshops are booked separately from your conference pass, directly with the presenter.
+          </p>
 
-      <div className="track-card" role="listitem">
-        <span className="track-label">Track C · Business &amp; Growth</span>
-        <h3 className="track-title">Building a Thriving Hypnotherapy Practice</h3>
-        <p className="track-presenter">Presenter TBC</p>
-        <p className="track-room">Salon A</p>
-        <p className="track-desc">From referral networks and pricing strategy to online presence and client retention, a practical session for practitioners looking to grow or restructure their practice with confidence.</p>
-      </div>
+          <article className="coc-section ws-feature reveal">
+            <span className="coc-section-num">01</span>
+            <div className="ws-feature-grid">
+              <img
+                className="ws-feature-photo"
+                src={`${BASE}/images/speakers/melissa-tiers.jpg`}
+                width="480" height="600"
+                alt="Portrait of Melissa Tiers"
+                loading="lazy"
+              />
+              <div>
+                <p className="section-meta">Melissa Tiers · Pre/post-conference workshop</p>
+                <h2>Procrastination Lab</h2>
+                <p>
+                  Melissa Tiers brings her Procrastination Lab to Dublin. Treated as an experiment rather than a
+                  lecture, it uses a project you have been putting off as live material, so you learn the
+                  process from the inside out before using it with clients.
+                </p>
+                <ul className="coc-list">
+                  <li>Spot when procrastination is really an unconscious conflict, and how to bring it into alignment</li>
+                  <li>Tell the difference between work that matters and work that can simply be dropped</li>
+                  <li>Build a generative, unconscious strategy for getting things started and finished</li>
+                  <li>Take the approach straight into your client work</li>
+                </ul>
+                <p>Registration stays open until the day itself.</p>
+                <div className="ws-actions">
+                  <a href={MELISSA_BOOKING} className="btn-gold" target="_blank" rel="noopener noreferrer">
+                    Secure your place
+                  </a>
+                  <Link href="/speakers/melissa-tiers" className="ws-link">About Melissa Tiers</Link>
+                </div>
+              </div>
+            </div>
+          </article>
 
-    </div>
-  </article>
+          <article className="coc-section reveal">
+            <span className="coc-section-num">02</span>
+            <h2>More workshops to be announced</h2>
+            <p>
+              Further pre and post-conference workshops will be added as they are confirmed. Join the mailing
+              list on the homepage to hear first, or see the full <Link href="/speakers">2027 speaker line-up</Link>.
+            </p>
+          </article>
 
-  <article className="coc-section reveal">
-    <span className="coc-section-num">02</span>
-    <h2>Morning Intensives</h2>
-    <p className="section-meta">Sunday 18 April · 09:30–11:00</p>
-    <p>Two in-depth morning sessions run in parallel on Sunday, providing extended time to explore specialist topics with a smaller group. Places are limited and included in every conference ticket.</p>
-    <div className="intensive-grid" role="list">
-
-      <div className="intensive-card" role="listitem">
-        <span className="intensive-tag">Intensive &middot; 90 min</span>
-        <h3 className="intensive-title">Hypnosis for Trauma-Informed Care</h3>
-        <p className="intensive-meta">Various Speakers &middot; Liffey Suite</p>
-        <p className="intensive-desc">A careful, supervised exploration of working with trauma histories in a hypnotherapeutic context. Covers screening, pace-setting, safe language, and when to refer. Suitable for practitioners with at least two years of clinical experience.</p>
-      </div>
-
-      <div className="intensive-card" role="listitem">
-        <span className="intensive-tag">Intensive &middot; 90 min</span>
-        <h3 className="intensive-title">Advanced Ericksonian Techniques</h3>
-        <p className="intensive-meta">Various Speakers &middot; Valley Suite</p>
-        <p className="intensive-desc">A deep-dive into Erickson's indirect suggestion, confusion techniques, and utilisation approaches, with live demonstrations and supervised practice. Participants will leave with expanded induction and intervention repertoire.</p>
-      </div>
-
-    </div>
-  </article>
-
-  <article className="coc-section reveal">
-    <span className="coc-section-num">03</span>
-    <h2>Choosing Your Track</h2>
-    <p>All workshop streams are designed to be accessible to both newer and experienced practitioners. If you are unsure which track to attend, consider:</p>
-    <ul className="coc-list">
-      <li><strong>Track A (Clinical Practice)</strong>: best suited to those seeking new client-facing techniques and clinical frameworks</li>
-      <li><strong>Track B (Research &amp; Evidence)</strong>: ideal for practitioners wishing to deepen their academic literacy or engage with referral networks</li>
-      <li><strong>Track C (Business &amp; Growth)</strong>: recommended for those building, scaling, or repositioning their practice</li>
-      <li>The Sunday Intensives are open to every ticket holder, no separate booking required</li>
-    </ul>
-  </article>
-
-  <div className="coc-commitment" role="complementary" aria-label="Workshops included in all passes">
-    <span className="coc-commitment-label">Included in Your Pass</span>
-    <p>All parallel workshop tracks are included in every conference ticket, subject to room capacity.</p>
-    <a href="/#tickets" className="btn-gold">View Ticket Options</a>
-  </div>
-
-</div>
-</main>
+          <div className="coc-commitment" role="complementary" aria-label="Conference passes">
+            <span className="coc-commitment-label">The main conference</span>
+            <p>
+              More than 40 sessions across three rooms, Friday 16 to Sunday 18 April. Conference passes start at €400.
+            </p>
+            <Link href="/#tickets" className="btn-gold">Compare passes</Link>
+          </div>
+        </div>
+      </main>
     </>
   );
 }

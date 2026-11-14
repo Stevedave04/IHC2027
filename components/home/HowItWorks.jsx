@@ -9,7 +9,7 @@ export default function HowItWorks() {
     <div className="how-step reveal">
       <div className="how-num" aria-hidden="true">01</div>
       <h3 className="how-title">Book your ticket</h3>
-      <p className="how-body">One ticket covers all three days, every session and full CPD accreditation. Takes two minutes to book.</p>
+      <p className="how-body">Choose the Conference Only or Full 3 Day Pass. Both cover all three days and every session. Takes two minutes to book.</p>
     </div>
     <div className="how-step reveal">
       <div className="how-num" aria-hidden="true">02</div>
@@ -19,7 +19,7 @@ export default function HowItWorks() {
     <div className="how-step reveal">
       <div className="how-num" aria-hidden="true">03</div>
       <h3 className="how-title">Leave better equipped</h3>
-      <p className="how-body">Go home with new techniques, 24+ CPD hours, session recordings, and a network of peers still in your phone when you need them in December.</p>
+      <p className="how-body">Go home with new techniques you can use on Monday, and a network of peers still in your phone when you need them in December.</p>
     </div>
   </div>
   <div style={{textAlign:'center',marginTop:'3rem'}} className="reveal">

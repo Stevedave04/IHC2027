@@ -1,44 +1,25 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 
-const DAYS = [
-  {
-    label: 'Day One: Fri 16 Apr',
-    rows: [
-      ['09:00', 'Registration and Welcome Coffee', 'Main Lobby, Clayton Hotel', 'Arrival', 't-brk'],
-      ['10:00', 'Opening Keynote: The Future of Hypnotherapy', 'Melissa Tiers', 'Keynote', 't-key'],
-      ['11:30', 'Neuroscience Meets Hypnosis', 'Dr Rebecca Clavell-Bate', 'Keynote', 't-key'],
-      ['13:00', 'Lunch and Networking', 'Grand Ballroom', 'Break', 't-brk'],
-      ['14:30', 'Rapid Change Techniques', 'Sean Michael Andrews', 'Workshop', 't-ws'],
-      ['16:00', 'Evidence-Based Practice in Modern Hypnotherapy', 'Scott Sandland', 'Keynote', 't-key'],
-      ['17:30', 'Day One Closing and Networking Reception', 'Sky Bar, Clayton Hotel', 'Social', 't-pan'],
-    ],
-  },
-  {
-    label: 'Day Two: Sat 17 Apr',
-    rows: [
-      ['09:30', 'Morning Keynote: Integrative Approaches', 'Karl Smith', 'Keynote', 't-key'],
-      ['11:00', 'Virtual Gastric Band: New Research and Results', 'Sheila Granger', 'Keynote', 't-key'],
-      ['13:00', 'Lunch and Poster Presentations', 'Exhibition Hall', 'Break', 't-brk'],
-      ['14:30', 'Advanced Parallel Workshops (Three Tracks)', 'Multiple Presenters', 'Workshop', 't-ws'],
-      ['16:30', 'European Perspectives Panel', 'Rob De Groof and Panellists', 'Panel', 't-pan'],
-      ['19:30', 'IHC Gala Dinner and Awards Ceremony', 'Grand Ballroom, Black Tie Optional', 'Gala', 't-pan'],
-    ],
-  },
-  {
-    label: 'Day Three: Sun 18 Apr',
-    rows: [
-      ['09:30', 'Morning Intensive Workshops', 'Various Speakers', 'Workshop', 't-ws'],
-      ['11:30', 'Innovation in Practice: New Frontiers', 'Melissa Tiers and Guests', 'Panel', 't-pan'],
-      ['13:00', 'Lunch and Community Networking', 'Garden Terrace', 'Break', 't-brk'],
-      ['14:30', 'Closing Keynote: Vision for Irish Hypnotherapy 2030', 'Special Guest Announcement', 'Keynote', 't-key'],
-      ['16:00', 'Closing Ceremony and Farewell', 'Main Stage', 'Close', 't-brk'],
-    ],
-  },
-];
+function Row({ r }) {
+  return (
+    <div className="sched-row">
+      <div className="sched-time">{r.time}</div>
+      <div>
+        <div className="sched-title">{r.title}</div>
+        <div className="sched-speaker">
+          {r.slug ? <Link href={`/speakers/${r.slug}`}>{r.speaker}</Link> : r.speaker}
+        </div>
+      </div>
+      <span className={`sched-type ${r.cls}`}>{r.tag}</span>
+    </div>
+  );
+}
 
-export default function Schedule() {
+/** @param {{ days: ReturnType<typeof import('../../lib/programme').buildProgramme> }} props */
+export default function Schedule({ days: DAYS }) {
   const [active, setActive] = useState(0);
   const tabRefs = useRef([]);
 
@@ -67,8 +48,8 @@ export default function Schedule() {
           Three days, one<br />extraordinary journey
         </h2>
         <p className="sched-provisional reveal">
-          <span>Provisional programme</span> The 2027 schedule is being finalised. Sessions and times
-          below are indicative and will be confirmed as speakers are announced.
+          <span>Provisional programme</span> Sessions are confirmed; times and rooms are still being
+          finalised and may change. <Link href="/speakers">Browse all speakers</Link>.
         </p>
 
         <div className="schedule-tabs reveal" role="tablist" aria-label="Conference days">
@@ -91,16 +72,13 @@ export default function Schedule() {
 
         {DAYS.map((day, i) => (
           <div key={day.label} className={`schedule-panel${i === active ? ' active' : ''}`} id={`d${i + 1}`} role="tabpanel">
-            {day.rows.map(([time, title, speaker, type, cls]) => (
-              <div className="sched-row" key={time + title}>
-                <div className="sched-time">{time}</div>
-                <div>
-                  <div className="sched-title">{title}</div>
-                  <div className="sched-speaker">{speaker}</div>
-                </div>
-                <span className={`sched-type ${cls}`}>{type}</span>
-              </div>
-            ))}
+            {day.timed.map(r => <Row r={r} key={r.time + r.title} />)}
+            {day.tbc.length > 0 && (
+              <>
+                <h3 className="sched-group">Also on {day.longLabel}, times to be confirmed</h3>
+                {day.tbc.map(r => <Row r={r} key={r.title} />)}
+              </>
+            )}
           </div>
         ))}
       </div>

@@ -31,8 +31,8 @@ export default function Footer() {
           <div>
             <h3 className="footer-col-title">Tickets</h3>
             <ul className="footer-links">
-              <li><Link href="/#tickets">Conference Pass</Link></li>
-              <li><Link href="/#tickets">What&rsquo;s Included</Link></li>
+              <li><Link href="/#tickets">Compare Passes</Link></li>
+              <li><Link href="/speakers">Speakers</Link></li>
               <li><Link href="/#faq">Group Bookings</Link></li>
               <li><Link href="/refund-policy">Refunds</Link></li>
               <li><Link href="/apply-to-speak">Apply to Speak</Link></li>

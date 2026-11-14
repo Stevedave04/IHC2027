@@ -524,3 +524,13 @@ textarea.contact-input{resize:vertical;min-height:120px}
   color:var(--emerald);background:var(--gold);
   padding:.25rem .6rem;vertical-align:.12em;
 }
+
+/* Schedule: TBC group + speaker links */
+.sched-group{
+  font-family:var(--f-sans);font-size:.66rem;font-weight:600;font-style:normal;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  margin:3rem 0 .5rem;padding-top:1.5rem;border-top:1px solid var(--gold-rule);
+}
+.sched-speaker a{color:inherit;border-bottom:1px solid rgba(255,255,255,.18);transition:color .2s,border-color .2s}
+.sched-speaker a:hover{color:var(--gold);border-color:var(--gold)}
+.sched-provisional a{color:var(--gold);border-bottom:1px solid var(--gold-rule)}

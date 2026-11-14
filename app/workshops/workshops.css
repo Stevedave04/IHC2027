@@ -211,7 +211,16 @@
 .btn-gold:hover{background:var(--gold-light)}
 
 /* ── Responsive ───────────────────────────────── */
+.ws-feature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:2.5rem;align-items:start}
+.ws-feature-photo{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;border:1px solid var(--parchment-3)}
+.ws-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;margin-top:1.75rem}
+.ws-link{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--gold-rule);padding-bottom:.2rem}
+.ws-link:hover{color:var(--gold);border-color:var(--gold)}
+.coc-section a:not(.btn-gold):not(.ws-link){color:var(--text);border-bottom:1px solid var(--gold-rule)}
 @media(max-width:768px){
+  .ws-feature-grid{grid-template-columns:1fr}
+  .ws-feature-photo{max-width:280px}
+
   .footer-top{grid-template-columns:1fr 1fr}
   .track-grid{grid-template-columns:1fr}
   .intensive-grid{grid-template-columns:1fr}}

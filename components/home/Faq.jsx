@@ -8,15 +8,13 @@ const Mail = () => <a href={`mailto:${EMAIL}`}>{EMAIL}</a>;
 
 const ITEMS = [
   ['What does a ticket include?',
-    <>There is one ticket for every delegate: €450 gives you all three days, every keynote, workshop and panel, the Sunday intensives, the Gala Dinner and Awards Night, lunch each day, 90 days of session recordings and a full CPD certificate.</>],
+    <>There are two passes. The Conference Only Pass (€400) gives you every session from Friday to Sunday, with tea and coffee throughout. The Full 3 Day Pass (€450) adds a buffet lunch each day, the Saturday Gala Dinner and the evening entertainment. Both are booked through our secure checkout.</>],
   ['Are group bookings available, and is there a discount?',
     <>Group bookings are welcome. For parties of 5 or more, please contact us directly at <Mail /> to discuss pricing and logistics.</>],
   ['What is the refund and cancellation policy?',
     <>Full refunds are available up to 30 days before the conference. A 50% refund applies between 14 and 30 days prior. No refunds are issued within 14 days of the start date. Tickets are fully transferable at no extra charge. See our <Link href="/refund-policy">Refund Policy</Link> for full details.</>],
-  ['Will sessions be recorded, and for how long?',
-    <>Yes. Every delegate receives 90-day access to the session recordings after the conference.</>],
   ['Is the Gala Dinner included?',
-    <>Yes. The Saturday evening Gala Dinner and Awards Ceremony is included in every ticket.</>],
+    <>The Saturday evening Gala Dinner is included in the Full 3 Day Pass (€450). It is not part of the Conference Only Pass.</>],
   ['Is the venue fully accessible?',
     <>Yes. Clayton Hotel Liffey Valley is fully accessible with step-free access throughout, accessible restrooms, and designated parking. If you have specific accessibility requirements, please contact us in advance and we will ensure appropriate arrangements are in place.</>],
   ['Are there accommodation deals at the Clayton Hotel?',
@@ -29,11 +27,10 @@ const ITEMS = [
 
 // plain-text copies of the answers so the filter can search them
 const SEARCH_TEXT = [
-  'ticket include price €450 three days keynotes workshops gala dinner lunch recordings cpd',
+  'ticket include price €400 €450 conference only full pass three days sessions gala dinner lunch tea coffee',
   'group bookings discount parties 5 contact pricing logistics email',
   'refund cancellation policy 30 days 50% 14 days transferable',
-  'recordings recorded 90-day access',
-  'gala dinner awards ceremony saturday included',
+  'gala dinner saturday included full pass',
   'venue accessible clayton hotel liffey valley step-free restrooms parking accessibility',
   'accommodation deals clayton hotel delegate room rates booking',
   'speaker programme announced phases keynote schedule announcements',

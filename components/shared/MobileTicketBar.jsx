@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { TICKET_PRICE } from '../../lib/event';
+import { TICKET_FROM } from '../../lib/event';
 
 /** Slim bottom bar on mobile: appears once the hero has scrolled away,
  *  hides while the tickets section itself is in view. */
@@ -32,7 +32,7 @@ export default function MobileTicketBar() {
   return (
     <div className={`mobile-ticket-bar${visible ? ' visible' : ''}`} aria-hidden={!visible}>
       <div className="mtb-info">
-        <span className="mtb-price">€{TICKET_PRICE}</span>
+        <span className="mtb-price">From €{TICKET_FROM}</span>
         <span className="mtb-meta">16–18 April · Dublin</span>
       </div>
       <Link href="/#tickets" className="mtb-cta" tabIndex={visible ? 0 : -1}>Get Tickets</Link>
