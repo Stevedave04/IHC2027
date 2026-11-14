@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SPEAKERS, DAY_LABELS, getSpeaker, initials } from '../../../lib/speakers';
-import { BASE, SITE_URL } from '../../../lib/site';
+import { BASE, SITE_URL, OG_IMAGE } from '../../../lib/site';
 import '../speakers.css';
 
 export function generateStaticParams() {
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
       description: summary(s),
       url: `/speakers/${s.slug}`,
       type: 'profile',
-      ...(s.photo ? { images: [`${BASE}${s.photo}`] } : {}),
+      images: [OG_IMAGE],
     },
   };
 }

@@ -4,7 +4,7 @@ import Footer from '../components/shared/Footer';
 import RevealManager from '../components/shared/RevealManager';
 import ScrollTop from '../components/shared/ScrollTop';
 import MobileTicketBar from '../components/shared/MobileTicketBar';
-import { BASE, SITE_URL } from '../lib/site';
+import { BASE, SITE_URL, OG_IMAGE } from '../lib/site';
 
 const FONT_URL =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap';
@@ -24,9 +24,9 @@ export const metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Irish Hypnotherapy Conference 2027',
-    images: [`${BASE}/ihc2026.jpeg`],
+    images: [OG_IMAGE],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: { card: 'summary_large_image', images: [OG_IMAGE.url] },
 };
 
 export default function RootLayout({ children }) {

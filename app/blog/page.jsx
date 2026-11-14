@@ -2,7 +2,7 @@ import Link from 'next/link';
 import './blog.css';
 import NewsletterForm from '../../components/shared/NewsletterForm';
 import { POSTS } from '../../lib/posts';
-import { BASE } from '../../lib/site';
+import { BASE, OG_IMAGE } from '../../lib/site';
 
 const DESC =
   'Dublin city guides, day trips, travel tips and Irish culture, why the setting is half the reason to attend the Irish Hypnotherapy Conference 2027.';
@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Discover Dublin & Ireland',
   description: DESC,
   alternates: { canonical: '/blog' },
-  openGraph: { title: 'Discover Dublin & Ireland', description: DESC, url: '/blog' },
+  openGraph: { title: 'Discover Dublin & Ireland', description: DESC, url: '/blog', images: [OG_IMAGE] },
 };
 
 export default function Page() {

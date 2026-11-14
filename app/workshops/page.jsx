@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BASE } from '../../lib/site';
+import { BASE, OG_IMAGE } from '../../lib/site';
 import './workshops.css';
 
 const DESC =
@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Workshops',
   description: DESC,
   alternates: { canonical: '/workshops' },
-  openGraph: { title: 'IHC 2027 Workshops', description: DESC, url: '/workshops' },
+  openGraph: { title: 'IHC 2027 Workshops', description: DESC, url: '/workshops', images: [OG_IMAGE] },
 };
 
 export default function Page() {

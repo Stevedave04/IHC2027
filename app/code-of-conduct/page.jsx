@@ -1,10 +1,11 @@
 import './code-of-conduct.css';
+import { OG_IMAGE } from '../../lib/site';
 
 export const metadata = {
   title: "Code of Conduct",
   description: "The Irish Hypnotherapy Conference Code of Conduct, our commitment to a professional, respectful, and collaborative environment for all participants.",
   alternates: { canonical: '/code-of-conduct' },
-  openGraph: { title: "Code of Conduct", description: "The Irish Hypnotherapy Conference Code of Conduct, our commitment to a professional, respectful, and collaborative environment for all participants.", url: '/code-of-conduct' },
+  openGraph: { title: "Code of Conduct", description: "The Irish Hypnotherapy Conference Code of Conduct, our commitment to a professional, respectful, and collaborative environment for all participants.", url: '/code-of-conduct', images: [OG_IMAGE] },
 };
 
 export default function Page() {

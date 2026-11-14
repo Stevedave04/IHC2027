@@ -1,6 +1,7 @@
 import SpeakerDirectory from '../../components/speakers/SpeakerDirectory';
 import { SPEAKERS } from '../../lib/speakers';
 import './speakers.css';
+import { OG_IMAGE } from '../../lib/site';
 
 const DESC = `Meet the ${SPEAKERS.length} confirmed speakers at the Irish Hypnotherapy Conference 2027, 16 to 18 April at Clayton Hotel Liffey Valley, Dublin. Keynotes from John Scanlon, Melissa Tiers and Mike Mandel.`;
 
@@ -8,7 +9,7 @@ export const metadata = {
   title: '2027 Speakers',
   description: DESC,
   alternates: { canonical: '/speakers' },
-  openGraph: { title: 'IHC 2027 Speakers', description: DESC, url: '/speakers' },
+  openGraph: { title: 'IHC 2027 Speakers', description: DESC, url: '/speakers', images: [OG_IMAGE] },
 };
 
 export default function SpeakersPage() {

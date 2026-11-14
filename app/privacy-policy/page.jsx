@@ -1,10 +1,11 @@
 import './privacy-policy.css';
+import { OG_IMAGE } from '../../lib/site';
 
 export const metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for the Irish Hypnotherapy Conference, how we collect, use, and protect your personal data.",
   alternates: { canonical: '/privacy-policy' },
-  openGraph: { title: "Privacy Policy", description: "Privacy Policy for the Irish Hypnotherapy Conference, how we collect, use, and protect your personal data.", url: '/privacy-policy' },
+  openGraph: { title: "Privacy Policy", description: "Privacy Policy for the Irish Hypnotherapy Conference, how we collect, use, and protect your personal data.", url: '/privacy-policy', images: [OG_IMAGE] },
 };
 
 export default function Page() {

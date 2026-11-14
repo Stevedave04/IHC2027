@@ -17,14 +17,14 @@ import Venue from '../components/home/Venue';
 import Accommodation from '../components/home/Accommodation';
 import Faq from '../components/home/Faq';
 import Contact from '../components/home/Contact';
-import { SITE_URL } from '../lib/site';
+import { SITE_URL, OG_IMAGE } from '../lib/site';
 import { TICKETS } from '../lib/event';
 import { SPEAKERS } from '../lib/speakers';
 import { buildProgramme } from '../lib/programme';
 
 export const metadata = {
   alternates: { canonical: '/' },
-  openGraph: { url: '/' },
+  openGraph: { url: '/', images: [OG_IMAGE] },
 };
 
 const BASE = SITE_URL;
@@ -42,7 +42,7 @@ const EVENT_LD = {
     name: 'Clayton Hotel Liffey Valley',
     address: { '@type': 'PostalAddress', addressLocality: 'Dublin', addressCountry: 'IE' },
   },
-  image: [`${BASE}/ihc2026.jpeg`],
+  image: [`${BASE}/og-2027.jpg`],
   description:
     "Ireland's premier hypnotherapy conference, three days of world-class training, 50+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
   offers: TICKETS.map(t => ({

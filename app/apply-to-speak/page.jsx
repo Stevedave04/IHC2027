@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import './apply.css';
 import NewsletterForm from '../../components/shared/NewsletterForm';
+import { OG_IMAGE } from '../../lib/site';
 
 const DESC =
   'Speaker applications for the Irish Hypnotherapy Conference are now closed. Applications reopen in April 2027. Sign up to be notified.';
@@ -9,7 +10,7 @@ export const metadata = {
   title: 'Apply to Speak',
   description: DESC,
   alternates: { canonical: '/apply-to-speak' },
-  openGraph: { title: 'Apply to Speak at IHC', description: DESC, url: '/apply-to-speak' },
+  openGraph: { title: 'Apply to Speak at IHC', description: DESC, url: '/apply-to-speak', images: [OG_IMAGE] },
 };
 
 export default function ApplyToSpeakPage() {

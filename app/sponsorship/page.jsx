@@ -1,10 +1,11 @@
 import './sponsorship.css';
+import { OG_IMAGE } from '../../lib/site';
 
 export const metadata = {
   title: "Sponsor IHC 2027",
   description: "Partner with the Irish Hypnotherapy Conference 2027. Exhibition tables from \u20ac400, plus Bronze, Silver, Gold and Platinum sponsorship packages reaching 200+ hypnotherapy professionals in Dublin.",
   alternates: { canonical: '/sponsorship' },
-  openGraph: { title: "Sponsor IHC 2027", description: "Partner with the Irish Hypnotherapy Conference 2027. Exhibition tables from \u20ac400, plus Bronze, Silver, Gold and Platinum sponsorship packages reaching 200+ hypnotherapy professionals in Dublin.", url: '/sponsorship' },
+  openGraph: { title: "Sponsor IHC 2027", description: "Partner with the Irish Hypnotherapy Conference 2027. Exhibition tables from \u20ac400, plus Bronze, Silver, Gold and Platinum sponsorship packages reaching 200+ hypnotherapy professionals in Dublin.", url: '/sponsorship', images: [OG_IMAGE] },
 };
 
 export default function Page() {
