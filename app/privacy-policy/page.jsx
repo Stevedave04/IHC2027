@@ -51,6 +51,8 @@ export default function Page() {
     <p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
     <p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select "Remember Me", your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
     <p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after one day.</p>
+    <h2>Analytics</h2>
+    <p>This site uses Cloudflare Web Analytics to count visits and see which pages are useful. It does not use cookies, does not track you across other websites and does not collect personal data such as your name or email address.</p>
   </article>
 
   <article className="pp-section">
