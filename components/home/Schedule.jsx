@@ -10,7 +10,7 @@ function Row({ r }) {
       <div>
         <div className="sched-title">{r.title}</div>
         <div className="sched-speaker">
-          {r.slug ? <Link href={`/speakers/${r.slug}`}>{r.speaker}</Link> : r.speaker}
+          {r.slug ? <Link prefetch={false} href={`/speakers/${r.slug}`}>{r.speaker}</Link> : r.speaker}
         </div>
       </div>
       <span className={`sched-type ${r.cls}`}>{r.tag}</span>

@@ -55,10 +55,7 @@
   margin-bottom:3rem;
   padding-bottom:3rem;
   border-bottom:1px solid var(--gold-rule);
-  opacity:0;transform:translateY(16px);
-  transition:opacity .6s var(--ease),transform .6s var(--ease);
 }
-.rp-section.in{opacity:1;transform:none}
 .rp-section:last-child{border-bottom:none;margin-bottom:0}
 
 .rp-section-num{

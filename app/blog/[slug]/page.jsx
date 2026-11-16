@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { POSTS, getPost } from '../../../lib/posts';
-import { BASE, SITE_URL } from '../../../lib/site';
+import { SITE_URL } from '../../../lib/site';
 import '../blog.css';
 import './article.css';
+import { webpSources, PHOTO_WIDTHS } from '../../../lib/images';
 
 export function generateStaticParams() {
   return POSTS.map(p => ({ slug: p.slug }));
@@ -63,7 +64,7 @@ export default async function ArticlePage({ params }) {
       </header>
 
       <div className="article-hero">
-        <img src={BASE + post.image.src} alt={post.image.alt} width="1400" height="933" fetchPriority="high" />
+        <img {...webpSources(post.image.src, PHOTO_WIDTHS)} sizes="(max-width:900px) 100vw, 860px" alt={post.image.alt} width="1400" height="933" fetchPriority="high" />
       </div>
 
       <main id="main" className="article-wrap">

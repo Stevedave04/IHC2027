@@ -545,3 +545,14 @@ textarea.contact-input{resize:vertical;min-height:120px}
   transition:border-color .2s,color .2s;
 }
 .testi-pause:hover{border-color:var(--gold);color:#fff}
+
+/* ── Awards ────────────────────────────────────── */
+.awards-hl{
+  font-size:clamp(2.5rem,5vw,5rem);font-weight:300;font-style:italic;
+  line-height:1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;
+}
+.awards-intro{font-size:1rem;color:var(--muted);font-weight:300;max-width:50ch;margin-bottom:4rem}
+.award-item{padding:2rem 0;border-top:1px solid var(--gold-rule)}
+.award-num{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.75rem}
+.award-title{font-size:1.4rem;font-weight:600;font-style:italic;margin-bottom:.6rem;color:var(--text)}
+.award-body{font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.7}

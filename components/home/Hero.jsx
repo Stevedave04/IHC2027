@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Countdown from './Countdown';
-import HeroIntro from './HeroIntro';
 import { BASE } from '../../lib/site';
+import { webpSources, HERO_WIDTHS, LOGO_SRC } from '../../lib/images';
 
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-hl">
-      <img width="1600" height="629" src={BASE + "/ihc2026.jpeg"} alt="" className="hero-bg" aria-hidden="true" fetchPriority="high" />
+      <img width="1600" height="629" {...webpSources('/ihc2026.jpeg', HERO_WIDTHS)} sizes="100vw" alt="" className="hero-bg" aria-hidden="true" fetchPriority="high" />
       <div className="hero-ghost" aria-hidden="true">IHC</div>
       <div className="hero-corners" aria-hidden="true">
         <span className="hc tl"></span>
@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-logo-wrap">
-        <img width="160" height="150" src={BASE + "/logo.png"} alt="Irish Hypnotherapy Conference" />
+        <img width="160" height="150" src={LOGO_SRC} alt="Irish Hypnotherapy Conference" fetchPriority="high" />
       </div>
 
       <p className="hero-eyebrow">16–18 April 2027 &ensp;·&ensp; Clayton Hotel, Dublin</p>
@@ -38,7 +38,6 @@ export default function Hero() {
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg>
         Add to Calendar
       </a>
-      <HeroIntro />
     </section>
   );
 }

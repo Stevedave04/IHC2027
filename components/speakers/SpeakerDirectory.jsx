@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { BASE } from '../../lib/site';
 import { DAY_LABELS, initials } from '../../lib/speaker-format';
+import { webpSources, SPEAKER_WIDTHS } from '../../lib/images';
 
 const FILTERS = [
   { id: 'all', label: 'All speakers' },
@@ -41,10 +41,10 @@ export default function SpeakerDirectory({ speakers: SPEAKERS }) {
       <ul className="spk-grid">
         {list.map(s => (
           <li key={s.slug}>
-            <Link href={`/speakers/${s.slug}`} className="spk-card">
+            <Link prefetch={false} href={`/speakers/${s.slug}`} className="spk-card">
               <span className="spk-photo">
                 {s.photo
-                  ? <img width="480" height="600" src={BASE + s.photo} alt="" loading="lazy" />
+                  ? <img width="480" height="600" {...webpSources(s.photo, SPEAKER_WIDTHS)} sizes="(max-width:600px) 45vw, (max-width:1100px) 30vw, 290px" alt="" loading="lazy" />
                   : <span aria-hidden="true">{initials(s.name)}</span>}
                 {s.keynote && <span className="spk-key">Keynote</span>}
               </span>

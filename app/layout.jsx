@@ -1,3 +1,4 @@
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import Nav from '../components/shared/Nav';
 import Footer from '../components/shared/Footer';
@@ -6,8 +7,15 @@ import ScrollTop from '../components/shared/ScrollTop';
 import MobileTicketBar from '../components/shared/MobileTicketBar';
 import { BASE, SITE_URL, OG_IMAGE } from '../lib/site';
 
-const FONT_URL =
-  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap';
+// Fonts are downloaded at build time and served from this site, so no
+// request goes to Google when a page loads.
+const serif = Cormorant_Garamond({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-serif',
+});
+const sans = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-sans' });
 
 export const metadata = {
   metadataBase: new URL(SITE_URL + '/'),
@@ -31,15 +39,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-GB" suppressHydrationWarning>
+    <html lang="en-GB" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
       <head>
         {/* Mark JS as available before first paint so reveal animations only hide
             content when a script can bring it back; without JS everything stays visible. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href={FONT_URL} />
       </head>
       <body>
         <a className="skip-link" href="#main">Skip to content</a>

@@ -3,8 +3,8 @@
 /* ── Tokens ───────────────────────────────────── */
 :root {
   /* --f = display serif (large headlines only); --f-sans = everything you read */
-  --f: 'Cormorant Garamond', Georgia, serif;
-  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
+  --f-sans: var(--font-sans), 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --emerald:   #091910;
   --emerald-2: #112218;
@@ -303,10 +303,17 @@ input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#FF9C8C !i
 .form-status.is-error{color:#FFB4A8}
 
 /* ── GSAP reveal initial state ─────────────────── */
-html.js .reveal{opacity:0}
-html.js .wipe{opacity:0}
+html.js .reveal,html.js .wipe{opacity:0}
+/* RevealManager adds .is-in when the block scrolls into view. The animation only
+   fills backwards, so hover transforms on the element still work afterwards. */
+html.js .reveal.is-in,html.js .wipe.is-in{
+  opacity:1;
+  animation:reveal-in .9s var(--ease) backwards;
+  animation-delay:var(--reveal-delay,0ms);
+}
+@keyframes reveal-in{from{opacity:0;transform:translateY(24px)}}
 @media(prefers-reduced-motion:reduce){
-  html.js .reveal,html.js .wipe{opacity:1}
+  html.js .reveal,html.js .wipe{opacity:1;animation:none}
 }
 
 /* ── Type system ───────────────────────────────── */

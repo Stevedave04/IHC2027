@@ -2,7 +2,8 @@ import Link from 'next/link';
 import './blog.css';
 import NewsletterForm from '../../components/shared/NewsletterForm';
 import { POSTS } from '../../lib/posts';
-import { BASE, OG_IMAGE } from '../../lib/site';
+import { OG_IMAGE } from '../../lib/site';
+import { webpSources, PHOTO_WIDTHS } from '../../lib/images';
 
 const DESC =
   'Dublin city guides, day trips, travel tips and Irish culture, why the setting is half the reason to attend the Irish Hypnotherapy Conference 2027.';
@@ -32,7 +33,7 @@ export default function Page() {
         <div className="blog-wrap">
           <article className="blog-feature reveal" aria-label="Featured article">
             <Link href={`/blog/${feature.slug}`} className="blog-img-link" aria-hidden="true" tabIndex={-1}>
-              <img src={BASE + feature.image.src} alt={feature.image.alt} className="blog-img" style={{ height: '360px' }} loading="eager" />
+              <img {...webpSources(feature.image.src, PHOTO_WIDTHS)} sizes="(max-width:900px) 100vw, 60vw" width="1400" height="933" alt={feature.image.alt} className="blog-img" style={{ height: '360px' }} loading="eager" />
             </Link>
             <div>
               <div className="blog-eyebrow">
@@ -58,7 +59,7 @@ export default function Page() {
             {rest.map(post => (
               <article className="blog-card reveal" role="listitem" key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="blog-img-link" aria-hidden="true" tabIndex={-1}>
-                  <img src={BASE + post.image.src} alt={post.image.alt} className="blog-img blog-img-card" loading="lazy" />
+                  <img {...webpSources(post.image.src, PHOTO_WIDTHS)} sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 34vw" width="1400" height="933" alt={post.image.alt} className="blog-img blog-img-card" loading="lazy" />
                 </Link>
                 <div className="blog-eyebrow" style={{ marginTop: 0 }}>
                   <span className="blog-cat">{post.category}</span>

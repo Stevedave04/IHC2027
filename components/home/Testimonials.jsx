@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { prefersReducedMotion } from '../../lib/gsap';
+import { prefersReducedMotion } from '../../lib/motion';
 
 const QUOTES = [
   { text: '"The IHC is without question the most valuable event in the Irish hypnotherapy calendar. The quality of speakers is simply unmatched."', name: 'Siobhán Murphy', role: 'Clinical Hypnotherapist, Cork' },

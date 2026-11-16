@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BASE } from '../../lib/site';
+import { webpSources, SPEAKER_WIDTHS } from '../../lib/images';
 import { SPEAKER_COUNT } from '../../lib/event';
 import { SPEAKERS, KEYNOTES, DAY_LABELS, getSpeaker, initials } from '../../lib/speakers';
 
@@ -23,9 +23,9 @@ const slotLabel = s => {
 function KeynoteCard({ s }) {
   const layout = KEYNOTE_LAYOUT[s.slug] || 'sp-wide';
   return (
-    <Link href={`/speakers/${s.slug}`} className={`speaker-card ${layout} reveal`} aria-label={`${s.name}, keynote speaker. View profile`}>
+    <Link prefetch={false} href={`/speakers/${s.slug}`} className={`speaker-card ${layout} reveal`} aria-label={`${s.name}, keynote speaker. View profile`}>
       {s.photo && (
-        <img width="480" height="600" src={BASE + s.photo} alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
+        <img width="480" height="600" {...webpSources(s.photo, SPEAKER_WIDTHS)} sizes="(max-width:768px) 50vw, 34vw" alt="" className="speaker-photo" aria-hidden="true" loading="lazy" />
       )}
       <span className="speaker-initial" aria-hidden="true">{initials(s.name)}</span>
       <div>
@@ -71,10 +71,10 @@ export default function Speakers() {
         <ul className="speaker-roster" aria-label="More 2027 speakers">
           {roster.map(s => (
             <li key={s.slug} className="reveal">
-              <Link href={`/speakers/${s.slug}`} className="roster-item">
+              <Link prefetch={false} href={`/speakers/${s.slug}`} className="roster-item">
                 <span className="roster-photo">
                   {s.photo
-                    ? <img width="240" height="240" src={BASE + s.photo} alt="" loading="lazy" />
+                    ? <img width="240" height="240" {...webpSources(s.photo, SPEAKER_WIDTHS)} sizes="(max-width:768px) 45vw, 210px" alt="" loading="lazy" />
                     : <span aria-hidden="true">{initials(s.name)}</span>}
                 </span>
                 <span className="roster-name">{s.name}</span>

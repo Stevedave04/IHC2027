@@ -2,56 +2,59 @@
 
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { gsap, ScrollTrigger, prefersReducedMotion } from '../../lib/gsap';
+import { prefersReducedMotion } from '../../lib/motion';
+
+const SELECTOR = '.reveal, .wipe';
+const STAGGER_MS = 80;
+const MAX_STAGGER_STEPS = 6;
+
+/** Mark an element as revealed; the fade-up itself is a CSS animation (globals.css). */
+const reveal = (el, delayMs = 0) => {
+  el.style.setProperty('--reveal-delay', `${delayMs}ms`);
+  el.classList.add('is-in');
+};
 
 /**
- * GSAP-driven scroll reveals for every element carrying .reveal or .wipe.
+ * Scroll reveals for every element carrying .reveal or .wipe.
  * Re-runs on route change so newly rendered pages animate too.
  */
 export default function RevealManager() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const els = gsap.utils.toArray('.reveal, .wipe');
-    if (!els.length) return;
+    const els = [...document.querySelectorAll(SELECTOR)].filter(el => !el.classList.contains('is-in'));
+    if (!els.length) return undefined;
 
-    if (prefersReducedMotion()) {
-      gsap.set(els, { opacity: 1 });
-      return;
+    if (prefersReducedMotion() || !('IntersectionObserver' in window)) {
+      els.forEach(el => reveal(el));
+      return undefined;
     }
 
-    // opacity only (never visibility:hidden) so links inside stay keyboard-focusable
-    gsap.set(els, { opacity: 0, y: 24 });
-    const batch = ScrollTrigger.batch(els, {
-      start: 'top 88%',
-      once: true,
-      onEnter: targets =>
-        gsap.to(targets, {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-          ease: 'expo.out',
-          stagger: 0.08,
-          overwrite: true,
-        }),
-    });
-    // anything already past the trigger (e.g. after hash navigation) shows immediately
-    ScrollTrigger.refresh();
+    const observer = new IntersectionObserver(
+      entries => {
+        entries
+          .filter(entry => entry.isIntersecting)
+          .forEach((entry, i) => {
+            reveal(entry.target, Math.min(i, MAX_STAGGER_STEPS) * STAGGER_MS);
+            observer.unobserve(entry.target);
+          });
+      },
+      { rootMargin: '0px 0px -12% 0px' }
+    );
+    els.forEach(el => observer.observe(el));
 
     // keyboard focus landing inside a not-yet-revealed block shows it straight away
     const onFocusIn = e => {
-      const hidden = [];
-      for (let el = e.target.closest?.('.reveal, .wipe'); el; el = el.parentElement?.closest('.reveal, .wipe')) {
-        hidden.push(el);
+      for (let el = e.target.closest?.(SELECTOR); el; el = el.parentElement?.closest(SELECTOR)) {
+        reveal(el);
+        observer.unobserve(el);
       }
-      if (hidden.length) gsap.to(hidden, { opacity: 1, y: 0, duration: 0.2, overwrite: true });
     };
     document.addEventListener('focusin', onFocusIn);
 
     return () => {
       document.removeEventListener('focusin', onFocusIn);
-      batch.forEach(st => st.kill());
-      gsap.set(els, { clearProps: 'all' });
+      observer.disconnect();
     };
   }, [pathname]);
 

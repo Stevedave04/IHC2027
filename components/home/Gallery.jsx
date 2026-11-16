@@ -1,4 +1,4 @@
-import { BASE } from '../../lib/site';
+import { webpSources, HERO_WIDTHS, PHOTO_WIDTHS } from '../../lib/images';
 
 const PHOTOS = [
   {
@@ -30,7 +30,7 @@ export default function Gallery() {
         <div className="gallery-grid reveal">
           <figure className="gallery-item gallery-feature">
             <span className="gallery-frame">
-              <img width="1600" height="629" src={BASE + '/ihc2026.jpeg'} alt="Delegates seated in the main plenary hall at IHC 2026" loading="lazy" />
+              <img width="1600" height="629" {...webpSources('/ihc2026.jpeg', HERO_WIDTHS)} sizes="(max-width:768px) 100vw, 60vw" alt="Delegates seated in the main plenary hall at IHC 2026" loading="lazy" />
             </span>
             <figcaption className="gallery-caption">Main plenary session, IHC 2026</figcaption>
           </figure>
@@ -38,7 +38,7 @@ export default function Gallery() {
           {PHOTOS.map(p => (
             <figure className="gallery-item" key={p.src}>
               <span className="gallery-frame">
-                <img width="1400" height="933" src={BASE + p.src} alt={p.alt} loading="lazy" />
+                <img width="1400" height="933" {...webpSources(p.src, PHOTO_WIDTHS)} sizes="(max-width:768px) 100vw, 34vw" alt={p.alt} loading="lazy" />
               </span>
               <figcaption className="gallery-caption">{p.caption}</figcaption>
             </figure>

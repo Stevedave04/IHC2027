@@ -1,46 +1,63 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { gsap, ScrollTrigger, prefersReducedMotion } from '../../lib/gsap';
+import { prefersReducedMotion } from '../../lib/motion';
+import { SPEAKER_COUNT, ATTENDEE_COUNT, YEARS_RUNNING } from '../../lib/event';
+
+/** '40+' -> { value: 40, suffix: '+' } */
+const split = figure => ({ value: parseInt(figure, 10), suffix: String(figure).replace(/^\d+/, '') });
 
 const STATS = [
-  { value: 40, suffix: '+', label: 'International Speakers' },
+  { ...split(SPEAKER_COUNT), label: 'International Speakers' },
   { value: 3, suffix: '', label: 'Days of Learning' },
-  { value: 200, suffix: '+', label: 'Attendees' },
-  { value: 4, suffix: '', label: 'Years Running' },
+  { ...split(ATTENDEE_COUNT), label: 'Attendees' },
+  { value: YEARS_RUNNING, suffix: '', label: 'Years Running' },
 ];
 
-/** Stats count up with GSAP when scrolled into view. */
+const COUNT_MS = 1600;
+const easeOut = t => 1 - (1 - t) * (1 - t);
+
+/** Count an element's text up from 0; returns a function that cancels it. */
+function countUp(el, { value, suffix }) {
+  let frame;
+  const start = performance.now();
+  const tick = now => {
+    const progress = Math.min((now - start) / COUNT_MS, 1);
+    el.textContent = Math.round(easeOut(progress) * value) + suffix;
+    if (progress < 1) frame = requestAnimationFrame(tick);
+  };
+  frame = requestAnimationFrame(tick);
+  return () => cancelAnimationFrame(frame);
+}
+
+/** Stats count up once when scrolled into view. */
 export default function Numbers() {
   const gridRef = useRef(null);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
-    const figs = gridRef.current.querySelectorAll('.number-fig');
-    const tweens = [];
-    figs.forEach((el, i) => {
-      const { value, suffix } = STATS[i];
-      const counter = { n: 0 };
-      tweens.push(
-        gsap.to(counter, {
-          n: value,
-          duration: 1.6,
-          ease: 'power2.out',
-          snap: { n: 1 },
-          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-          onUpdate: () => { el.textContent = counter.n + suffix; },
-        })
-      );
-    });
-    return () => tweens.forEach(t => { t.scrollTrigger?.kill(); t.kill(); });
+    if (prefersReducedMotion() || !('IntersectionObserver' in window)) return undefined;
+    const figs = [...gridRef.current.querySelectorAll('.number-fig')];
+    const cancels = [];
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.filter(entry => entry.isIntersecting).forEach(entry => {
+          observer.unobserve(entry.target);
+          cancels.push(countUp(entry.target, STATS[figs.indexOf(entry.target)]));
+        });
+      },
+      { threshold: 0.4 }
+    );
+    figs.forEach(fig => observer.observe(fig));
+    return () => {
+      observer.disconnect();
+      cancels.forEach(cancel => cancel());
+    };
   }, []);
 
   return (
     <div className="light-section">
-      <div className="section-wrap" style={{ paddingTop: '3rem', paddingBottom: 0 }}>
-        <p className="reveal" style={{ textAlign: 'center', fontSize: '.72rem', fontWeight: 600, letterSpacing: '.26em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '2.25rem' }}>
-          By the Numbers
-        </p>
+      <div className="section-wrap numbers-wrap">
+        <p className="numbers-eyebrow reveal">By the Numbers</p>
         <div className="numbers-grid" ref={gridRef}>
           {STATS.map(s => (
             <div className="number-item reveal" key={s.label}>

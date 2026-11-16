@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { BASE } from '../../lib/site';
+import { LOGO_SRC } from '../../lib/images';
 
 const PRIMARY = [
   ['/#about', 'About'],
@@ -74,7 +74,7 @@ export default function Nav() {
         {...(open ? { 'data-open': '' } : {})}
       >
         <Link href="/" className="nav-logo" aria-label="Irish Hypnotherapy Conference 2027, home" onClick={close}>
-          <img width="160" height="150" src={BASE + '/logo.png'} alt="IHC" />
+          <img width="160" height="150" src={LOGO_SRC} alt="IHC" />
           <div className="nav-logo-name">
             Irish Hypnotherapy Conference<span>Dublin · April 2027</span>
           </div>

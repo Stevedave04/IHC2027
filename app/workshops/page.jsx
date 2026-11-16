@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { BASE, OG_IMAGE } from '../../lib/site';
+import { OG_IMAGE } from '../../lib/site';
 import './workshops.css';
+import { webpSources, SPEAKER_WIDTHS } from '../../lib/images';
 
 const DESC =
   'Pre and post-conference workshops at the Irish Hypnotherapy Conference 2027 in Dublin, including Procrastination Lab with Melissa Tiers. More workshops to be announced.';
@@ -36,7 +37,8 @@ export default function Page() {
             <div className="ws-feature-grid">
               <img
                 className="ws-feature-photo"
-                src={`${BASE}/images/speakers/melissa-tiers.jpg`}
+                {...webpSources('/images/speakers/melissa-tiers.jpg', SPEAKER_WIDTHS)}
+                sizes="280px"
                 width="480" height="600"
                 alt="Portrait of Melissa Tiers"
                 loading="lazy"

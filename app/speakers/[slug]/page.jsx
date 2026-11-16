@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { SPEAKERS, DAY_LABELS, getSpeaker, initials } from '../../../lib/speakers';
 import { BASE, SITE_URL, OG_IMAGE } from '../../../lib/site';
 import '../speakers.css';
+import { webpSources, SPEAKER_WIDTHS } from '../../../lib/images';
 
 export function generateStaticParams() {
   return SPEAKERS.map(s => ({ slug: s.slug }));
@@ -63,7 +64,7 @@ export default async function SpeakerPage({ params }) {
         <div className="prof-wrap">
           <div className="prof-photo">
             {s.photo
-              ? <img width="480" height="600" src={BASE + s.photo} alt={`Portrait of ${s.name}`} />
+              ? <img width="480" height="600" {...webpSources(s.photo, SPEAKER_WIDTHS)} sizes="(max-width:820px) 90vw, 420px" alt={`Portrait of ${s.name}`} fetchPriority="high" />
               : <span aria-hidden="true">{initials(s.name)}</span>}
           </div>
 
@@ -96,8 +97,8 @@ export default async function SpeakerPage({ params }) {
           </div>
 
           <nav className="prof-nav" aria-label="More speakers">
-            <Link href={`/speakers/${prev.slug}`}><span>Previous</span>{prev.name}</Link>
-            <Link href={`/speakers/${next.slug}`} style={{ textAlign: 'right' }}><span>Next</span>{next.name}</Link>
+            <Link prefetch={false} href={`/speakers/${prev.slug}`}><span>Previous</span>{prev.name}</Link>
+            <Link prefetch={false} href={`/speakers/${next.slug}`} style={{ textAlign: 'right' }}><span>Next</span>{next.name}</Link>
           </nav>
         </div>
       </main>

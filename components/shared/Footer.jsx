@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BASE } from '../../lib/site';
+import { LOGO_SRC } from '../../lib/images';
 
 /** Current year, set each time the site is built. */
 const COPYRIGHT_YEAR = new Date().getFullYear();
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-logo">
-              <img width="160" height="150" src={BASE + "/logo.png"} alt="IHC" />
+              <img width="160" height="150" src={LOGO_SRC} loading="lazy" alt="IHC" />
               <div className="footer-logo-name">
                 Irish Hypnotherapy Conference<span>Dublin · 16–18 April 2027</span>
               </div>

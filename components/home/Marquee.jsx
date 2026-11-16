@@ -1,7 +1,3 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import { gsap, prefersReducedMotion } from '../../lib/gsap';
 import { SPEAKER_COUNT } from '../../lib/event';
 
 const ITEMS = [
@@ -9,47 +5,11 @@ const ITEMS = [
   '16–18 April 2027', 'Dublin, Ireland', `${SPEAKER_COUNT} World-Class Speakers`,
 ];
 
-/** GSAP seamless marquee loop, 60px/s desktop, 30px/s mobile, pauses on hover. */
+/** Decorative ticker. Two copies of the items make the CSS loop seamless (home-a.css). */
 export default function Marquee() {
-  const trackRef = useRef(null);
-
-  useEffect(() => {
-    if (prefersReducedMotion()) return;
-    const track = trackRef.current;
-    let tween;
-
-    const build = () => {
-      tween?.kill();
-      const pxPerSec = window.innerWidth < 769 ? 30 : 60;
-      const half = track.scrollWidth / 2;
-      tween = gsap.fromTo(
-        track,
-        { x: 0 },
-        { x: -half, duration: half / pxPerSec, ease: 'none', repeat: -1 }
-      );
-    };
-
-    build();
-    document.fonts?.ready?.then(build);
-    let t;
-    const onResize = () => { clearTimeout(t); t = setTimeout(build, 200); };
-    window.addEventListener('resize', onResize, { passive: true });
-    const pause = () => tween?.pause();
-    const play = () => tween?.play();
-    track.addEventListener('mouseenter', pause);
-    track.addEventListener('mouseleave', play);
-
-    return () => {
-      tween?.kill();
-      window.removeEventListener('resize', onResize);
-      track.removeEventListener('mouseenter', pause);
-      track.removeEventListener('mouseleave', play);
-    };
-  }, []);
-
   return (
     <div className="marquee-band" aria-hidden="true">
-      <div className="marquee-track" ref={trackRef}>
+      <div className="marquee-track">
         {[0, 1].map(copy =>
           ITEMS.map(item => (
             <span key={`${copy}-${item}`} style={{ display: 'contents' }}>
