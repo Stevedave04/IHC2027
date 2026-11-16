@@ -40,11 +40,17 @@ const EVENT_LD = {
   location: {
     '@type': 'Place',
     name: 'Clayton Hotel Liffey Valley',
-    address: { '@type': 'PostalAddress', addressLocality: 'Dublin', addressCountry: 'IE' },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Fonthill Road, Liffey Valley',
+      addressLocality: 'Dublin',
+      postalCode: 'D22 X4W6',
+      addressCountry: 'IE',
+    },
   },
   image: [`${BASE}/og-2027.jpg`],
   description:
-    "Ireland's premier hypnotherapy conference, three days of world-class training, 50+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
+    "Ireland's premier hypnotherapy conference, three days of world-class training, 40+ international speakers, workshops, CPD hours and the annual gala awards dinner in Dublin.",
   offers: TICKETS.map(t => ({
     '@type': 'Offer', name: t.name, price: String(t.price), priceCurrency: 'EUR', url: t.url,
     availability: 'https://schema.org/InStock', validFrom: '2026-01-01',

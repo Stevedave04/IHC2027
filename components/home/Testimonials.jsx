@@ -5,7 +5,7 @@ import { prefersReducedMotion } from '../../lib/gsap';
 
 const QUOTES = [
   { text: '"The IHC is without question the most valuable event in the Irish hypnotherapy calendar. The quality of speakers is simply unmatched."', name: 'Siobhán Murphy', role: 'Clinical Hypnotherapist, Cork' },
-  { text: '"I have attended every year for six years. The connections I have made have genuinely transformed my practice and my career."', name: "Declan O'Brien", role: 'Hypnotherapy Trainer, Dublin' },
+  { text: '"I have attended every year for four years. The connections I have made have genuinely transformed my practice and my career."', name: "Declan O'Brien", role: 'Hypnotherapy Trainer, Dublin' },
   { text: '"Melissa Tiers alone was worth the trip from London. The level of expertise on stage across three days is genuinely world-class."', name: 'Aoife Brennan', role: 'Hypnotherapist and Coach, Galway' },
   { text: '"The workshops are outstanding: practical, immediately applicable and presented by genuine masters of their craft."', name: 'Ciarán Walsh', role: 'Practice Owner, Limerick' },
   { text: '"The Gala Dinner is an experience in itself, an evening of celebration, inspiration and community I look forward to every year."', name: 'Fionnuala Kelly', role: 'Hypnotherapy Supervisor, Belfast' },

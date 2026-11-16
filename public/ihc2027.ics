@@ -10,9 +10,10 @@ DTSTART;TZID=Europe/Dublin:20270416T090000
 DTEND;TZID=Europe/Dublin:20270418T180000
 SUMMARY:Irish Hypnotherapy Conference 2027
 DESCRIPTION:Three days of hypnotherapy training in Dublin with more than 
- 50 speakers\, workshops and the Saturday Gala Dinner.\nhttps://irishhypnot
+ 40 speakers\, workshops and the Saturday Gala Dinner.\nhttps://irishhypnot
  herapyconference.ie/
-LOCATION:Clayton Hotel Liffey Valley\, Dublin\, Ireland
+LOCATION:Clayton Hotel Liffey Valley\, Fonthill Road\, Liffey Valley\, Dub
+ lin\, D22 X4W6\, Ireland
 URL:https://irishhypnotherapyconference.ie/
 STATUS:CONFIRMED
 BEGIN:VALARM

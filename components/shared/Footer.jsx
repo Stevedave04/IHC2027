@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { BASE } from '../../lib/site';
 
+/** Current year, set each time the site is built. */
+const COPYRIGHT_YEAR = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <footer>
@@ -54,7 +57,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p className="footer-copy">© 2027 Irish Hypnotherapy Conference. All rights reserved.</p>
+          <p className="footer-copy">© {COPYRIGHT_YEAR} Irish Hypnotherapy Conference. All rights reserved.</p>
           <ul className="footer-policies">
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
             <li><Link href="/refund-policy">Refund Policy</Link></li>

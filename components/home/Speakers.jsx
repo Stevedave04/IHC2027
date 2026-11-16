@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BASE } from '../../lib/site';
+import { SPEAKER_COUNT } from '../../lib/event';
 import { SPEAKERS, KEYNOTES, DAY_LABELS, getSpeaker, initials } from '../../lib/speakers';
 
 /** Names shown in the homepage roster strip, in display order. */
@@ -51,7 +52,7 @@ export default function Speakers() {
           <div>
             <div className="eyebrow reveal" style={{ '--eyebrow-c': 'var(--gold-text)' }}>2027 Speakers</div>
             <h2 className="speakers-hl reveal" id="speakers-hl">
-              <em>{SPEAKERS.length} confirmed speakers</em>
+              <em>{SPEAKER_COUNT} confirmed speakers</em>
               Voices shaping<br />the future
             </h2>
           </div>
