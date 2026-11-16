@@ -17,7 +17,7 @@ export default function NotFound() {
         padding: '8rem 2rem 6rem',
       }}
     >
-      <p style={{ fontFamily: 'var(--f)', fontSize: '.7rem', fontWeight: 600, letterSpacing: '.3em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem' }}>
+      <p style={{ fontFamily: 'var(--f)', fontSize: '.72rem', fontWeight: 600, letterSpacing: '.3em', textTransform: 'uppercase', color:'var(--gold-text)', marginBottom: '1.5rem' }}>
         Four Oh Four
       </p>
       <h1 style={{ fontFamily: 'var(--f)', fontSize: 'clamp(2.6rem,6vw,5rem)', fontWeight: 300, fontStyle: 'italic', color: '#fff', lineHeight: 1.05, maxWidth: '18ch', marginBottom: '1.5rem' }}>
@@ -31,7 +31,7 @@ export default function NotFound() {
         <Link href="/" style={{ fontFamily: 'var(--f)', background: 'var(--gold)', color: 'var(--emerald)', padding: '.85rem 2.2rem', fontSize: '.78rem', fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase' }}>
           Back to Home
         </Link>
-        <Link href="/blog" style={{ fontFamily: 'var(--f)', border: '1px solid var(--gold-rule)', color: 'var(--gold)', padding: '.85rem 2.2rem', fontSize: '.78rem', fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase' }}>
+        <Link href="/blog" style={{ fontFamily: 'var(--f)', border: '1px solid var(--gold-rule)', color:'var(--gold-text)', padding: '.85rem 2.2rem', fontSize: '.78rem', fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase' }}>
           Discover Dublin
         </Link>
       </div>

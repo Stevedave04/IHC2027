@@ -5,7 +5,7 @@ import { BASE } from '../../lib/site';
 
 export default function Hero() {
   return (
-    <section className="hero" id="main" aria-labelledby="hero-hl">
+    <section className="hero" aria-labelledby="hero-hl">
       <img width="1600" height="629" src={BASE + "/ihc2026.jpeg"} alt="" className="hero-bg" aria-hidden="true" fetchPriority="high" />
       <div className="hero-ghost" aria-hidden="true">IHC</div>
       <div className="hero-corners" aria-hidden="true">

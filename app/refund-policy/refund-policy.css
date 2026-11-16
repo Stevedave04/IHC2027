@@ -16,8 +16,8 @@
   white-space:nowrap;
 }
 .page-eyebrow{
-  font-size:.65rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-text);margin-bottom:1.25rem;
   opacity:0;animation:fade-up .7s var(--ease) .1s forwards;
 }
 .page-title{
@@ -62,8 +62,8 @@
 .rp-section:last-child{border-bottom:none;margin-bottom:0}
 
 .rp-section-num{
-  font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.6rem;display:block;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-text);margin-bottom:.6rem;display:block;
 }
 .rp-section h2{
   font-size:clamp(1.8rem,3.5vw,2.6rem);
@@ -80,7 +80,7 @@
 
 /* ── Subsection heading ───────────────────────── */
 .rp-sub{
-  font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
   color:var(--ink);margin:1.75rem 0 .75rem;display:block;
 }
 
@@ -101,7 +101,7 @@
   padding:1rem 1.25rem;
   background:var(--emerald);
   font-size:.85rem;font-weight:500;
-  color:var(--gold);line-height:1.4;
+  color:var(--gold-text);line-height:1.4;
   display:flex;align-items:center;
 }
 .rp-timeline-detail{
@@ -141,8 +141,8 @@
   height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);
 }
 .rp-contact-label{
-  font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;display:block;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-text);margin-bottom:1.25rem;display:block;
 }
 .rp-contact h2{
   font-size:clamp(1.6rem,3vw,2.2rem);
@@ -160,9 +160,9 @@
 .rp-contact-email{
   display:inline-flex;align-items:center;gap:.6rem;
   font-size:1rem;font-weight:500;letter-spacing:.04em;
-  color:var(--gold);
+  color:var(--gold-text);
   border-bottom:1px solid var(--gold-rule);
-  padding-bottom:.15rem;
+  padding-bottom:.15rem;max-width:100%;overflow-wrap:anywhere;
   transition:border-color .2s;
 }
 .rp-contact-email:hover{border-color:var(--gold)}
@@ -184,7 +184,7 @@
   margin-top:1.5rem;padding-top:1.5rem;
   border-top:1px solid rgba(196,154,40,.15);
   font-size:.85rem;font-style:italic;font-weight:400;
-  color:rgba(255,255,255,.35);line-height:1.6;
+  color:rgba(255,255,255,.68);line-height:1.6;
 }
 
 /* ── Utilities ────────────────────────────────── */
@@ -192,12 +192,9 @@
 
 /* ── Responsive ───────────────────────────────── */
 @media(max-width:768px){
-  .footer-top{grid-template-columns:1fr 1fr}
   .rp-timeline-item{grid-template-columns:1fr}}
 @media(max-width:600px){
   .page-header{padding:8rem 1.75rem 4rem}
   .rp-wrap{padding:4rem 1.5rem 6rem}
   .rp-contact{padding:2rem 1.75rem}
-  .footer-top{grid-template-columns:1fr}
-  .footer-inner{padding:3rem 1.5rem 1.5rem}
 }

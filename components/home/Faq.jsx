@@ -58,7 +58,7 @@ export default function Faq() {
           <input
             id="faq-filter"
             type="search"
-            placeholder="Search questions… e.g. CPD, refund, parking"
+            placeholder="Search questions… e.g. gala dinner, refund, parking"
             autoComplete="off"
             value={query}
             onChange={e => setQuery(e.target.value)}
@@ -76,15 +76,17 @@ export default function Faq() {
               style={matches[i] ? undefined : { display: 'none' }}
             >
               <button
+                type="button"
                 className="faq-trigger"
                 aria-expanded={open === i}
+                aria-controls={`faq-panel-${i}`}
                 onClick={() => setOpen(open === i ? -1 : i)}
               >
                 <span className="faq-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="faq-q">{question}</span>
                 <span className="faq-icon" aria-hidden="true">+</span>
               </button>
-              <div className="faq-body">
+              <div className="faq-body" id={`faq-panel-${i}`} inert={open !== i}>
                 <div className="faq-body-inner">
                   <p className="faq-answer">{answer}</p>
                 </div>

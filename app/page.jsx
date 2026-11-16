@@ -57,6 +57,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(EVENT_LD) }} />
+      <main id="main">
       <Hero />
       <Marquee />
       <Numbers />
@@ -73,6 +74,7 @@ export default function Home() {
       <Accommodation />
       <Faq />
       <Contact />
+      </main>
     </>
   );
 }

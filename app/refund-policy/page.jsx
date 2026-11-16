@@ -2,16 +2,16 @@ import './refund-policy.css';
 import { OG_IMAGE } from '../../lib/site';
 
 export const metadata = {
-  title: "Refund &amp; Cancellations Policy",
+  title: "Refund & Cancellations Policy",
   description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027, ticket cancellation terms, transfer rules, and how to request a refund.",
   alternates: { canonical: '/refund-policy' },
-  openGraph: { title: "Refund &amp; Cancellations Policy", description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027, ticket cancellation terms, transfer rules, and how to request a refund.", url: '/refund-policy', images: [OG_IMAGE] },
+  openGraph: { title: "Refund & Cancellations Policy", description: "Refund and cancellations policy for the Irish Hypnotherapy Conference 2027, ticket cancellation terms, transfer rules, and how to request a refund.", url: '/refund-policy', images: [OG_IMAGE] },
 };
 
 export default function Page() {
   return (
     <>
-<div className="page-header" role="banner">
+<div className="page-header">
   <div className="page-header-ghost" aria-hidden="true">Refunds</div>
   <p className="page-eyebrow">Irish Hypnotherapy Conference 2027</p>
   <h1 className="page-title">Refund &amp;<br/><strong style={{fontWeight:'700',fontStyle:'normal'}}>Cancellations</strong></h1>
@@ -47,7 +47,7 @@ export default function Page() {
     <span className="rp-section-num">02</span>
     <h2>Refund Process</h2>
     <ul className="rp-list">
-      <li>All refund requests must be submitted via email to <a href="mailto:john@irishhypnotherapyconference.ie" style={{color:'var(--gold)',borderBottom:'1px solid var(--gold-rule)'}}>john@irishhypnotherapyconference.ie</a></li>
+      <li>All refund requests must be submitted via email to <a href="mailto:john@irishhypnotherapyconference.ie" style={{color:'var(--gold-text)',borderBottom:'1px solid var(--gold-rule)'}}>john@irishhypnotherapyconference.ie</a></li>
       <li>Refunds will be processed within 7–10 business days</li>
       <li>Refunds will be credited to the original payment method</li>
     </ul>
@@ -89,7 +89,7 @@ export default function Page() {
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
       john@irishhypnotherapyconference.ie
     </a>
-    <p style={{fontSize:'.8rem',fontWeight:'300',color:'rgba(255,255,255,.35)',marginTop:'1.5rem',marginBottom:'.5rem',letterSpacing:'.1em',textTransform:'uppercase'}}>Please include in your email:</p>
+    <p style={{fontSize:'.8rem',fontWeight:'300',color:'rgba(255,255,255,.68)',marginTop:'1.5rem',marginBottom:'.5rem',letterSpacing:'.1em',textTransform:'uppercase'}}>Please include in your email:</p>
     <ul className="rp-contact-list">
       <li>Full name</li>
       <li>Ticket reference number</li>

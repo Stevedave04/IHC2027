@@ -16,17 +16,18 @@ export default function RevealManager() {
     if (!els.length) return;
 
     if (prefersReducedMotion()) {
-      gsap.set(els, { autoAlpha: 1 });
+      gsap.set(els, { opacity: 1 });
       return;
     }
 
-    gsap.set(els, { autoAlpha: 0, y: 24 });
+    // opacity only (never visibility:hidden) so links inside stay keyboard-focusable
+    gsap.set(els, { opacity: 0, y: 24 });
     const batch = ScrollTrigger.batch(els, {
       start: 'top 88%',
       once: true,
       onEnter: targets =>
         gsap.to(targets, {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.9,
           ease: 'expo.out',
@@ -37,7 +38,18 @@ export default function RevealManager() {
     // anything already past the trigger (e.g. after hash navigation) shows immediately
     ScrollTrigger.refresh();
 
+    // keyboard focus landing inside a not-yet-revealed block shows it straight away
+    const onFocusIn = e => {
+      const hidden = [];
+      for (let el = e.target.closest?.('.reveal, .wipe'); el; el = el.parentElement?.closest('.reveal, .wipe')) {
+        hidden.push(el);
+      }
+      if (hidden.length) gsap.to(hidden, { opacity: 1, y: 0, duration: 0.2, overwrite: true });
+    };
+    document.addEventListener('focusin', onFocusIn);
+
     return () => {
+      document.removeEventListener('focusin', onFocusIn);
       batch.forEach(st => st.kill());
       gsap.set(els, { clearProps: 'all' });
     };

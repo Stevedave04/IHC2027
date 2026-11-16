@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { BASE } from '../../lib/site';
 
@@ -24,29 +24,49 @@ const SECONDARY = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const headerRef = useRef(null);
+  const toggleRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    const onKey = e => { if (e.key === 'Escape') setOpen(false); };
-    document.addEventListener('keydown', onKey);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      document.removeEventListener('keydown', onKey);
-    };
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // lock page scroll while the overlay is open
+  // While the overlay is open: lock page scroll and make everything outside the
+  // header inert, so keyboard and screen-reader focus stays inside the menu.
   useEffect(() => {
-    document.documentElement.style.overflow = open ? 'hidden' : '';
-    return () => { document.documentElement.style.overflow = ''; };
+    if (!open) return undefined;
+    const outside = [...document.body.children].filter(
+      el => el !== headerRef.current && !el.hasAttribute('inert') && el.tagName !== 'SCRIPT'
+    );
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.classList.add('nav-open');
+    outside.forEach(el => el.setAttribute('inert', ''));
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.documentElement.classList.remove('nav-open');
+      outside.forEach(el => el.removeAttribute('inert'));
+    };
+  }, [open]);
+
+  // Escape closes the menu and returns focus to the button that opened it
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = e => {
+      if (e.key !== 'Escape') return;
+      setOpen(false);
+      toggleRef.current?.focus();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [open]);
 
   const close = () => setOpen(false);
 
   return (
-    <header>
+    <header ref={headerRef}>
       <nav
         className={`nav${scrolled ? ' scrolled' : ''}`}
         id="nav"
@@ -59,6 +79,20 @@ export default function Nav() {
             Irish Hypnotherapy Conference<span>Dublin · April 2027</span>
           </div>
         </Link>
+
+        <button
+          className="nav-hamburger"
+          id="nav-toggle"
+          ref={toggleRef}
+          type="button"
+          aria-controls="nav-links"
+          aria-label={open ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={open}
+          onClick={() => setOpen(o => !o)}
+        >
+          <span></span>
+          <span></span>
+        </button>
 
         <div className="nav-links" id="nav-links">
           <ul className="nav-primary">
@@ -81,16 +115,6 @@ export default function Nav() {
           <p className="nav-overlay-meta">16–18 April 2027 &nbsp;·&nbsp; Clayton Hotel Liffey Valley, Dublin</p>
         </div>
 
-        <button
-          className="nav-hamburger"
-          id="nav-toggle"
-          aria-label={open ? 'Close navigation' : 'Open navigation'}
-          aria-expanded={open}
-          onClick={() => setOpen(o => !o)}
-        >
-          <span></span>
-          <span></span>
-        </button>
       </nav>
     </header>
   );

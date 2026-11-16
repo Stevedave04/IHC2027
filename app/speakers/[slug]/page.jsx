@@ -53,7 +53,7 @@ export default async function SpeakerPage({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
-      <div className="page-header" role="banner">
+      <div className="page-header">
         <div className="page-header-ghost" aria-hidden="true">{initials(s.name)}</div>
         <p className="page-eyebrow">{s.keynote ? 'Keynote Speaker' : 'Speaker'} · IHC 2027</p>
         <h1 className="page-title">{s.name}</h1>

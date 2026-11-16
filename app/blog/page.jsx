@@ -19,7 +19,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="page-header" role="banner">
+      <div className="page-header">
         <div className="page-header-ghost" aria-hidden="true">Éire</div>
         <p className="page-eyebrow">Discover Dublin &amp; Ireland</p>
         <h1 className="page-title">

@@ -3,54 +3,67 @@
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import NewsletterForm from '../shared/NewsletterForm';
+import { CONTACT_EMAIL as EMAIL, isValidEmail, sendForm } from '../../lib/contact';
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/john@irishhypnotherapyconference.ie';
-const EMAIL = 'john@irishhypnotherapyconference.ie';
+const FIELD_ERRORS = {
+  name: 'Please enter your name.',
+  email: 'Please enter a valid email address, for example name@example.com.',
+  message: 'Please enter your message.',
+};
+
+/** @param {{name:string,email:string,message:string}} values */
+const validate = values => ({
+  ...(values.name ? {} : { name: FIELD_ERRORS.name }),
+  ...(isValidEmail(values.email) ? {} : { email: FIELD_ERRORS.email }),
+  ...(values.message ? {} : { message: FIELD_ERRORS.message }),
+});
 
 export default function Contact() {
   const formRef = useRef(null);
   const [state, setState] = useState('idle'); // idle | busy | done | error
+  const [errors, setErrors] = useState({});
 
   const submit = async e => {
     e.preventDefault();
     const form = formRef.current;
-    const get = id => form.querySelector('#' + id);
-    const name = get('cf-name').value.trim();
-    const email = get('cf-email').value.trim();
-    const msg = get('cf-message').value.trim();
-    if (!name || !email || !email.includes('@') || !msg) {
-      [get('cf-name'), get('cf-email'), get('cf-message')].forEach(el => {
-        if (!el.value.trim()) {
-          el.style.borderColor = 'rgba(200,80,80,.6)';
-          setTimeout(() => (el.style.borderColor = ''), 2500);
-        }
-      });
+    const data = new FormData(form);
+    const values = {
+      name: String(data.get('name') || '').trim(),
+      email: String(data.get('email') || '').trim(),
+      message: String(data.get('message') || '').trim(),
+    };
+    const found = validate(values);
+    setErrors(found);
+    const firstInvalid = Object.keys(found)[0];
+    if (firstInvalid) {
+      form.querySelector(`[name="${firstInvalid}"]`)?.focus();
       return;
     }
-    if (form.querySelector('[name="_honey"]').value) return;
+    if (data.get('_honey')) return;
     setState('busy');
     try {
-      const r = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name, email, message: msg,
-          _subject: 'IHC 2027 - ' + (get('cf-subject').value.trim() || 'Contact form enquiry'),
-          form: 'contact',
-        }),
+      await sendForm({
+        ...values,
+        _subject: 'IHC 2027 - ' + (String(data.get('subject') || '').trim() || 'Contact form enquiry'),
+        form: 'contact',
       });
-      if (!r.ok) throw new Error('send failed');
       form.reset();
       setState('done');
-      setTimeout(() => setState('idle'), 5000);
     } catch {
       setState('error');
-      setTimeout(() => setState('idle'), 4000);
     }
   };
 
-  const btnLabel =
-    state === 'busy' ? 'Sending…' : state === 'error' ? 'Something went wrong, try again' : 'Send Message';
+  const clearError = name => () => {
+    if (errors[name]) setErrors(({ [name]: _removed, ...rest }) => rest);
+  };
+  const fieldProps = name => ({
+    'aria-invalid': errors[name] ? true : undefined,
+    'aria-describedby': errors[name] ? `cf-${name}-error` : undefined,
+    onInput: clearError(name),
+  });
+  const FieldError = ({ name }) =>
+    errors[name] ? <span className="field-error" id={`cf-${name}-error`}>{errors[name]}</span> : null;
 
   return (
     <section className="dark-section" id="contact" aria-labelledby="contact-hl" style={{ background: 'var(--emerald-2)', borderTop: '1px solid rgba(196,154,40,.12)' }}>
@@ -75,7 +88,7 @@ export default function Contact() {
             </div>
             <div className="cta-inner" style={{ textAlign: 'left', alignItems: 'flex-start', padding: 0 }}>
               <span className="cta-label" style={{ marginBottom: '.5rem' }}>Not ready to book yet?</span>
-              <p style={{ fontSize: '.9rem', fontWeight: 300, color: 'rgba(255,255,255,.55)', marginBottom: '1.25rem', maxWidth: '38ch', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '.9rem', fontWeight: 300, color: 'rgba(255,255,255,.68)', marginBottom: '1.25rem', maxWidth: '38ch', lineHeight: 1.6 }}>
                 Get speaker announcements, ticket news and programme updates straight to your
                 inbox, so you do not miss the window.
               </p>
@@ -87,11 +100,13 @@ export default function Contact() {
               <div className="contact-row">
                 <div className="contact-field">
                   <label htmlFor="cf-name">Name</label>
-                  <input id="cf-name" name="name" className="contact-input" type="text" placeholder="Your name" required autoComplete="name" />
+                  <input id="cf-name" name="name" className="contact-input" type="text" placeholder="Your name" required autoComplete="name" {...fieldProps('name')} />
+                  <FieldError name="name" />
                 </div>
                 <div className="contact-field">
                   <label htmlFor="cf-email">Email</label>
-                  <input id="cf-email" name="email" className="contact-input" type="email" placeholder="your@email.com" required autoComplete="email" />
+                  <input id="cf-email" name="email" className="contact-input" type="email" placeholder="your@email.com" required autoComplete="email" {...fieldProps('email')} />
+                  <FieldError name="email" />
                 </div>
               </div>
               <div className="contact-field">
@@ -100,14 +115,16 @@ export default function Contact() {
               </div>
               <div className="contact-field">
                 <label htmlFor="cf-message">Message</label>
-                <textarea id="cf-message" name="message" className="contact-input" placeholder="Your message…" required></textarea>
+                <textarea id="cf-message" name="message" className="contact-input" placeholder="Your message…" required {...fieldProps('message')}></textarea>
+                <FieldError name="message" />
               </div>
               <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px' }} />
               <button type="submit" className="btn-gold" disabled={state === 'busy'} style={{ alignSelf: 'flex-start', padding: '.85rem 2rem' }}>
-                {btnLabel}
+                {state === 'busy' ? 'Sending…' : 'Send Message'}
               </button>
-              <p className="contact-success" role="status" style={state === 'done' ? { display: 'block' } : undefined}>
-                Thank you, we will be in touch shortly.
+              <p className={`form-status${state === 'error' ? ' is-error' : ''}`} role={state === 'error' ? 'alert' : 'status'}>
+                {state === 'done' && 'Thank you, your message has been sent. We will be in touch shortly.'}
+                {state === 'error' && `Sorry, your message did not send. Please try again or email ${EMAIL}.`}
               </p>
             </form>
           </div>

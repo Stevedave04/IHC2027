@@ -15,7 +15,7 @@ export const metadata = {
 export default function SpeakersPage() {
   return (
     <>
-      <div className="page-header" role="banner">
+      <div className="page-header">
         <div className="page-header-ghost" aria-hidden="true">Speakers</div>
         <p className="page-eyebrow">Dublin · 16–18 April 2027</p>
         <h1 className="page-title">The 2027<br /><strong style={{ fontWeight: 700, fontStyle: 'normal' }}>line-up</strong></h1>

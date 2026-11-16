@@ -38,7 +38,7 @@
   float:left;
   line-height:.82;
   padding:.06em .12em 0 0;
-  color:var(--gold);
+  color:var(--gold-text);
 }
 .article-quote{
   font-family:var(--f);
@@ -63,9 +63,9 @@
 .article-cta-eyebrow{
   display:block;
   font-family:var(--f-sans);
-  font-size:.65rem;font-weight:600;
+  font-size:.72rem;font-weight:600;
   letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);
+  color:var(--gold-text);
   margin-bottom:1rem;
 }
 .article-cta p{
@@ -81,6 +81,7 @@
   font-size:.78rem;font-weight:700;
   letter-spacing:.16em;text-transform:uppercase;
   transition:background .2s;
+  max-width:100%;
 }
 .article-cta .btn-gold:hover{background:var(--gold-light)}
 
@@ -90,13 +91,14 @@
   padding-top:2rem;
 }
 .pager-link{
+  display:inline-block;padding:.6rem 0;
   font-family:var(--f-sans);
   font-size:.9rem;font-weight:500;
   color:var(--muted);
   max-width:38ch;
   transition:color .2s;
 }
-.pager-link:hover{color:var(--gold)}
+.pager-link:hover{color:var(--gold-text)}
 .pager-next{text-align:right;margin-left:auto}
 
 @media(max-width:600px){

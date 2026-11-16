@@ -16,7 +16,7 @@ export const metadata = {
 export default function ApplyToSpeakPage() {
   return (
     <>
-      <div className="page-header" role="banner">
+      <div className="page-header">
         <div className="page-header-ghost" aria-hidden="true">Speak</div>
         <p className="page-eyebrow">Call for Speakers</p>
         <h1 className="page-title">Apply to<br /><strong style={{ fontWeight: 700, fontStyle: 'normal' }}>speak in Dublin</strong></h1>

@@ -19,6 +19,10 @@
   --gold-light: #D4AE50;
   --gold-pale:  #F0E4B8;
   --gold-rule:  rgba(196,154,40,0.28);
+  /* Gold for TEXT. Dark enough to read on parchment (5.4:1); dark surfaces
+     switch it back to the bright gold below. */
+  --gold-ink:   #7A5C0E;
+  --gold-text:  var(--gold-ink);
 
   --ink:   #0A0E08;
   --text:  #1C1F14;
@@ -27,6 +31,13 @@
 
   --ease: cubic-bezier(0.16,1,0.3,1);
 }
+
+/* Dark surfaces: gold text uses the bright brand gold */
+.dark-section,.hero,.page-header,.nav,footer,.mobile-ticket-bar,.scroll-top,.skip-link,
+.exhibit-band,.ticket-card.featured,.mid-section,.accom-section,
+.fts-section,.prof-session,.tier-card.tier-featured,.coc-commitment,.pp-rights,.rp-contact,
+.rp-timeline-period,.blog-img-placeholder,.blog-newsletter,.article-cta,.table-hero,.apply-closed,
+.spk-filter button[aria-pressed="true"]{--gold-text:var(--gold)}
 
 /* ── Reset ────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -43,6 +54,8 @@ body{
   text-rendering:optimizeLegibility;
 }
 img{display:block;max-width:100%}
+/* long emails and URLs wrap instead of pushing the page sideways */
+main a{overflow-wrap:anywhere}
 a{color:inherit;text-decoration:none}
 button,input,textarea,select{font-family:var(--f-sans);border:none;background:none}
 
@@ -76,14 +89,14 @@ body::after{
   backdrop-filter:blur(16px);
   border-color:var(--gold-rule);
 }
-.nav-logo{display:flex;align-items:center;gap:.9rem}
+.nav-logo{display:flex;align-items:center;gap:.9rem;position:relative;z-index:101}
 .nav-logo img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
 .nav-logo-name{
   font-size:.72rem;font-weight:500;
   letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,.75);line-height:1.4;
 }
-.nav-logo-name span{display:block;font-size:.62rem;color:rgba(255,255,255,.38);letter-spacing:.18em}
+.nav-logo-name span{display:block;font-size:.72rem;color:rgba(255,255,255,.62);letter-spacing:.18em}
 .nav-links{display:flex;align-items:center}
 .nav-primary{display:flex;align-items:center;gap:2.25rem;list-style:none}
 .nav-secondary{display:none;list-style:none}
@@ -99,16 +112,16 @@ body::after{
   display:inline-block;
   padding:.5rem 1.4rem;
   border:1px solid var(--gold-rule);
-  color:var(--gold) !important;
+  color:var(--gold-text) !important;
   font-weight:600;letter-spacing:.1em;
   transition:background .2s,border-color .2s !important;
 }
 .nav-ticket:hover{background:var(--gold);color:var(--emerald) !important;border-color:var(--gold)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.6);transition:transform .3s,opacity .3s}
+.nav-hamburger{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-11px;order:3;cursor:pointer;position:relative;z-index:101}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.85);transition:transform .3s,opacity .3s}
 /* animate to × when open */
-.nav[data-open] .nav-hamburger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.nav[data-open] .nav-hamburger span:nth-child(2){transform:translateY(-6px) rotate(-45deg)}
+.nav[data-open] .nav-hamburger span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.nav[data-open] .nav-hamburger span:nth-child(2){transform:translateY(-3px) rotate(-45deg)}
 
 /* ── Footer ───────────────────────────────────── */
 footer{
@@ -124,21 +137,29 @@ footer{
 }
 .footer-logo{display:flex;align-items:center;gap:.85rem;margin-bottom:1.25rem}
 .footer-logo img{width:36px;height:36px;object-fit:contain}
-.footer-logo-name{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.4}
-.footer-logo-name span{display:block;font-size:.6rem;color:rgba(255,255,255,.3);letter-spacing:.18em}
-.footer-desc{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.38);line-height:1.75;max-width:28ch}
-.footer-col-title{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.footer-logo-name{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.4}
+.footer-logo-name span{display:block;font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.18em}
+.footer-desc{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.68);line-height:1.75;max-width:28ch}
+.footer-col-title{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text);margin-bottom:1.25rem}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4);transition:color .2s}
-.footer-links a:hover{color:rgba(255,255,255,.8)}
+.footer-links a{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.7);transition:color .2s}
+.footer-links a:hover{color:#fff}
 .footer-bottom{
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:1rem;
 }
-.footer-copy{font-size:.7rem;letter-spacing:.1em;color:rgba(255,255,255,.25)}
+.footer-copy{font-size:.72rem;letter-spacing:.1em;color:rgba(255,255,255,.62)}
 .footer-policies{display:flex;gap:1.5rem;list-style:none}
-.footer-policies a{font-size:.7rem;letter-spacing:.08em;color:rgba(255,255,255,.25);transition:color .2s}
-.footer-policies a:hover{color:rgba(255,255,255,.5)}
+.footer-policies a{font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,.62);transition:color .2s;display:inline-block;padding:.4rem 0}
+.footer-policies a:hover{color:#fff}
+
+/* Footer layout on smaller screens (shared by every page) */
+@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr;gap:2.25rem}
+  .footer-inner{padding:3rem 1.5rem 1.5rem}
+  .footer-policies{flex-wrap:wrap;gap:.25rem 1.5rem}
+}
 
 /* ── Animations ───────────────────────────────── */
 @keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -149,7 +170,7 @@ footer{
 
 /* ── Active page highlight ─────────────────────── */
 .footer-links a[aria-current],
-.footer-policies a[aria-current]{color:var(--gold)}
+.footer-policies a[aria-current]{color:var(--gold-text)}
 
 
 /* ── Mobile navigation overlay ─────────────────── */
@@ -164,11 +185,11 @@ footer{
     padding:6.5rem 2.25rem 2.25rem;
     z-index:99;
     overflow-y:auto;
-    opacity:0;pointer-events:none;
+    opacity:0;pointer-events:none;visibility:hidden;
     transform:translateY(-12px);
-    transition:opacity .35s var(--ease),transform .35s var(--ease);
+    transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s .35s;
   }
-  .nav[data-open] .nav-links{opacity:1;pointer-events:auto;transform:none}
+  .nav[data-open] .nav-links{opacity:1;pointer-events:auto;visibility:visible;transform:none;transition-delay:0s}
 
   /* primary: large numbered serif links */
   .nav-primary{
@@ -191,12 +212,12 @@ footer{
   .nav-primary li a::before{
     content:counter(navi,decimal-leading-zero);
     font-family:var(--f);
-    font-size:.6rem;font-weight:600;font-style:normal;
+    font-size:.72rem;font-weight:600;font-style:normal;
     letter-spacing:.22em;
-    color:var(--gold);
+    color:var(--gold-text);
     min-width:1.6rem;
   }
-  .nav-primary li a:hover{color:var(--gold)}
+  .nav-primary li a:hover{color:var(--gold-text)}
   .nav[data-open] .nav-primary li a{opacity:1;transform:none}
   .nav[data-open] .nav-primary li:nth-child(1) a{transition-delay:.08s}
   .nav[data-open] .nav-primary li:nth-child(2) a{transition-delay:.13s}
@@ -221,32 +242,35 @@ footer{
   /* secondary page links */
   .nav-secondary{
     display:flex;flex-wrap:wrap;
-    gap:.85rem 1.9rem;
+    gap:.2rem 1.9rem;
     margin-top:2.25rem;padding-top:1.9rem;width:100%;
     border-top:1px solid rgba(255,255,255,.08);
   }
   .nav-secondary a{
     font-size:.74rem;font-weight:600;
     letter-spacing:.18em;text-transform:uppercase;
-    color:rgba(255,255,255,.55);
+    color:rgba(255,255,255,.72);
     transition:color .2s;
+    display:inline-block;padding:.45rem 0;
   }
-  .nav-secondary a:hover{color:var(--gold)}
+  .nav-secondary a:hover{color:var(--gold-text)}
 
   /* event meta pinned to the bottom */
   .nav-overlay-meta{
     display:block;
     margin-top:auto;padding-top:2.5rem;
     font-family:var(--f);
-    font-size:.62rem;font-weight:600;
+    font-size:.72rem;font-weight:600;
     letter-spacing:.2em;text-transform:uppercase;
-    color:rgba(255,255,255,.38);
+    color:rgba(255,255,255,.62);
   }
 
   .nav{padding:1.25rem 1.5rem}
   .nav.scrolled{padding:.9rem 1.5rem}
   /* solid bar behind the logo/close button while the overlay is open */
-  .nav[data-open]{background:rgba(9,25,16,.98)}
+  /* backdrop-filter would turn the bar into the containing block for the
+     fixed overlay and clip it to the bar's height once the page has scrolled */
+  .nav[data-open]{background:rgba(9,25,16,.98);backdrop-filter:none}
 }
 
 /* ── Reduced motion ────────────────────────────── */
@@ -267,6 +291,16 @@ footer{
 .nav-links a:focus-visible,.footer-links a:focus-visible{outline-offset:5px}
 
 
+
+/* Form fields always show a visible focus ring */
+input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ── Form errors and status (forms sit on dark surfaces) ── */
+.field-error{font-size:.82rem;color:#FFB4A8;line-height:1.4}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#FF9C8C !important}
+.form-status{font-size:.9rem;line-height:1.5;margin-top:.6rem;color:rgba(255,255,255,.85)}
+.form-status:empty{display:none}
+.form-status.is-error{color:#FFB4A8}
 
 /* ── GSAP reveal initial state ─────────────────── */
 html.js .reveal{opacity:0}
@@ -296,7 +330,7 @@ html.js .wipe{opacity:0}
   border:1px solid var(--gold-rule);
   background:rgba(9,25,16,.85);
   backdrop-filter:blur(12px);
-  color:var(--gold);
+  color:var(--gold-text);
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;
   opacity:0;pointer-events:none;
@@ -324,7 +358,7 @@ html.js .wipe{opacity:0}
   .mobile-ticket-bar.visible{transform:none}
   .mtb-info{display:flex;flex-direction:column;line-height:1.2}
   .mtb-price{font-family:var(--f);font-size:1.5rem;font-weight:600;font-style:italic;color:#fff}
-  .mtb-meta{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .mtb-meta{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
   .mtb-cta{
     background:var(--gold);color:var(--emerald);
     font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -335,3 +369,6 @@ html.js .wipe{opacity:0}
   .scroll-top{bottom:5.5rem}
   footer{padding-bottom:4.5rem}
 }
+
+/* floating controls step aside while the mobile menu is open */
+.nav-open .scroll-top,.nav-open .mobile-ticket-bar{display:none}

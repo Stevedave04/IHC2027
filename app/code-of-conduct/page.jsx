@@ -11,7 +11,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-<div className="page-header" role="banner">
+<div className="page-header">
   <div className="page-header-ghost" aria-hidden="true">Conduct</div>
   <p className="page-eyebrow">Irish Hypnotherapy Conference 2027</p>
   <h1 className="page-title">Code of<br/><strong style={{fontWeight:'700',fontStyle:'normal'}}>Conduct</strong></h1>

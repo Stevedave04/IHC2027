@@ -38,7 +38,7 @@ export default function Numbers() {
   return (
     <div className="light-section">
       <div className="section-wrap" style={{ paddingTop: '3rem', paddingBottom: 0 }}>
-        <p className="reveal" style={{ textAlign: 'center', fontSize: '.64rem', fontWeight: 600, letterSpacing: '.26em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '2.25rem' }}>
+        <p className="reveal" style={{ textAlign: 'center', fontSize: '.72rem', fontWeight: 600, letterSpacing: '.26em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '2.25rem' }}>
           By the Numbers
         </p>
         <div className="numbers-grid" ref={gridRef}>

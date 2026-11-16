@@ -17,13 +17,13 @@
   white-space:nowrap;
 }
 .page-eyebrow{
-  font-size:.65rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-text);margin-bottom:1.25rem;
   opacity:0;animation:fade-up .7s var(--ease) .1s forwards;
 }
 .page-updated{
   font-size:.72rem;font-weight:400;letter-spacing:.14em;
-  color:rgba(255,255,255,.3);margin-top:1.5rem;
+  color:rgba(255,255,255,.68);margin-top:1.5rem;
   opacity:0;animation:fade-up .7s var(--ease) .35s forwards;
 }
 .page-title{
@@ -56,7 +56,7 @@
   border-bottom:1px solid var(--gold-rule);
 }
 .pp-intro a{
-  color:var(--gold);
+  color:var(--gold-text);
   border-bottom:1px solid var(--gold-rule);
   transition:border-color .2s;
 }
@@ -74,8 +74,8 @@
 .pp-section:last-child{border-bottom:none;margin-bottom:0}
 
 .pp-section-num{
-  font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.6rem;display:block;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-text);margin-bottom:.6rem;display:block;
 }
 .pp-section h2{
   font-size:clamp(1.8rem,3.5vw,2.6rem);
@@ -90,7 +90,7 @@
 }
 .pp-section p:last-child{margin-bottom:0}
 .pp-section a{
-  color:var(--gold);
+  color:var(--gold-text);
   border-bottom:1px solid var(--gold-rule);
   transition:border-color .2s;
 }
@@ -110,8 +110,8 @@
   height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);
 }
 .pp-rights-label{
-  font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;display:block;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-text);margin-bottom:1rem;display:block;
 }
 .pp-rights p{
   font-size:clamp(1.1rem,2vw,1.45rem);
@@ -122,12 +122,9 @@
 .pp-rights p:last-child{margin-bottom:0}
 
 /* ── Responsive ───────────────────────────────── */
-@media(max-width:768px){
-  .footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){}
 @media(max-width:600px){
   .page-header{padding:8rem 1.75rem 4rem}
   .pp-wrap{padding:4rem 1.5rem 6rem}
   .pp-rights{padding:2rem 1.75rem}
-  .footer-top{grid-template-columns:1fr}
-  .footer-inner{padding:3rem 1.5rem 1.5rem}
 }

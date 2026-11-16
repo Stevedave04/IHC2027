@@ -11,7 +11,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-<div className="page-header" role="banner">
+<div className="page-header">
   <div className="page-header-ghost" aria-hidden="true">Sponsor</div>
   <p className="page-eyebrow">Partner with IHC 2027</p>
   <h1 className="page-title">Reach Ireland's<br/><strong style={{fontWeight:'700',fontStyle:'normal'}}>Hypnotherapy Community</strong></h1>

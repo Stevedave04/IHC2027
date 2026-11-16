@@ -49,7 +49,7 @@ export default function Speakers() {
       <div className="section-wrap-wide">
         <div className="speakers-header">
           <div>
-            <div className="eyebrow reveal" style={{ '--eyebrow-c': 'var(--gold)' }}>2027 Speakers</div>
+            <div className="eyebrow reveal" style={{ '--eyebrow-c': 'var(--gold-text)' }}>2027 Speakers</div>
             <h2 className="speakers-hl reveal" id="speakers-hl">
               <em>{SPEAKERS.length} confirmed speakers</em>
               Voices shaping<br />the future
